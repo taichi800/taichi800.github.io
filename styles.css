@@ -1,0 +1,157 @@
+html {
+  font-size: 100%; /* Base font size respecting user settings */
+}
+
+body {
+  font-family: monospace, sans-serif;
+  font-size: 1rem; /* 16px */
+  max-width: 44rem; /* 16px × 44 characters = 704px */
+  line-height: 1.6;
+  margin: 0 auto;
+  padding: 0 1rem; /* Default side padding */
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000000; /* Black background */
+    color: #ffffff; /* White text */
+  }
+}
+
+/* Very Small Screens and Minimal Displays */
+@media (max-width: 2em) { /* 32px */
+  body {
+    font-size: 0.625rem; /* 10px */
+    max-width: 2rem; /* 32px */
+    padding: 0 0.5rem; /* 8px side padding */
+  }
+}
+
+@media (min-width: 2.063em) and (max-width: 5.25em) { /* 33px to 84px */
+  body {
+    font-size: 0.75rem; /* 12px */
+    max-width: 4rem; /* 84px */
+    padding: 0 0.5rem; /* 8px side padding */
+  }
+}
+
+/* Legacy Screens */
+@media (min-width: 5.313em) and (max-width: 15em) { /* 85px to 240px */
+  body {
+    font-size: 0.8125rem; /* 13px */
+    max-width: 14rem; /* 240px */
+    padding: 0 0.75rem; /* 12px side padding */
+  }
+}
+
+/* Very Small Screens (241px to 320px) */
+@media (min-width: 15.063em) and (max-width: 20em) { /* 241px to 320px */
+  body {
+    font-size: 0.9375rem; /* 15px */
+    max-width: 16rem; /* 270px */
+    padding: 0 1rem; /* 16px side padding */
+  }
+}
+
+/* Small Screens (321px to 375px) */
+@media (min-width: 20.063em) and (max-width: 23.438em) { /* 321px to 375px */
+  body {
+    font-size: 0.9375rem; /* 15px */
+    max-width: 18rem; /* 315px */
+    padding: 0 1rem; /* 16px side padding */
+  }
+}
+
+/* Small-Medium Screens (376px to 480px) */
+@media (min-width: 23.5em) and (max-width: 30em) { /* 376px to 480px */
+  body {
+    font-size: 1.0625rem; /* 17px */
+    max-width: 24rem; /* 408px */
+    padding: 0 1rem; /* 16px side padding */
+  }
+}
+
+/* Medium Screens (481px to 600px) */
+@media (min-width: 30.063em) and (max-width: 37.5em) { /* 481px to 600px */
+  body {
+    font-size: 1.0625rem; /* 17px */
+    max-width: 30rem; /* 512px */
+    padding: 0 1.125rem; /* 18px side padding */
+  }
+}
+
+/* Medium-Large Screens (601px to 768px) */
+@media (min-width: 37.563em) and (max-width: 48em) { /* 601px to 768px */
+  body {
+    font-size: 1.0625rem; /* 17px */
+    max-width: 46rem; /* 768px */
+    padding: 0 1.125rem; /* 18px side padding */
+  }
+}
+
+/* Large Screens (769px to 1024px) */
+@media (min-width: 48.063em) and (max-width: 64em) { /* 769px to 1024px */
+  body {
+    font-size: 1.125rem; /* 18px */
+    max-width: 58rem; /* 960px */
+    padding: 0 1.125rem; /* 18px side padding */
+  }
+  .content-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 2%;
+  }
+}
+
+/* Extra Large Screens (1025px to 1280px) */
+@media (min-width: 64.063em) and (max-width: 80em) { /* 1025px to 1280px */
+  body {
+    font-size: 1.25rem; /* 20px */
+    max-width: 74rem; /* 1216px */
+    padding: 0 1.125rem; /* 18px side padding */
+  }
+}
+
+/* Wide Screens (1281px to 1440px) */
+@media (min-width: 80.063em) and (max-width: 90em) { /* 1281px to 1440px */
+  body {
+    font-size: 1.375rem; /* 22px */
+    max-width: 82rem; /* 1344px */
+    padding: 0 1.125rem; /* 18px side padding */
+  }
+}
+
+/* Ultra-Wide Screens (1441px to 1920px) */
+@media (min-width: 90.063em) and (max-width: 120em) { /* 1441px to 1920px */
+  body {
+    font-size: 1.5rem; /* 24px */
+    max-width: 106rem; /* 1728px */
+    padding: 0 1.125rem; /* 18px side padding */
+  }
+}
+
+/* 4K Screens (1921px to 2560px) */
+@media (min-width: 120.063em) and (max-width: 160em) { /* 1921px to 2560px */
+  body {
+    font-size: 1.5rem; /* 24px */
+    max-width: 110rem; /* 1800px */
+    padding: 0 1.125rem; /* 18px side padding */
+  }
+  .content-container {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+}
+
+/* 5K and Above Screens (2561px and above) */
+@media (min-width: 160.063em) { /* 2561px and above */
+  body {
+    font-size: 1.5rem; /* 24px */
+    max-width: 110rem; /* 1800px */
+    padding: 0 1.125rem; /* 18px side padding */
+  }
+  .content-container {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+}
