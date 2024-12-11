@@ -1,0 +1,54 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #333333; /* Dark gray for better readability */
+    background-color: #FFFFFF; /* White background */
+    line-height: 1.6;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px; /* Optimal line length for reading */
+}
+
+h1, h2 {
+    color: #0044cc; /* High contrast for headings */
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+p {
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+/* Link Styles */
+a {
+    color: #0066cc; /* Standard link color for visibility */
+    text-decoration: underline; /* Underline for clear identification of links */
+}
+
+a:hover, a:focus {
+    color: #004499; /* Darker shade on hover/focus for better visibility */
+    text-decoration: none; /* Removing underline on hover/focus for distinction */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+}
+
+
+:focus {
+    outline: 3px solid #ffbf47; /* Yellow outline for focused elements */
+    outline-offset: 3px;
+}
