@@ -1,0 +1,21 @@
+Welcome to the Direct Text-Based Index
+
+If you have trouble using modern web pages, use the links below to navigate directly to resources:
+
+Resources:
+- File 1: Introduction (file1.txt)
+- File 2: Guidelines (file2.txt)
+- File 3: FAQ (file3.txt)
+- File 4: Contact Information (file4.txt)
+
+Directories:
+- Directory 1: Additional Resources (directory1/index.html)
+- Directory 2: Archived Materials (directory2/index.html)
+
+Plain Text Versions:
+- This Page (thispage.txt)
+- File 1: Introduction (file1.txt)
+- File 2: Guidelines (file2.txt)
+- File 3: FAQ (file3.txt)
+
+For any issues, please email us at taichiman@tutamail.com.
