@@ -1,17 +1,62 @@
-Welcome to Our Website
+Taichi For Everyone
+Explore the world of Tai Chi Chuan with a focus on health, wellness, and personal responsibility.
 
-Choose the best link for your system to access the website content:
+-------------------------------------------------------------------------------
 
-- Link for Modern Systems (2009+): https://example.com/modern.html
-- Link for Legacy Systems (1997–2008): https://example.com/legacy.html
-- Link to Direct Text File Index (compatible with all systems): https://example.com/text-index.html
+WELCOME TO TAI CHI RANGE
+A Tai Chi Chuan Resource
 
-If the links do not display correctly, you can access the Direct Text File Index here:
-https://example.com/text-index.html
+-------------------------------------------------------------------------------
 
----
+DISCOVER WHILE KEEPING COOLHEADED
+[Image: Tiger with Sunglasses]
+
+-------------------------------------------------------------------------------
+
+DISCLAIMER
+We're independent locally based health promotion enthusiasts with a martial art background.
+I, the admin, and everybody affiliated with all this content are not experts in the topics discussed on this site.
+Any advice or information provided here should not be taken as professional or expert advice. It is shared from a
+personal perspective and could be incorrect or inappropriate for your specific circumstances.
+
+If you are in need of expert advice, we strongly encourage you to seek guidance from qualified professionals
+in the respective field. By using this site, you agree with our terms of service and privacy statement.
+
+-------------------------------------------------------------------------------
 
 Instructions:
 To access a link, please copy the URL and paste it into your browser’s address bar.
 
 Thank you for visiting!
+
+CHOOSE THE BEST OPTION FOR YOUR SYSTEM
+
+- Modern Site with Javascript
+- Modern Site without Javascript
+- Legacy Site
+- Direct Text File Index
+- Plain Text Version of this Page
+
+-------------------------------------------------------------------------------
+
+SUPPORT
+For support, visit the Support Page.
+[Image: Rainbow Frog, link to support page]
+
+-------------------------------------------------------------------------------
+
+CONTACT INFORMATION
+Email: taichiman@tutamail.com
+© 2022 Taichimand's Range
+© 2022 123taichi
+
+-------------------------------------------------------------------------------
+
+ADDITIONAL LINKS
+- Privacy Policy
+- Terms of Service
+- Home
+- Support
+- Code of Conduct
+
+-------------------------------------------------------------------------------
