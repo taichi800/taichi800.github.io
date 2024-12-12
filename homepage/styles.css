@@ -381,6 +381,7 @@ cite {
     max-width: 46rem; /* 768px */
     padding: 0 1.125rem; /* 18px side padding */
   }
+    
 }
 
 /* Large Screens (769px to 1024px) */
@@ -395,6 +396,23 @@ cite {
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     gap: 2%;
   }
+
+        .hamburger, #menu-toggle {
+        display: none; /* Hide hamburger icon and checkbox on larger screens */
+    }
+    .menu {
+        display: block;
+        background: none;
+    }
+    .menu li {
+        display: inline-block; /* Horizontal menu */
+    }
+    .menu li a {
+        padding: 15px;
+        border-radius: 50%; /* Consistent border-radius */
+        border: 2px solid transparent; /* Initial border color transparent */
+    }
+    
 }
 
 /* Extra Large Screens (1025px to 1280px) */
@@ -404,6 +422,23 @@ cite {
     max-width: 74rem; /* 1216px */
     padding: 0 1.125rem; /* 18px side padding */
   }
+
+        .hamburger, #menu-toggle {
+        display: none; /* Hide hamburger icon and checkbox on larger screens */
+    }
+    .menu {
+        display: block;
+        background: none;
+    }
+    .menu li {
+        display: inline-block; /* Horizontal menu */
+    }
+    .menu li a {
+        padding: 15px;
+        border-radius: 50%; /* Consistent border-radius */
+        border: 2px solid transparent; /* Initial border color transparent */
+    }
+    
 }
 
 /* Wide Screens (1281px to 1440px) */
@@ -413,6 +448,23 @@ cite {
     max-width: 82rem; /* 1344px */
     padding: 0 1.125rem; /* 18px side padding */
   }
+
+        .hamburger, #menu-toggle {
+        display: none; /* Hide hamburger icon and checkbox on larger screens */
+    }
+    .menu {
+        display: block;
+        background: none;
+    }
+    .menu li {
+        display: inline-block; /* Horizontal menu */
+    }
+    .menu li a {
+        padding: 15px;
+        border-radius: 50%; /* Consistent border-radius */
+        border: 2px solid transparent; /* Initial border color transparent */
+    }
+    
 }
 
 /* Ultra-Wide Screens (1441px to 1920px) */
@@ -422,6 +474,23 @@ cite {
     max-width: 106rem; /* 1728px */
     padding: 0 1.125rem; /* 18px side padding */
   }
+
+    .hamburger, #menu-toggle {
+        display: none; /* Hide hamburger icon and checkbox on larger screens */
+    }
+    .menu {
+        display: block;
+        background: none;
+    }
+    .menu li {
+        display: inline-block; /* Horizontal menu */
+    }
+    .menu li a {
+        padding: 15px;
+        border-radius: 50%; /* Consistent border-radius */
+        border: 2px solid transparent; /* Initial border color transparent */
+    }
+    
 }
 
 /* 4K Screens (1921px to 2560px) */
@@ -434,6 +503,23 @@ cite {
   .content-container {
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   }
+
+    .hamburger, #menu-toggle {
+        display: none; /* Hide hamburger icon and checkbox on larger screens */
+    }
+    .menu {
+        display: block;
+        background: none;
+    }
+    .menu li {
+        display: inline-block; /* Horizontal menu */
+    }
+    .menu li a {
+        padding: 15px;
+        border-radius: 50%; /* Consistent border-radius */
+        border: 2px solid transparent; /* Initial border color transparent */
+    }
+    
 }
 
 /* 5K and Above Screens (2561px and above) */
@@ -446,4 +532,21 @@ cite {
   .content-container {
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   }
+
+    .hamburger, #menu-toggle {
+        display: none; /* Hide hamburger icon and checkbox on larger screens */
+    }
+    .menu {
+        display: block;
+        background: none;
+    }
+    .menu li {
+        display: inline-block; /* Horizontal menu */
+    }
+    .menu li a {
+        padding: 15px;
+        border-radius: 50%; /* Consistent border-radius */
+        border: 2px solid transparent; /* Initial border color transparent */
+    }
+    
 }
