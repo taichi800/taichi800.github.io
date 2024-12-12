@@ -1,4 +1,3 @@
-<script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -17,4 +16,3 @@
         "query-input": "required name=search_term_string"
     }
 }
-</script>
