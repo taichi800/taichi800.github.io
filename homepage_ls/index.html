@@ -61,34 +61,34 @@
         object-src 'none'; 
         base-uri 'self'; 
         form-action 'self';
+	frame-ancestors 'none';
     ">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
     <meta name="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta name="Expect-CT" content="max-age=86400, enforce">
     <meta http-equiv="X-Download-Options" content="noopen">
-    <meta http-equiv="Permissions-Policy" content="geolocation=(self), camera=(), microphone=(), fullscreen=(self), payment=(self)">
+<meta http-equiv="Permissions-Policy" content="
+    geolocation=(),
+    camera=(),
+    microphone=(),
+    fullscreen=(),
+    payment=(),
+    accelerometer=(),
+    ambient-light-sensor=(),
+    gyroscope=(),
+    magnetometer=(),
+    bluetooth=(),
+    nfc=(),
+    autoplay=(),
+    picture-in-picture=(),
+    clipboard-read=(),
+    clipboard-write=(self)
+    gamepad=()
+    usb=()
+">
+	
+<script src="schema.js" type="application/json"></script>
 
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Tai Chi For Everyone",
-    "description": "A comprehensive resource on Tai Chi, featuring creative works and content available for general use.",
-    "url": "https://taichi800.github.io/",
-    "keywords": ["tai chi", "martial arts", "health", "wellness", "exercise"],
-    "creator": {
-        "@type": "Person",
-        "name": "Taichiman"
-    },
-    "image": "https://taichi800.github.io/images10/featured-figure.jpg",
-    "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://taichi800.github.io/?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-    }
-}
-</script>
 
 </head>
