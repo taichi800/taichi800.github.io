@@ -15,6 +15,11 @@ body {
     min-height: 100vh;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Ensures no extra space below the image */
+}
 
 /* Header Styles */
 header {
