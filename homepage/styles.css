@@ -1,0 +1,342 @@
+body {
+    font-family: Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p {
+    margin-bottom: 1em; /* Consistent spacing for paragraphs */
+}
+
+/* Header styling STACKBLOCK00 */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Wraps content on smaller screens */
+    padding: 10px;
+    background-color: #0D0D0D;
+    color: #fff;
+}
+
+.left-section, .center-section, .right-section {
+    flex: 1;
+    text-align: center;
+    padding: 5px;
+}
+
+/* Image styling within center section */
+.center-section .images {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between images */
+    margin-bottom: 10px; /* Margin below images */
+}
+
+.center-section .images img, .center-section > img {
+    width: 120px;
+    height: auto;
+}
+
+/* Navigation styling */
+nav {
+    background-color: #0077B6; /* Bright blue background */
+    padding: 0.625em 1.25em; /* Padding around the nav content */
+}
+
+/* Menu styling */
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #333; /* Dark background for the menu */
+    text-align: center;
+    display: none; /* Hidden by default, shown when hamburger is clicked */
+}
+
+.menu li a {
+    display: inline-block; /* Inline-block for better spacing handling */
+    padding: 0.625em 1.25em; /* Padding for better spacing around text */
+    color: white; /* Text color for readability */
+    text-decoration: none; /* No underline */
+    transition: background-color 0.5s ease, color 0.5s ease, border 0.5s ease; /* Smooth transition for hover effects */
+    border-radius: 50%; /* Smooth rounded corners for circular effect */
+    border: 2px solid transparent; /* Initial border color transparent */
+}
+
+/* Hover and focus states for links */
+.menu li a:hover, .menu li a:focus {
+    background-color: #005f8a; /* Smooth background color change */
+    text-decoration: none; /* No underline for a smoother look */
+    color: #FFD700; /* Bright color for hover state, ADA compliant */
+    border: 2px solid #FFD700; /* Smooth border color change */
+    outline: none; /* Remove outline for better aesthetics */
+}
+
+/* Hamburger icon styling */
+.hamburger {
+    display: block;
+    font-size: 1.875em; /* Converted from 30px for better scalability */
+    cursor: pointer;
+    text-align: center;
+    padding: 0.625em; /* Consistent em unit padding */
+    background: #333; /* Matching menu background */
+    color: white; /* Icon color */
+}
+
+/* Display menu when hamburger is checked */
+input[type="checkbox"]:checked + .hamburger + .menu {
+    display: block;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+    .hamburger, #menu-toggle {
+        display: none; /* Hide hamburger icon and checkbox on larger screens */
+    }
+    .menu {
+        display: block;
+        background: none;
+    }
+    .menu li {
+        display: inline-block; /* Horizontal menu */
+    }
+    .menu li a {
+        padding: 15px;
+        border-radius: 50%; /* Consistent border-radius */
+        border: 2px solid transparent; /* Initial border color transparent */
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+    .menu {
+        width: 100%;
+    }
+}
+
+/* Slideshow Container */
+.slideshow-container {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden; /* Prevent overflow */
+}
+
+/* Slide Images */
+.mySlides img {
+  width: 100%;  /* Ensures width is always 100% of the container */
+  height: auto; /* Height automatically adjusts to maintain the aspect ratio */
+  object-fit: cover; /* Cover to ensure the entire container is filled */
+}
+
+/* Slide Videos */
+.mySlides video {
+  width: 100%;  /* Ensures width is always 100% of the container */
+  height: auto; /* Height automatically adjusts to maintain the aspect ratio */
+  object-fit: cover; /* Cover to ensure the entire container is filled */
+}
+
+/* Adjusted for consistency */
+.mySlides {
+  display: none;
+  text-align: center;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.dots-container {
+  text-align: center;
+  padding: 20px;
+  background: #ddd;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Message Section */
+
+.button-style {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.button-style:hover {
+    background-color: #45a049;
+}
+
+.button-style:focus {
+    outline: 2px solid #FFD700;
+}
+
+
+.message {
+    text-align: center; /* Center all text within the message section */
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f4f4f4; /* Light background to reduce visual strain */
+    color: #333;
+}
+
+.message h2, .message h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #4CAF50; /* Distinct green color for headings */
+}
+
+.message p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.message ul {
+    list-style-type: none; /* Cleaner look without bullets */
+    padding: 0;
+    margin: 0 auto; /* Center the list */
+    text-align: left; /* Align list text to the left */
+    max-width: 600px; /* Set a max-width for better readability on wider screens */
+}
+
+.message li {
+    margin-bottom: 10px;
+}
+
+.message button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.message button:hover {
+    background-color: #45a049;
+}
+
+.message a.button {
+    display: inline-block; /* Makes the link behave like a button */
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none; /* Removes underline from links */
+    color: white; /* Text color */
+    background-color: #4CAF50; /* Green background */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor appears as a pointer */
+    border: none; /* No border */
+    margin: 5px; /* Space around buttons */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.message a.button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.message a:focus, .message button:focus {
+    outline: 2px solid #FFD700; /* High visibility for focus state */
+}
+
+.site-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.site-footer a {
+    color: #0077B6;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.site-footer a:hover {
+    color: #005994;
+}
+
+.site-footer p {
+    margin: 0.625rem 0; 
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+    .hamburger, #menu-toggle {
+        display: none; /* Hide hamburger icon and checkbox on larger screens */
+    }
+    .menu {
+        display: block;
+        background: none;
+    }
+    .menu li {
+        display: inline-block; /* Horizontal menu */
+    }
+    .menu li a {
+        padding: 15px;
+        border-radius: 50%; /* Consistent border-radius */
+        border: 2px solid transparent; /* Initial border color transparent */
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+    .menu {
+        width: 100%;
+    }
+
+@media (min-width: 768px) {
+  .slideshow-container {
+    width: 1920px;  /* Fixed width for desktop */
+    height: 1080px; /* Fixed height for desktop */
+    margin: auto;   /* Centering the slideshow */
+  }
+
+  .mySlides img, .mySlides video {
+    height: 1080px; /* Fixed height */
+    object-fit: cover; /* Ensures the image covers the full area without stretching */
+  }
+    
+}
