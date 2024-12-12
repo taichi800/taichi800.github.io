@@ -19,6 +19,16 @@ img {
     max-width: 100%;
     height: auto;
     display: block; /* Ensures no extra space below the image */
+    margin: 0 auto; /* Centers the image horizontally */
+}
+
+.container {
+    padding: 20px;
+    text-align: center; /* Centers text and image together */
+}
+
+p {
+    margin-top: 10px;
 }
 
 /* Header Styles */
@@ -32,30 +42,27 @@ header {
     margin: 10px 0;
 }
 
-
-
 /* === Dark and Light Mode === */
 @media (prefers-color-scheme: dark) {
-  body {
-    background-color: #000000; /* Dark background */
-    color: #ffffff; /* Light text */
-  }
-
+    body {
+        background-color: #000000; /* Dark background */
+        color: #ffffff; /* Light text */
+    }
 }
 
 @media (prefers-color-scheme: light) {
-  body {
-    background-color: #ffffff; /* Light background */
-    color: #000000; /* Dark text */
-  }
+    body {
+        background-color: #ffffff; /* Light background */
+        color: #000000; /* Dark text */
+    }
 
-  button, a {
-    border-color: #000000;
-  }
+    button, a {
+        border-color: #000000;
+    }
 
-  button:focus, a:focus {
-    outline: 2px dashed #000000;
-  }
+    button:focus, a:focus {
+        outline: 2px dashed #000000;
+    }
 }
 
 /* === Reduced Motion === */
