@@ -1,13 +1,3 @@
-body {
-    font-family: Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-p {
-    margin-bottom: 1em; /* Consistent spacing for paragraphs */
-}
 
 /* Header styling STACKBLOCK00 */
 .site-header {
@@ -90,109 +80,92 @@ input[type="checkbox"]:checked + .hamburger + .menu {
     display: block;
 }
 
-/* Desktop styles */
-@media (min-width: 768px) {
-    .hamburger, #menu-toggle {
-        display: none; /* Hide hamburger icon and checkbox on larger screens */
-    }
-    .menu {
-        display: block;
-        background: none;
-    }
-    .menu li {
-        display: inline-block; /* Horizontal menu */
-    }
-    .menu li a {
-        padding: 15px;
-        border-radius: 50%; /* Consistent border-radius */
-        border: 2px solid transparent; /* Initial border color transparent */
-    }
+
+/* Global Styles */
+body {
+font-family: Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light background for readability */
 }
 
-/* Mobile styles */
-@media (max-width: 767px) {
-    .menu {
-        width: 100%;
-    }
+/* Section Headings */
+main h2 {
+    font-size: 28px;
+    color: #4CAF50; /* Distinct green for section headings */
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center; /* Center-align section headings for consistency */
 }
 
-/* Slideshow Container */
-.slideshow-container {
-  position: relative;
-  max-width: 1000px;
-  margin: auto;
-  overflow: hidden; /* Prevent overflow */
+/* Paragraph Text */
+main p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 10px 20px;
+    text-align: justify; /* Justify text for better readability */
 }
 
-/* Slide Images */
-.mySlides img {
-  width: 100%;  /* Ensures width is always 100% of the container */
-  height: auto; /* Height automatically adjusts to maintain the aspect ratio */
-  object-fit: cover; /* Cover to ensure the entire container is filled */
+/* Lists */
+main ul {
+    list-style-type: none; /* Remove bullets for a clean appearance */
+    padding: 0;
+    margin: 20px auto;
+    max-width: 800px; /* Limit width for better readability */
 }
 
-/* Slide Videos */
-.mySlides video {
-  width: 100%;  /* Ensures width is always 100% of the container */
-  height: auto; /* Height automatically adjusts to maintain the aspect ratio */
-  object-fit: cover; /* Cover to ensure the entire container is filled */
+main ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    position: relative;
 }
 
-/* Adjusted for consistency */
-.mySlides {
-  display: none;
-  text-align: center;
+main ul li::before {
+    content: "•"; /* Add a bullet alternative */
+    color: #4CAF50;
+    font-size: 24px;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  background-color: rgba(0,0,0,0.5);
+/* Links */
+main a {
+    color: #0056b3; /* Accessible blue for links */
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+main a:hover {
+    text-decoration: underline;
+    color: #003d80; /* Darker blue on hover */
 }
 
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+/* Blockquotes */
+blockquote {
+    font-style: italic;
+    background: #f9f9f9;
+    border-left: 5px solid #4CAF50;
+    margin: 20px 20px;
+    padding: 10px 20px;
+    color: #666;
 }
 
-.dots-container {
-  text-align: center;
-  padding: 20px;
-  background: #ddd;
+cite {
+    display: block;
+    text-align: right;
+    color: #4CAF50;
+    font-style: normal;
+    margin-top: 10px;
 }
 
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Message Section */
-
-.button-style {
+/* Buttons */
+.button-style,
+.message button,
+.message a.button {
     display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
@@ -201,30 +174,39 @@ input[type="checkbox"]:checked + .hamburger + .menu {
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
+    margin: 10px 5px;
     transition: background-color 0.3s ease;
+    border: none;
 }
 
-.button-style:hover {
+.button-style:hover,
+.message button:hover,
+.message a.button:hover {
     background-color: #45a049;
 }
 
-.button-style:focus {
-    outline: 2px solid #FFD700;
+.button-style:focus,
+.message button:focus,
+.message a:focus {
+    outline: 2px solid #FFD700; /* High-contrast focus state */
 }
 
-
+/* Message Section */
 .message {
-    text-align: center; /* Center all text within the message section */
+    text-align: center; /* Center-align all text */
     margin-top: 20px;
     padding: 20px;
-    background-color: #f4f4f4; /* Light background to reduce visual strain */
+    background-color: #f9f9f9;
     color: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.message h2, .message h3 {
+.message h2,
+.message h3 {
     font-size: 24px;
     margin-bottom: 10px;
-    color: #4CAF50; /* Distinct green color for headings */
+    color: #4CAF50;
 }
 
 .message p {
@@ -233,54 +215,40 @@ input[type="checkbox"]:checked + .hamburger + .menu {
     margin-bottom: 20px;
 }
 
-.message ul {
-    list-style-type: none; /* Cleaner look without bullets */
-    padding: 0;
-    margin: 0 auto; /* Center the list */
-    text-align: left; /* Align list text to the left */
-    max-width: 600px; /* Set a max-width for better readability on wider screens */
+/* Specific Adjustments for Disclaimer Section */
+#disclaimer {
+    border: 2px solid #4CAF50;
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff; /* Separate visual tone for disclaimers */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.message li {
+#disclaimer h2 {
+    text-align: left; /* Left-align disclaimer heading */
+    font-size: 22px;
+    color: #333;
+}
+
+#disclaimer p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Key Features Section */
+[aria-label="List of key features"] li {
+    background: #eaf4e9; /* Soft green background for feature items */
+    padding: 10px;
+    border: 1px solid #4CAF50;
+    border-radius: 4px;
     margin-bottom: 10px;
+    transition: background-color 0.3s;
 }
 
-.message button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
+[aria-label="List of key features"] li:hover {
+    background: #d7ecd5; /* Slightly darker green on hover */
 }
-
-.message button:hover {
-    background-color: #45a049;
-}
-
-.message a.button {
-    display: inline-block; /* Makes the link behave like a button */
-    padding: 10px 20px;
-    font-size: 16px;
-    text-decoration: none; /* Removes underline from links */
-    color: white; /* Text color */
-    background-color: #4CAF50; /* Green background */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Cursor appears as a pointer */
-    border: none; /* No border */
-    margin: 5px; /* Space around buttons */
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
-}
-
-.message a.button:hover {
-    background-color: #45a049; /* Darker green on hover */
-}
-
-.message a:focus, .message button:focus {
-    outline: 2px solid #FFD700; /* High visibility for focus state */
-}
-
 .site-footer {
     background-color: #333;
     color: #fff;
@@ -302,41 +270,180 @@ input[type="checkbox"]:checked + .hamburger + .menu {
     margin: 0.625rem 0; 
 }
 
-/* Desktop styles */
-@media (min-width: 768px) {
-    .hamburger, #menu-toggle {
-        display: none; /* Hide hamburger icon and checkbox on larger screens */
-    }
-    .menu {
-        display: block;
-        background: none;
-    }
-    .menu li {
-        display: inline-block; /* Horizontal menu */
-    }
-    .menu li a {
-        padding: 15px;
-        border-radius: 50%; /* Consistent border-radius */
-        border: 2px solid transparent; /* Initial border color transparent */
-    }
+/* === Dark Light Mode === */
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000000; /* Dark background */
+    color: #ffffff; /* Light text */
+  }
 }
 
-/* Mobile styles */
-@media (max-width: 767px) {
-    .menu {
-        width: 100%;
-    }
-
-@media (min-width: 768px) {
-  .slideshow-container {
-    width: 1920px;  /* Fixed width for desktop */
-    height: 1080px; /* Fixed height for desktop */
-    margin: auto;   /* Centering the slideshow */
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #ffffff; /* Light background */
+    color: #000000; /* Dark text */
   }
 
-  .mySlides img, .mySlides video {
-    height: 1080px; /* Fixed height */
-    object-fit: cover; /* Ensures the image covers the full area without stretching */
+  button, a {
+    border-color: #000000;
   }
-    
+
+  button:focus, a:focus {
+    outline: 2px dashed #000000;
+  }
+}
+
+/* === Reduced Motion === */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* === Printing === */
+@media print {
+  body {
+    font-size: 12pt;
+    color: black;
+    background: none;
+  }
+}
+
+
+/* Very Small Screens and Minimal Displays */
+@media (max-width: 2em) { /* 32px */
+  body {
+    font-size: 0.625rem; /* 10px */
+    max-width: 2rem; /* 32px */
+    padding: 0 0.5rem; /* 8px side padding */
+  }
+}
+
+@media (min-width: 2.063em) and (max-width: 5.25em) { /* 33px to 84px */
+  body {
+    font-size: 0.75rem; /* 12px */
+    max-width: 4rem; /* 84px */
+    padding: 0 0.5rem; /* 8px side padding */
+  }
+}
+
+/* Legacy Screens */
+@media (min-width: 5.313em) and (max-width: 15em) { /* 85px to 240px */
+  body {
+    font-size: 0.8125rem; /* 13px */
+    max-width: 14rem; /* 240px */
+    padding: 0 0.75rem; /* 12px side padding */
+  }
+}
+
+/* Very Small Screens (241px to 320px) */
+@media (min-width: 15.063em) and (max-width: 20em) { /* 241px to 320px */
+  body {
+    font-size: 0.9375rem; /* 15px */
+    max-width: 16rem; /* 270px */
+    padding: 0 1rem; /* 16px side padding */
+  }
+}
+
+/* Small Screens (321px to 375px) */
+@media (min-width: 20.063em) and (max-width: 23.438em) { /* 321px to 375px */
+  body {
+    font-size: 0.9375rem; /* 15px */
+    max-width: 18rem; /* 315px */
+    padding: 0 1rem; /* 16px side padding */
+  }
+}
+
+/* Small-Medium Screens (376px to 480px) */
+@media (min-width: 23.5em) and (max-width: 30em) { /* 376px to 480px */
+  body {
+    font-size: 1.0625rem; /* 17px */
+    max-width: 24rem; /* 408px */
+    padding: 0 1rem; /* 16px side padding */
+  }
+}
+
+/* Medium Screens (481px to 600px) */
+@media (min-width: 30.063em) and (max-width: 37.5em) { /* 481px to 600px */
+  body {
+    font-size: 1.0625rem; /* 17px */
+    max-width: 30rem; /* 512px */
+    padding: 0 1.125rem; /* 18px side padding */
+  }
+}
+
+/* Medium-Large Screens (601px to 768px) */
+@media (min-width: 37.563em) and (max-width: 48em) { /* 601px to 768px */
+  body {
+    font-size: 1.0625rem; /* 17px */
+    max-width: 46rem; /* 768px */
+    padding: 0 1.125rem; /* 18px side padding */
+  }
+}
+
+/* Large Screens (769px to 1024px) */
+@media (min-width: 48.063em) and (max-width: 64em) { /* 769px to 1024px */
+  body {
+    font-size: 1.125rem; /* 18px */
+    max-width: 58rem; /* 960px */
+    padding: 0 1.125rem; /* 18px side padding */
+  }
+  .content-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 2%;
+  }
+}
+
+/* Extra Large Screens (1025px to 1280px) */
+@media (min-width: 64.063em) and (max-width: 80em) { /* 1025px to 1280px */
+  body {
+    font-size: 1.25rem; /* 20px */
+    max-width: 74rem; /* 1216px */
+    padding: 0 1.125rem; /* 18px side padding */
+  }
+}
+
+/* Wide Screens (1281px to 1440px) */
+@media (min-width: 80.063em) and (max-width: 90em) { /* 1281px to 1440px */
+  body {
+    font-size: 1.375rem; /* 22px */
+    max-width: 82rem; /* 1344px */
+    padding: 0 1.125rem; /* 18px side padding */
+  }
+}
+
+/* Ultra-Wide Screens (1441px to 1920px) */
+@media (min-width: 90.063em) and (max-width: 120em) { /* 1441px to 1920px */
+  body {
+    font-size: 1.5rem; /* 24px */
+    max-width: 106rem; /* 1728px */
+    padding: 0 1.125rem; /* 18px side padding */
+  }
+}
+
+/* 4K Screens (1921px to 2560px) */
+@media (min-width: 120.063em) and (max-width: 160em) { /* 1921px to 2560px */
+  body {
+    font-size: 1.5rem; /* 24px */
+    max-width: 110rem; /* 1800px */
+    padding: 0 1.125rem; /* 18px side padding */
+  }
+  .content-container {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+}
+
+/* 5K and Above Screens (2561px and above) */
+@media (min-width: 160.063em) { /* 2561px and above */
+  body {
+    font-size: 1.5rem; /* 24px */
+    max-width: 110rem; /* 1800px */
+    padding: 0 1.125rem; /* 18px side padding */
+  }
+  .content-container {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
 }
