@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +35,7 @@
     <link rel="manifest" href="manifest.json">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="screens2.css">
+    <link rel="stylesheet" href="styles.css">
 
     <!-- Social Media and Sharing Metadata -->
     <meta property="og:title" content="Taichi For Everyone">
@@ -62,35 +61,17 @@
         object-src 'none'; 
         base-uri 'self'; 
         form-action 'self';
+	frame-ancestors 'none';
     ">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
     <meta name="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta name="Expect-CT" content="max-age=86400, enforce">
     <meta http-equiv="X-Download-Options" content="noopen">
     <meta http-equiv="Permissions-Policy" content="geolocation=(self), camera=(), microphone=(), fullscreen=(self), payment=(self)">
 
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Tai Chi For Everyone",
-    "description": "A comprehensive resource on Tai Chi, featuring creative works and content available for general use.",
-    "url": "https://taichi800.github.io/",
-    "keywords": ["tai chi", "martial arts", "health", "wellness", "exercise"],
-    "creator": {
-        "@type": "Person",
-        "name": "Taichiman"
-    },
-    "image": "https://taichi800.github.io/images10/featured-figure.jpg",
-    "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://taichi800.github.io/?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-    }
-}
-</script>
+<script src="schema.js" type="application/json"></script>
+
 
 </head>
 
@@ -142,7 +123,7 @@
         <h2>Contact Information</h2>
         <p>If you have any questions about these Terms, please contact us at <a href="mailto:taichiman@tutamail.com">taichiman@tutamail.com</a>.</p>
 
-	    <script src="scripts.js" defer></script>
+	
 	    
     </body>
     </html>
