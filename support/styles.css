@@ -34,10 +34,6 @@ header {
 
 
 
-
-/
-
-
 /* === Dark and Light Mode === */
 @media (prefers-color-scheme: dark) {
   body {
