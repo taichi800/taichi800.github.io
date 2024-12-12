@@ -2,18 +2,12 @@
     --main-bg-color: black;
     --main-text-color: yellow;
     --link-hover-color: yellow;
-    --focus-outline-color: yellow;
-    --button-bg-color: #005a9c; /* Default button background color */
-    --button-text-color: white;
-    --accept-button-bg-color: #00cc44; /* Green background */
-    --decline-button-bg-color: #f44336; /* Red background */
 }
 
 body {
     background-color: var(--main-bg-color);
     color: var(--main-text-color);
     font-family: Arial, sans-serif;
-    text-align: center;
     padding: 0;
     margin: 0;
     line-height: 1.6;
@@ -21,21 +15,6 @@ body {
     min-height: 100vh;
 }
 
-/* Skip Link Styles */
-.skip-link {
-    position: absolute;
-    left: -999px;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    top: auto;
-}
-
-.skip-link:focus {
-    position: static;
-    width: auto;
-    height: auto;
-}
 
 /* Header Styles */
 header {
@@ -49,74 +28,9 @@ header {
 }
 
 
-/* Link and Focus Styles */
-a:focus, button:focus, input:focus {
-    outline: 2px solid var(--focus-outline-color);
-}
-
-a {
-    text-decoration: none; 
-    color: inherit; 
-}
-
-a:hover, a:focus {
-    color: var(--link-hover-color); 
-    text-decoration: underline; 
-}
-
-/* Button Container Styles */
-.button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-    padding: 10px;
-}
-
-.button-container a {
-    display: inline-block;
-    padding: 10px;
-    min-width: 44px;
-    min-height: 44px;
-    text-align: center;
-    cursor: pointer;
-}
-
-.button-container img {
-    max-width: 100%;
-    height: auto;
-    cursor: pointer;
-}
-
-/* Footer Styles */
-footer p {
-    margin-top: 20px;
-    font-size: 16px;
-}
 
 
-/* Button Styles */
-button {
-    border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    background-color: var(--button-bg-color);
-    color: var(--button-text-color);
-}
-
-button[onclick="acceptDisclaimer()"] {
-    background-color: var(--accept-button-bg-color);
-    color: black;
-}
-
-button[onclick="declineDisclaimer()"] {
-    background-color: var(--decline-button-bg-color);
-    color: white;
-}"
-
+/
 
 
 /* === Dark and Light Mode === */
