@@ -42,13 +42,7 @@ header {
     margin: 10px 0;
 }
 
-/* === Dark and Light Mode === */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #000000; /* Dark background */
-        color: #ffffff; /* Light text */
-    }
-}
+/* === Light Mode === */
 
 @media (prefers-color-scheme: light) {
     body {
