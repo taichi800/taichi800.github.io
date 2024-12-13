@@ -37,6 +37,21 @@
     text-align: center; /* Align with surrounding content */
 }
 
+.accessibility-link {
+    font-size: 1rem; /* Match or slightly larger than body text */
+    font-weight: bold; /* Emphasize the text */
+    color: #FFD700; /* High contrast for visibility */
+    margin-left: 10px; /* Space between the image and the text */
+    text-decoration: none; /* Clean appearance */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.accessibility-link:hover,
+.accessibility-link:focus {
+    color: #FFAA00; /* Slightly darker shade for hover/focus state */
+    text-decoration: underline; /* Clear visual feedback for hover */
+}
+
 /* Navigation styling */
 nav {
     background-color: #0077B6; /* Bright blue background */
