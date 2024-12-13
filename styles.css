@@ -1,101 +1,294 @@
-:root {
-    --main-bg-color: black;
-    --main-text-color: yellow;
-    --link-hover-color: yellow;
-    --focus-outline-color: yellow;
-    --button-bg-color: #005a9c; /* Default button background color */
-    --button-text-color: white;
-    --accept-button-bg-color: #00cc44; /* Green background */
-    --decline-button-bg-color: #f44336; /* Red background */
-}
 
-body {
-    background-color: var(--main-bg-color);
-    color: var(--main-text-color);
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    line-height: 1.6;
-    font-size: 16px;
-    min-height: 100vh;
-}
-
-/* Skip Link Styles */
-.skip-link {
-    position: absolute;
-    left: -999px;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    top: auto;
-}
-
-.skip-link:focus {
-    position: static;
-    width: auto;
-    height: auto;
-}
-
-/* Header Styles */
-header {
-    background-color: var(--main-bg-color);
+/* Header styling STACKBLOCK00 */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap; /* to prevent odd spacing on smaller screens */
     padding: 10px;
+    background-color: #0D0D0D;
+    color: #fff;
 }
 
-.header-text {
-    font-size: 24px;
-    margin: 10px 0;
+.left-section, .center-section, .right-section {
+    flex: 1;
+    text-align: center;
+    padding: 5px;
 }
 
-
-/* Link and Focus Styles */
-a:focus, button:focus, input:focus {
-    outline: 2px solid var(--focus-outline-color);
-}
-
-a {
-    text-decoration: none; 
-    color: inherit; 
-}
-
-a:hover, a:focus {
-    color: var(--link-hover-color); 
-    text-decoration: underline; 
-}
-
-/* Button Container Styles */
-.button-container {
+/* Image styling within center section */
+.center-section .images {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-    padding: 10px;
+    gap: 10px; /* Space between images */
+    margin-bottom: 10px; /* Margin below images */
 }
 
-.button-container a {
-    display: inline-block;
-    padding: 10px;
-    min-width: 44px;
-    min-height: 44px;
-    text-align: center;
-    cursor: pointer;
-}
-
-.button-container img {
-    max-width: 100%;
+.center-section .images img, .center-section > img {
+    width: 120px;
     height: auto;
+}
+
+.accessibility-text {
+    font-size: 1rem; /* Match or slightly larger than body text */
+    font-weight: bold; /* Emphasize the text */
+    color: #FFD700; /* High contrast for visibility */
+    margin-left: 10px; /* Space between the image and text */
+    text-align: center; /* Align with surrounding content */
+}
+
+.accessibility-link {
+    font-size: 1rem; /* Match or slightly larger than body text */
+    font-weight: bold; /* Emphasize the text */
+    color: #FFD700; /* High contrast for visibility */
+    margin-left: 10px; /* Space between the image and the text */
+    text-decoration: none; /* Clean appearance */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.accessibility-link:hover,
+.accessibility-link:focus {
+    color: #FFAA00; /* Slightly darker shade for hover/focus state */
+    text-decoration: underline; /* Clear visual feedback for hover */
+}
+
+/* Navigation styling */
+nav {
+    background-color: #0077B6; /* Bright blue background */
+    padding: 0.625em 1.25em; /* Padding around the nav content */
+}
+
+/* Menu styling */
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #333; /* Dark background for the menu */
+    text-align: center;
+    display: none; /* Hidden by default, shown when hamburger is clicked */
+}
+
+.menu li a {
+    display: inline-block; /* Inline-block for better spacing handling */
+    padding: 0.625em 1.25em; /* Padding for better spacing around text */
+    color: white; /* Text color for readability */
+    text-decoration: none; /* No underline */
+    transition: background-color 0.5s ease, color 0.5s ease, border 0.5s ease; /* Smooth transition for hover effects */
+    border-radius: 50%; /* Smooth rounded corners for circular effect */
+    border: 2px solid transparent; /* Initial border color transparent */
+}
+
+/* Hover and focus states for links */
+.menu li a:hover, .menu li a:focus {
+    background-color: #005f8a; /* Smooth background color change */
+    text-decoration: none; /* No underline for a smoother look */
+    color: #FFD700; /* Bright color for hover state, ADA compliant */
+    border: 2px solid #FFD700; /* Smooth border color change */
+    outline: none; /* Remove outline for better aesthetics */
+}
+
+/* Hamburger icon styling */
+.hamburger {
+    display: block;
+    font-size: 1.875em; /* Converted from 30px for better scalability */
     cursor: pointer;
+    text-align: center;
+    padding: 0.625em; /* Consistent em unit padding */
+    background: #333; /* Matching menu background */
+    color: white; /* Icon color */
 }
 
-/* Footer Styles */
-footer p {
+/* Display menu when hamburger is checked */
+input[type="checkbox"]:checked + .hamburger + .menu {
+    display: block;
+}
+
+
+/* Global Styles */
+body {
+font-family: monospace, sans-serif;
+    color: #333;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light background for readability */
+}
+
+/* Section Headings */
+main h2 {
+    font-size: 28px;
+    color: #4CAF50; /* Distinct green for section headings */
     margin-top: 20px;
-    font-size: 16px;
+    margin-bottom: 10px;
+    text-align: center; /* Center-align section headings for consistency */
 }
 
-.underline {
+/* Paragraph Text */
+main p {
+    text-align: left; /* To adjust readability */
+    line-height: 1.2;
+}
+
+/* Lists */
+main ul {
+    list-style-type: none; /* Remove bullets for a clean appearance */
+    padding: 0;
+    margin: 20px auto;
+    max-width: 800px; /* Limit width for better readability */
+}
+
+main ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    position: relative;
+}
+
+main ul li::before {
+    content: "•"; /* Add a bullet alternative */
+    color: #4CAF50;
+    font-size: 24px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Links */
+main a {
+    color: #0056b3; /* Accessible blue for links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main a:hover {
     text-decoration: underline;
+    color: #003d80; /* Darker blue on hover */
+}
+
+/* Blockquotes */
+blockquote {
+    font-style: italic;
+    background: #f9f9f9;
+    border-left: 5px solid #4CAF50;
+    margin: 20px 20px;
+    padding: 10px 20px;
+    color: #666;
+}
+
+cite {
+    display: block;
+    text-align: right;
+    color: #4CAF50;
+    font-style: normal;
+    margin-top: 10px;
+}
+
+/* Buttons */
+.button-style,
+.message button,
+.message a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 10px 5px;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.button-style:hover,
+.message button:hover,
+.message a.button:hover {
+    background-color: #45a049;
+}
+
+.button-style:focus,
+.message button:focus,
+.message a:focus {
+    outline: 2px solid #FFD700; /* High-contrast focus state */
+}
+
+/* Message Section */
+.message {
+    text-align: center; /* Center-align all text */
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.message h2,
+.message h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #4CAF50;
+}
+
+.message p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Specific Adjustments for Disclaimer Section */
+#disclaimer {
+    border: 2px solid #4CAF50;
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff; /* Separate visual tone for disclaimers */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#disclaimer h2 {
+    text-align: left; /* Left-align disclaimer heading */
+    font-size: 22px;
+    color: #333;
+}
+
+#disclaimer p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Key Features Section */
+[aria-label="List of key features"] li {
+    background: #eaf4e9; /* Soft green background for feature items */
+    padding: 10px;
+    border: 1px solid #4CAF50;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+[aria-label="List of key features"] li:hover {
+    background: #d7ecd5; /* Slightly darker green on hover */
+}
+.site-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.site-footer a {
+    color: #0077B6;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.site-footer a:hover {
+    color: #005994;
+}
+
+.site-footer p {
+    margin: 0.625rem 0; 
 }
 
 /* === Dark Light Mode === */
