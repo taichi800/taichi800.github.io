@@ -1,9 +1,10 @@
+
 /* Header styling STACKBLOCK00 */
 .site-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Wraps content on smaller screens */
+    flex-wrap: nowrap; /* to prevent odd spacing on smaller screens */
     padding: 10px;
     background-color: #0D0D0D;
     color: #fff;
@@ -26,6 +27,29 @@
 .center-section .images img, .center-section > img {
     width: 120px;
     height: auto;
+}
+
+.accessibility-text {
+    font-size: 1rem; /* Match or slightly larger than body text */
+    font-weight: bold; /* Emphasize the text */
+    color: #FFD700; /* High contrast for visibility */
+    margin-left: 10px; /* Space between the image and text */
+    text-align: center; /* Align with surrounding content */
+}
+
+.accessibility-link {
+    font-size: 1rem; /* Match or slightly larger than body text */
+    font-weight: bold; /* Emphasize the text */
+    color: #FFD700; /* High contrast for visibility */
+    margin-left: 10px; /* Space between the image and the text */
+    text-decoration: none; /* Clean appearance */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.accessibility-link:hover,
+.accessibility-link:focus {
+    color: #FFAA00; /* Slightly darker shade for hover/focus state */
+    text-decoration: underline; /* Clear visual feedback for hover */
 }
 
 /* Navigation styling */
@@ -83,8 +107,8 @@ input[type="checkbox"]:checked + .hamburger + .menu {
 /* Global Styles */
 body {
 font-family: monospace, sans-serif;
-    line-height: 1.6;
     color: #333;
+    line-height: 1.2;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4; /* Light background for readability */
@@ -101,10 +125,8 @@ main h2 {
 
 /* Paragraph Text */
 main p {
-    font-size: 18px;
-    line-height: 1.8;
-    margin: 10px 20px;
-    text-align: justify; /* Justify text for better readability */
+    text-align: left; /* To adjust readability */
+    line-height: 1.2;
 }
 
 /* Lists */
@@ -190,6 +212,50 @@ cite {
     outline: 2px solid #FFD700; /* High-contrast focus state */
 }
 
+/* Message Section */
+.message {
+    text-align: center; /* Center-align all text */
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.message h2,
+.message h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #4CAF50;
+}
+
+.message p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Specific Adjustments for Disclaimer Section */
+#disclaimer {
+    border: 2px solid #4CAF50;
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff; /* Separate visual tone for disclaimers */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#disclaimer h2 {
+    text-align: left; /* Left-align disclaimer heading */
+    font-size: 22px;
+    color: #333;
+}
+
+#disclaimer p {
+    font-size: 16px;
+    color: #555;
+}
 
 /* Older CSS CODE */
 
@@ -305,49 +371,19 @@ cite {
     margin-bottom: 0.5rem; /* Adds a little space below each list item */
 }
 
-/* Message Section */
-.message {
-    text-align: center; /* Center-align all text */
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    color: #333;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
-.message h2,
-.message h3 {
-    font-size: 24px;
+/* Key Features Section */
+[aria-label="List of key features"] li {
+    background: #eaf4e9; /* Soft green background for feature items */
+    padding: 10px;
+    border: 1px solid #4CAF50;
+    border-radius: 4px;
     margin-bottom: 10px;
-    color: #4CAF50;
+    transition: background-color 0.3s;
 }
 
-.message p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-/* Specific Adjustments for Disclaimer Section */
-#disclaimer {
-    border: 2px solid #4CAF50;
-    padding: 20px;
-    margin: 20px;
-    background-color: #fff; /* Separate visual tone for disclaimers */
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-#disclaimer h2 {
-    text-align: left; /* Left-align disclaimer heading */
-    font-size: 22px;
-    color: #333;
-}
-
-#disclaimer p {
-    font-size: 16px;
-    color: #555;
+[aria-label="List of key features"] li:hover {
+    background: #d7ecd5; /* Slightly darker green on hover */
 }
 
 /* Key Features Section */
