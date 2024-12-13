@@ -1,0 +1,206 @@
+body {
+    font-family: Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #000; /* Example color, change as needed */
+}
+
+p {
+    margin-bottom: 1em; /* Consistent spacing for paragraphs */
+}
+
+/* Header styling STACKBLOCK00 */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Wraps content on smaller screens */
+    padding: 10px;
+    background-color: #0D0D0D;
+    color: #fff;
+}
+
+.left-section, .center-section, .right-section {
+    flex: 1;
+    text-align: center;
+    padding: 5px;
+}
+
+/* Image styling within center section */
+.center-section .images {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between images */
+    margin-bottom: 10px; /* Margin below images */
+}
+
+.center-section .images img, .center-section > img {
+    width: 120px;
+    height: auto;
+}
+
+/* Navigation styling */
+nav {
+    background-color: #0077B6; /* Bright blue background */
+    padding: 0.625em 1.25em; /* Padding around the nav content */
+}
+
+/* Menu styling */
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #333; /* Dark background for the menu */
+    text-align: center;
+    display: none; /* Hidden by default, shown when hamburger is clicked */
+}
+
+.menu li a {
+    display: inline-block; /* Inline-block for better spacing handling */
+    padding: 0.625em 1.25em; /* Padding for better spacing around text */
+    color: white; /* Text color for readability */
+    text-decoration: none; /* No underline */
+    transition: background-color 0.5s ease, color 0.5s ease, border 0.5s ease; /* Smooth transition for hover effects */
+    border-radius: 50%; /* Smooth rounded corners for circular effect */
+    border: 2px solid transparent; /* Initial border color transparent */
+}
+
+/* Hover and focus states for links */
+.menu li a:hover, .menu li a:focus {
+    background-color: #005f8a; /* Smooth background color change */
+    text-decoration: none; /* No underline for a smoother look */
+    color: #FFD700; /* Bright color for hover state, ADA compliant */
+    border: 2px solid #FFD700; /* Smooth border color change */
+    outline: none; /* Remove outline for better aesthetics */
+}
+
+/* Hamburger icon styling */
+.hamburger {
+    display: block;
+    font-size: 1.875em; /* Converted from 30px for better scalability */
+    cursor: pointer;
+    text-align: center;
+    padding: 0.625em; /* Consistent em unit padding */
+    background: #333; /* Matching menu background */
+    color: white; /* Icon color */
+}
+
+/* Display menu when hamburger is checked */
+input[type="checkbox"]:checked + .hamburger + .menu {
+    display: block;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+    .hamburger, #menu-toggle {
+        display: none; /* Hide hamburger icon and checkbox on larger screens */
+    }
+    .menu {
+        display: block;
+        background: none;
+    }
+    .menu li {
+        display: inline-block; /* Horizontal menu */
+    }
+    .menu li a {
+        padding: 15px;
+        border-radius: 50%; /* Consistent border-radius */
+        border: 2px solid transparent; /* Initial border color transparent */
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+    .menu {
+        width: 100%;
+    }
+}
+
+main {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h1, h2, h3 {
+    color: #0077B6;
+}
+
+.relaxation-section {
+    margin: 2rem 0;
+}
+
+.relaxation-section h2 {
+    color: #002b5c;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.relaxation-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.relaxation-section li {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem;
+    max-width: 320px;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.relaxation-section li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.relaxation-section a {
+    color: #0077B6;
+    text-decoration: none;
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.relaxation-section a:hover {
+    color: #005994;
+}
+
+.relaxation-section p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+
+.site-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.site-footer a {
+    color: #0077B6;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.site-footer a:hover {
+    color: #005994;
+}
+
+.site-footer p {
+    margin: 0.625rem 0; 
+}
