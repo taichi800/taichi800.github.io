@@ -29,6 +29,14 @@
     height: auto;
 }
 
+.accessibility-text {
+    font-size: 1rem; /* Match or slightly larger than body text */
+    font-weight: bold; /* Emphasize the text */
+    color: #FFD700; /* High contrast for visibility */
+    margin-left: 10px; /* Space between the image and text */
+    text-align: center; /* Align with surrounding content */
+}
+
 /* Navigation styling */
 nav {
     background-color: #0077B6; /* Bright blue background */
