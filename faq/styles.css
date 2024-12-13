@@ -1,0 +1,265 @@
+/* General Layout and Typography */
+body {
+    font-family: Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    margin: 0;
+       padding: 0;
+    box-sizing: border-box;
+    color: #333; /* Darker text for better readability */
+}
+
+/* Improved paragraph spacing */
+p {
+    margin-bottom: 1em;
+}
+
+/* Header styling STACKBLOCK00 */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Wraps content on smaller screens */
+    padding: 10px;
+    background-color: #0D0D0D;
+    color: #fff;
+}
+
+.left-section, .center-section, .right-section {
+    flex: 1;
+    text-align: center;
+    padding: 5px;
+}
+
+/* Image styling within center section */
+.center-section .images {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between images */
+    margin-bottom: 10px; /* Margin below images */
+}
+
+.center-section .images img, .center-section > img {
+    width: 120px;
+    height: auto;
+}
+
+/* Navigation styling */
+nav {
+    background-color: #0077B6; /* Bright blue background */
+    padding: 0.625em 1.25em; /* Padding around the nav content */
+}
+
+/* Menu styling */
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #333; /* Dark background for the menu */
+    text-align: center;
+    display: none; /* Hidden by default, shown when hamburger is clicked */
+}
+
+.menu li a {
+    display: inline-block; /* Inline-block for better spacing handling */
+    padding: 0.625em 1.25em; /* Padding for better spacing around text */
+    color: white; /* Text color for readability */
+    text-decoration: none; /* No underline */
+    transition: background-color 0.5s ease, color 0.5s ease, border 0.5s ease; /* Smooth transition for hover effects */
+    border-radius: 50%; /* Smooth rounded corners for circular effect */
+    border: 2px solid transparent; /* Initial border color transparent */
+}
+
+/* Hover and focus states for links */
+.menu li a:hover, .menu li a:focus {
+    background-color: #005f8a; /* Smooth background color change */
+    text-decoration: none; /* No underline for a smoother look */
+    color: #FFD700; /* Bright color for hover state, ADA compliant */
+    border: 2px solid #FFD700; /* Smooth border color change */
+    outline: none; /* Remove outline for better aesthetics */
+}
+
+/* Hamburger icon styling */
+.hamburger {
+    display: block;
+    font-size: 1.875em; /* Converted from 30px for better scalability */
+    cursor: pointer;
+    text-align: center;
+    padding: 0.625em; /* Consistent em unit padding */
+    background: #333; /* Matching menu background */
+    color: white; /* Icon color */
+}
+
+/* Display menu when hamburger is checked */
+input[type="checkbox"]:checked + .hamburger + .menu {
+    display: block;
+}
+
+/* Accordion Button Styling */
+.accordion-button {
+    background-color: #004A7F; /* Dark blue for main accordion buttons */
+    color: white;
+    cursor: pointer;
+    padding: 15px; /* Larger padding for easier targeting */
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for main accordion buttons */
+.accordion-button:hover {
+    background-color: #0064AC; /* A lighter shade for hover */
+    color: #f1f1f1; /* Changing text color on hover */
+}
+
+/* Nested Accordion Button Styling */
+.sub-accordion {
+    background-color: #005fa8; /* Slightly lighter than the main button */
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for nested accordion buttons */
+.sub-accordion:hover {
+    background-color: #007bca; /* Even lighter shade for hover */
+    color: #f1f1f1;
+}
+
+/* Panel Content Styling */
+.panel-content, .sub-panel-content {
+    background-color: #f1f1f1;
+    overflow: auto; /* Allows scrolling within panels if needed */
+    padding: 10px;
+    border-left: 3px solid #004A7F;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease; /* Slower transition for calming effect */
+    position: relative; /* For positioning scroll indicators */
+}
+
+/* Custom scrollbar styling */
+.panel-content::-webkit-scrollbar, .sub-panel-content::-webkit-scrollbar {
+    width: 12px; /* Making the scrollbar wider for easier interaction */
+}
+
+.panel-content::-webkit-scrollbar-track, .sub-panel-content::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Light background for the track */
+    border-radius: 10px;
+}
+
+.panel-content::-webkit-scrollbar-thumb, .sub-panel-content::-webkit-scrollbar-thumb {
+    background-color: #005fa8; /* Darker blue for better visibility */
+    border-radius: 10px;
+    border: 3px solid #f1f1f1; /* White border to make the thumb more prominent */
+}
+
+/* Scrollbar styling for Firefox */
+.panel-content, .sub-panel-content {
+    scrollbar-width: thick;
+    scrollbar-color: #005fa8 #f1f1f1;
+}
+
+/* Nested Panel Styling */
+.sub-panel-content {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+
+/* Focus Styles for Accessibility */
+.accordion-button:focus, .sub-accordion:focus {
+    border-color: #005fa8;
+    box-shadow: 0 0 3px 2px rgba(0, 95, 168, 0.75);
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .menu {
+        width: 100%;
+    }
+    body {
+        padding: 10px;
+    }
+
+    .accordion-button, .sub-accordion {
+        padding: 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    .accordion-button, .sub-accordion {
+        padding: 20px; /* Larger padding for larger screens */
+    }
+
+    .hamburger, #menu-toggle {
+        display: none; /* Hide hamburger icon and checkbox on larger screens */
+    }
+    .menu {
+        display: block;
+        background: none;
+    }
+    .menu li {
+        display: inline-block; /* Horizontal menu */
+    }
+    .menu li a {
+        padding: 15px;
+        border-radius: 50%; /* Consistent border-radius */
+        border: 2px solid transparent; /* Initial border color transparent */
+    }
+
+    /* Specific Panel media query for larger screens (tablets and desktops) */
+    .panel-content::-webkit-scrollbar, .sub-panel-content::-webkit-scrollbar {
+        width: 16px; /* Wider scrollbar for easier interaction on larger screens */
+    }
+
+    .panel-content::-webkit-scrollbar-thumb, .sub-panel-content::-webkit-scrollbar-thumb {
+        border: 4px solid #f1f1f1; /* Adjusting the border thickness for visibility */
+    }
+
+    /* Scrollbar styling for Firefox on larger screens */
+    .panel-content, .sub-panel-content {
+        scrollbar-width: thick;
+        scrollbar-color: #005fa8 #f1f1f1;
+    }
+}
+
+
+main {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h1, h2, h3 {
+    color: #0077B6;
+}
+
+.site-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.site-footer a {
+    color: #0077B6;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.site-footer a:hover {
+    color: #005994;
+}
+
+.site-footer p {
+    margin: 0.625rem 0; 
+}
