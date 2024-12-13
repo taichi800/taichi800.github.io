@@ -651,6 +651,8 @@ main a:hover {
 [aria-label="List of key features"] li:hover {
     background: #d7ecd5; /* Slightly darker green on hover */
 }
+
+
 .site-footer {
     background-color: #333;
     color: #fff;
