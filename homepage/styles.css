@@ -85,6 +85,7 @@ input[type="checkbox"]:checked + .hamburger + .menu {
 body {
 font-family: monospace, sans-serif;
     color: #333;
+    line-height: 1.2;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4; /* Light background for readability */
@@ -102,6 +103,7 @@ main h2 {
 /* Paragraph Text */
 main p {
     text-align: left; /* To adjust readability */
+    line-height: 1.2;
 }
 
 /* Lists */
