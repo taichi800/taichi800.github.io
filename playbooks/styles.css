@@ -259,116 +259,33 @@ cite {
 
 /* Older CSS CODE */
 
-.learning-background {
-    background-color: #fff;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin: 2rem auto;
-    max-width: 800px; /* Ensures the text is not too wide, enhancing readability */
+dl {
+    background-color: #fff; /* Ensures contrast with text for readability */
+    border: 1px solid #ccc; /* Subtle border, not too distracting */
+    padding: 20px;
+    margin-bottom: 1rem; /* Adds space below each list for better separation */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Consistent with box shadows used elsewhere for depth */
 }
 
-.timeline {
-    border-left: 4px solid #0077B6;
-    border-radius: 4px;
-    margin-left: 20px;
-    padding: 10px;
+dt {
+    color: #333; /* Dark enough for good readability */
+    font-size: 1.25rem; /* Larger font size for clear hierarchy */
+    font-weight: bold; /* Maintains emphasis on terms */
+    border-bottom: 2px solid #0077B6; /* Uses theme color for visual consistency */
+    padding-bottom: 10px; /* Space between title and description */
+    margin-top: 20px; /* Separates terms when stacked */
 }
 
-.timeline-item {
-    position: relative;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    padding-left: 20px;
+dd {
+    font-size: 1rem; /* Comfortable reading size */
+    color: #666; /* Softer color for long reading sections */
+    padding: 10px 0 20px 0; /* Padding for readability */
+    border-bottom: 1px solid #eee; /* Light border for separating entries without heavy emphasis */
+    margin-bottom: 10px; /* Spacing below each description */
 }
 
-.timeline-item:last-child {
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
-
-.timeline-item::before {
-    content: '';
-    background-color: #0077B6;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    position: absolute;
-    left: -7px; /* Half of width to align center with the line */
-    top: 0;
-}
-
-.age-range {
-    font-weight: bold;
-    color: #333;
-}
-
-.martial-art {
-    display: block; /* Makes it go to the next line */
-    margin-top: 5px;
-}
-
-
-.practice-benefit {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.practice-benefit h2 {
-    color: #0077B6;
-    margin-bottom: 1rem;
-}
-
-.practice-benefit img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin-bottom: 1rem;
-}
-
-.practice-benefit p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #666;
-}
-
-
-.style-groups {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.style-groups div {
-    flex: 1 1 200px; /* Adjust width as needed */
-    margin-bottom: 1rem;
-}
-
-.style-groups img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-.focuses h2 {
-    margin-top: 2rem; /* Adds more space above the section heading */
-}
-
-.focuses ul {
-    padding-left: 0; /* Removes padding to align list properly */
-    list-style-type: none; /* Removes bullet points for a cleaner look */
-    columns: 2;  /* Arranges the list in two columns for better readability */
-    max-width: 600px; /* Limits the width for easier reading */
-    margin: auto; /* Centers the list in the section */
-}
-
-.focuses li {
-    margin-bottom: 0.5rem; /* Adds a little space below each list item */
+dd:last-child {
+    border-bottom: none; /* Removes border from last item for cleaner look */
 }
 
 
