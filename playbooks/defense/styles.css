@@ -286,6 +286,13 @@ cite {
 }
 
 /* Hover effect for the button */
+.button-container {
+  display: flex; /* Enables flexbox */
+  justify-content: center; /* Centers the button horizontally */
+  align-items: center; /* Centers the button vertically */
+  height: 100vh; /* Optional: Makes the container full height */
+}
+
 .back-button:hover {
   background-color: #005994; /* Darker shade for hover */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
