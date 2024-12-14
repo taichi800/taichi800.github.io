@@ -125,7 +125,7 @@ main h2 {
 
 /* Paragraph Text */
 main p {
-    text-align: left; /* To adjust readability */
+    text-align: center; /* To adjust readability */
     line-height: 1.2;
 }
 
