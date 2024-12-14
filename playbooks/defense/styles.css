@@ -328,6 +328,54 @@ cite {
     background-color: #000000; /* Dark background */
     color: #ffffff; /* Light text */
   }
+
+      .grid-container {
+    gap: 10px; /* Maintain spacing */
+    padding: 20px;
+    background-color: #121212; /* Dark background for grid container */
+  }
+
+  .grid-item, .back-button {
+    background-color: #1e1e1e; /* Darker gray for grid items */
+    border: 1px solid #444; /* Subtle border for separation */
+    color: #e0e0e0; /* Light text for high contrast */
+  }
+
+  .grid-item:hover,
+  .grid-item:focus,
+  .back-button:hover,
+  .back-button:focus {
+    background-color: #292929; /* Slightly lighter background for hover */
+    outline: 3px solid #ffd700; /* High-contrast focus outline */
+  }
+
+  /* Back Button */
+  .back-button {
+    margin-top: 20px;
+    width: 100%; /* Full width remains unchanged */
+    cursor: pointer;
+  }
+
+  /* Info Section */
+  .info-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #1e1e1e; /* Dark background for info section */
+    border: 1px solid #444; /* Subtle border */
+    color: #e0e0e0; /* Light text */
+  }
+
+  .info-section h2 {
+    font-size: 24px;
+    color: #ffd700; /* Bright yellow for headings */
+    margin-bottom: 10px;
+  }
+
+  .info-section p {
+    margin-bottom: 10px;
+    color: #e0e0e0; /* Maintain light text for readability */
+  }
+    
 }
 
 @media (prefers-color-scheme: light) {
