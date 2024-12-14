@@ -115,6 +115,14 @@ font-family: monospace, sans-serif;
 }
 
 /* Section Headings */
+h1 {
+    font-size: 28px;
+    color: #4CAF50; /* Distinct green for section headings */
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center; /* Center-align section headings for consistency */
+}
+
 main h2 {
     font-size: 28px;
     color: #4CAF50; /* Distinct green for section headings */
