@@ -459,7 +459,7 @@ cite {
   }
 
       .relaxation-section ul {
-    grid-template-columns: repeat(3, 1fr); /* Adds a third column */
+    grid-template-columns: repeat(2, 1fr); /* Adds a third column */
   }
     
 }
@@ -473,7 +473,7 @@ cite {
   }
 
   .relaxation-section ul {
-    grid-template-columns: repeat(3, 1fr); /* Balanced layout */
+    grid-template-columns: repeat(2, 1fr); /* Balanced layout */
   }
     
 }
@@ -487,7 +487,7 @@ cite {
   }
 
       .relaxation-section ul {
-    grid-template-columns: repeat(4, 1fr); /* Introduces fourth column */
+    grid-template-columns: repeat(3, 1fr); /* Introduces fourth column */
   }
     
 }
