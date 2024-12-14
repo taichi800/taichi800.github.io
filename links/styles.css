@@ -404,6 +404,10 @@ cite {
     max-width: 2rem; /* 32px */
     padding: 0 0.5rem; /* 8px side padding */
   }
+  .relaxation-section ul {
+    grid-template-columns: 1fr; /* Single column for minimal displays */
+  }
+    
 }
 
 @media (min-width: 2.063em) and (max-width: 5.25em) { /* 33px to 84px */
@@ -412,6 +416,10 @@ cite {
     max-width: 4rem; /* 84px */
     padding: 0 0.5rem; /* 8px side padding */
   }
+  .relaxation-section ul {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for better layout */
+  }
+    
 }
 
 /* Legacy Screens */
@@ -421,6 +429,11 @@ cite {
     max-width: 14rem; /* 240px */
     padding: 0 0.75rem; /* 12px side padding */
   }
+
+      .relaxation-section ul {
+    grid-template-columns: repeat(2, 1fr); /* Consistent two-column layout */
+  }
+    
 }
 
 /* Very Small Screens (241px to 320px) */
@@ -430,6 +443,11 @@ cite {
     max-width: 16rem; /* 270px */
     padding: 0 1rem; /* 16px side padding */
   }
+
+      .relaxation-section ul {
+    grid-template-columns: repeat(2, 1fr); /* Keeps a neat layout */
+  }
+    
 }
 
 /* Small Screens (321px to 375px) */
@@ -439,6 +457,11 @@ cite {
     max-width: 18rem; /* 315px */
     padding: 0 1rem; /* 16px side padding */
   }
+
+      .relaxation-section ul {
+    grid-template-columns: repeat(3, 1fr); /* Adds a third column */
+  }
+    
 }
 
 /* Small-Medium Screens (376px to 480px) */
@@ -448,6 +471,11 @@ cite {
     max-width: 24rem; /* 408px */
     padding: 0 1rem; /* 16px side padding */
   }
+
+  .relaxation-section ul {
+    grid-template-columns: repeat(3, 1fr); /* Balanced layout */
+  }
+    
 }
 
 /* Medium Screens (481px to 600px) */
@@ -457,6 +485,11 @@ cite {
     max-width: 30rem; /* 512px */
     padding: 0 1.125rem; /* 18px side padding */
   }
+
+      .relaxation-section ul {
+    grid-template-columns: repeat(4, 1fr); /* Introduces fourth column */
+  }
+    
 }
 
 /* Medium-Large Screens (601px to 768px) */
@@ -465,6 +498,10 @@ cite {
     font-size: 1.0625rem; /* 17px */
     max-width: 46rem; /* 768px */
     padding: 0 1.125rem; /* 18px side padding */
+  }
+
+      .relaxation-section ul {
+    grid-template-columns: repeat(4, 1fr); /* Consistent layout */
   }
     
 }
@@ -497,6 +534,10 @@ cite {
         border-radius: 50%; /* Consistent border-radius */
         border: 2px solid transparent; /* Initial border color transparent */
     }
+
+      .relaxation-section ul {
+    grid-template-columns: repeat(4, 1fr); /* Four columns fit well */
+  }
     
 }
 
@@ -525,7 +566,7 @@ cite {
     }
 
   .relaxation-section ul {
-    grid-template-columns: repeat(4, 1fr); /* Force exactly 4 columns */
+    grid-template-columns: repeat(5, 1fr); /* Add a fifth column */
   }
     
 }
@@ -555,7 +596,7 @@ cite {
     }
 
   .relaxation-section ul {
-    grid-template-columns: repeat(5, 1fr); /* Force exactly 4 columns */
+    grid-template-columns: repeat(6, 1fr); /* Six columns for wide view */
   }
     
 }
@@ -585,7 +626,7 @@ cite {
     }
 
   .relaxation-section ul {
-    grid-template-columns: repeat(6, 1fr); /* Force exactly 4 columns */
+    grid-template-columns: repeat(6, 1fr); /* Maintains six columns */
   }
     
 }
@@ -618,7 +659,7 @@ cite {
     }
 
   .relaxation-section ul {
-    grid-template-columns: repeat(6, 1fr); /* Force exactly 4 columns */
+    grid-template-columns: repeat(7, 1fr); /* Introduces a seventh column */
   }
     
 }
@@ -651,7 +692,7 @@ cite {
     }
 
   .relaxation-section ul {
-    grid-template-columns: repeat(6, 1fr); /* Force exactly 4 columns */
+    grid-template-columns: repeat(8, 1fr); /* Adds an eighth column */
   }
     
 }
