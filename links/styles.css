@@ -195,7 +195,7 @@ cite {
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
-    margin: 10px 5px;
+    margin: 10px auto;
     transition: background-color 0.3s ease;
     border: none;
 }
@@ -216,6 +216,9 @@ cite {
 .message {
     text-align: center; /* Center-align all text */
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
     background-color: #f9f9f9;
     color: #333;
@@ -265,6 +268,7 @@ cite {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     padding: 1rem;
+    margin: 0 auto;
     max-width: 320px;
     width: 100%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -466,6 +470,33 @@ cite {
     background-color: #000000; /* Dark background */
     color: #ffffff; /* Light text */
   }
+
+      .relaxation-section {
+    background-color: #222; /* Darker background */
+    color: #ccc; /* Light text for dark mode */
+  }
+
+  .relaxation-section li {
+    background-color: #333; /* Dark background for list items */
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Subtle shadow */
+    border: 1px solid #444; /* Border for better contrast */
+  }
+
+  .relaxation-section li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    background-color: #444; /* Slightly lighter hover background */
+  }
+
+  .relaxation-section a {
+    color: #76c7c0; /* Highlighted text color for links */
+  }
+
+  .relaxation-section a:hover {
+    color: #5ca9a2; /* Hover color for links */
+  }
+
+    
 }
 
 @media (prefers-color-scheme: light) {
