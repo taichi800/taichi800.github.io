@@ -687,7 +687,7 @@ cite {
     }
 
   .relaxation-section ul {
-    grid-template-columns: repeat(4, 1fr); /* Force exactly 4 columns */
+    grid-template-columns: repeat(5, 1fr); /* Force exactly 4 columns */
   }
     
 }
@@ -717,7 +717,7 @@ cite {
     }
 
   .relaxation-section ul {
-    grid-template-columns: repeat(5, 1fr); /* Force exactly 4 columns */
+    grid-template-columns: repeat(6, 1fr); /* Force exactly 4 columns */
   }
     
 }
