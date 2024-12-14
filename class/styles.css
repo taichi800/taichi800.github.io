@@ -612,6 +612,11 @@ main a:hover {
         border-left: 5px solid #ff8080; /* Lighter red border */
     }
 
+    .not-running p {
+    color: #FFFFFF;
+}
+
+
         .flowshop-header {
         background-color: #2a2a2a; /* Dark gray background */
         color: #f4f4f4; /* Light text */
