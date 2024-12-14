@@ -236,26 +236,65 @@ cite {
     margin-bottom: 20px;
 }
 
-/* Specific Adjustments for Disclaimer Section */
-#disclaimer {
-    border: 2px solid #4CAF50;
-    padding: 20px;
-    margin: 20px;
-    background-color: #fff; /* Separate visual tone for disclaimers */
+
+
+
+
+.relaxation-section {
+    margin: 2rem 0;
+}
+
+.relaxation-section h2 {
+    color: #002b5c;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.relaxation-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.relaxation-section li {
+    background-color: #f9f9f9;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem;
+    max-width: 320px;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#disclaimer h2 {
-    text-align: left; /* Left-align disclaimer heading */
-    font-size: 22px;
-    color: #333;
+.relaxation-section li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-#disclaimer p {
-    font-size: 16px;
-    color: #555;
+.relaxation-section a {
+    color: #0077B6;
+    text-decoration: none;
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
 }
+
+.relaxation-section a:hover {
+    color: #005994;
+}
+
+.relaxation-section p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
 
 /* Older CSS CODE */
 
