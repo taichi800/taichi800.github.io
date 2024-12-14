@@ -290,7 +290,6 @@ cite {
   display: flex; /* Enables flexbox */
   justify-content: center; /* Centers the button horizontally */
   align-items: center; /* Centers the button vertically */
-  height: 100vh; /* Optional: Makes the container full height */
 }
 
 .back-button:hover {
