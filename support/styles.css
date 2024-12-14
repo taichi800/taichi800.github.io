@@ -46,16 +46,16 @@ header {
 
 @media (prefers-color-scheme: light) {
     body {
-        background-color: #ffffff; /* Light background */
-        color: #000000; /* Dark text */
+        background-color: #000000; /* Light background */
+        color: #FFFF00; /*  text */
     }
 
     button, a {
-        border-color: #000000;
+        border-color: #FFFF00;
     }
 
     button:focus, a:focus {
-        outline: 2px dashed #000000;
+        outline: 2px dashed #FFFF00;
     }
 }
 
