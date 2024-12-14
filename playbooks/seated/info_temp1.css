@@ -1,0 +1,317 @@
+    body {
+        padding: 1.05em;                /* Padding in em for scalable spacing */
+        font-family: monospace, sans-serif; /* Comprehensive font stack */
+        font-size: 16px;                /* Base font size for scaling em units */
+    }
+
+pre {
+    background-color: #f4f4f4;         /* Light background for readability */
+    padding: 1em;                     /* Scalable padding */
+    white-space: pre-wrap;            /* Wrap text to the next line */
+    word-wrap: break-word;            /* Break long words to prevent overflow */
+    border: 0.0625em solid #ccc;      /* Consistent border scaling */
+    border-radius: 0.5em;             /* Rounded corners for a softer look */
+    margin: 1em 0;                    /* Vertical margin for spacing */
+    color: #333;                      /* Text color for good contrast */
+    overflow-x: auto;                 /* Add horizontal scrolling for large content */
+    font-family: monospace;           /* Monospace font for preformatted text */
+    font-size: 1em;                   /* Relative font size for scaling */
+}
+
+/* === Dark Light Mode === */
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000000; /* Dark background */
+    color: #ffffff; /* Light text */
+  }
+    
+    pre {
+        background-color: #1e1e1e;    /* Dark background */
+        color: #f4f4f4;               /* Light text */
+        border-color: #555;           /* Softer border for dark mode */
+    }
+    
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #ffffff; /* Light background */
+    color: #000000; /* Dark text */
+  }
+
+  button, a {
+    border-color: #000000;
+  }
+
+  button:focus, a:focus {
+    outline: 2px dashed #000000;
+  }
+}
+
+/* === Reduced Motion === */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* === Printing === */
+@media print {
+  body {
+    font-size: 12pt;
+    color: black;
+    background: none;
+  }
+
+   pre {
+        font-size: 12pt;              /* Standardized font size for printing */
+        color: black;                 /* Black text for print clarity */
+        background: none;             /* Remove background for printing */
+        border: none;                 /* Remove border for printing */
+        padding: 0;                   /* Remove padding for printing */
+        margin: 0;                    /* Remove margin for printing */
+    }    
+    
+}
+
+
+/* Very Small Screens and Minimal Displays */
+@media (max-width: 2em) { /* 32px */
+  body {
+    font-size: 0.625rem; /* 10px */
+    max-width: 2rem; /* 32px */
+    padding: 0 0.5rem; /* 8px side padding */
+  }
+}
+
+@media (min-width: 2.063em) and (max-width: 5.25em) { /* 33px to 84px */
+  body {
+    font-size: 0.75rem; /* 12px */
+    max-width: 4rem; /* 84px */
+    padding: 0 0.5rem; /* 8px side padding */
+  }
+}
+
+/* Legacy Screens */
+@media (min-width: 5.313em) and (max-width: 15em) { /* 85px to 240px */
+  body {
+    font-size: 0.8125rem; /* 13px */
+    max-width: 14rem; /* 240px */
+    padding: 0 0.75rem; /* 12px side padding */
+  }
+}
+
+/* Very Small Screens (241px to 320px) */
+@media (min-width: 15.063em) and (max-width: 20em) { /* 241px to 320px */
+  body {
+    font-size: 0.9375rem; /* 15px */
+    max-width: 16rem; /* 270px */
+    padding: 0 1rem; /* 16px side padding */
+  }
+}
+
+/* Small Screens (321px to 375px) */
+@media (min-width: 20.063em) and (max-width: 23.438em) { /* 321px to 375px */
+  body {
+    font-size: 0.9375rem; /* 15px */
+    max-width: 18rem; /* 315px */
+    padding: 0 1rem; /* 16px side padding */
+  }
+}
+
+/* Small-Medium Screens (376px to 480px) */
+@media (min-width: 23.5em) and (max-width: 30em) { /* 376px to 480px */
+  body {
+    font-size: 1.0625rem; /* 17px */
+    max-width: 24rem; /* 408px */
+    padding: 0 1rem; /* 16px side padding */
+  }
+}
+
+/* Medium Screens (481px to 600px) */
+@media (min-width: 30.063em) and (max-width: 37.5em) { /* 481px to 600px */
+  body {
+    font-size: 1.0625rem; /* 17px */
+    max-width: 30rem; /* 512px */
+    padding: 0 1.125rem; /* 18px side padding */
+  }
+}
+
+/* Medium-Large Screens (601px to 768px) */
+@media (min-width: 37.563em) and (max-width: 48em) { /* 601px to 768px */
+  body {
+    font-size: 1.0625rem; /* 17px */
+    max-width: 46rem; /* 768px */
+    padding: 0 1.125rem; /* 18px side padding */
+  }
+    
+}
+
+/* Large Screens (769px to 1024px) */
+@media (min-width: 48.063em) and (max-width: 64em) { /* 769px to 1024px */
+  body {
+    font-size: 1.125rem; /* 18px */
+    max-width: 58rem; /* 960px */
+    padding: 0 1.125rem; /* 18px side padding */
+  }
+  .content-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 2%;
+  }
+
+        .hamburger, #menu-toggle {
+        display: none; /* Hide hamburger icon and checkbox on larger screens */
+    }
+    .menu {
+        display: block;
+        background: none;
+    }
+    .menu li {
+        display: inline-block; /* Horizontal menu */
+    }
+    .menu li a {
+        padding: 15px;
+        border-radius: 50%; /* Consistent border-radius */
+        border: 2px solid transparent; /* Initial border color transparent */
+    }
+    
+}
+
+/* Extra Large Screens (1025px to 1280px) */
+@media (min-width: 64.063em) and (max-width: 80em) { /* 1025px to 1280px */
+  body {
+    font-size: 1.25rem; /* 20px */
+    max-width: 74rem; /* 1216px */
+    padding: 0 1.125rem; /* 18px side padding */
+  }
+
+        .hamburger, #menu-toggle {
+        display: none; /* Hide hamburger icon and checkbox on larger screens */
+    }
+    .menu {
+        display: block;
+        background: none;
+    }
+    .menu li {
+        display: inline-block; /* Horizontal menu */
+    }
+    .menu li a {
+        padding: 15px;
+        border-radius: 50%; /* Consistent border-radius */
+        border: 2px solid transparent; /* Initial border color transparent */
+    }
+    
+}
+
+/* Wide Screens (1281px to 1440px) */
+@media (min-width: 80.063em) and (max-width: 90em) { /* 1281px to 1440px */
+  body {
+    font-size: 1.375rem; /* 22px */
+    max-width: 82rem; /* 1344px */
+    padding: 0 1.125rem; /* 18px side padding */
+  }
+
+        .hamburger, #menu-toggle {
+        display: none; /* Hide hamburger icon and checkbox on larger screens */
+    }
+    .menu {
+        display: block;
+        background: none;
+    }
+    .menu li {
+        display: inline-block; /* Horizontal menu */
+    }
+    .menu li a {
+        padding: 15px;
+        border-radius: 50%; /* Consistent border-radius */
+        border: 2px solid transparent; /* Initial border color transparent */
+    }
+    
+}
+
+/* Ultra-Wide Screens (1441px to 1920px) */
+@media (min-width: 90.063em) and (max-width: 120em) { /* 1441px to 1920px */
+  body {
+    font-size: 1.5rem; /* 24px */
+    max-width: 106rem; /* 1728px */
+    padding: 0 1.125rem; /* 18px side padding */
+  }
+
+    .hamburger, #menu-toggle {
+        display: none; /* Hide hamburger icon and checkbox on larger screens */
+    }
+    .menu {
+        display: block;
+        background: none;
+    }
+    .menu li {
+        display: inline-block; /* Horizontal menu */
+    }
+    .menu li a {
+        padding: 15px;
+        border-radius: 50%; /* Consistent border-radius */
+        border: 2px solid transparent; /* Initial border color transparent */
+    }
+    
+}
+
+/* 4K Screens (1921px to 2560px) */
+@media (min-width: 120.063em) and (max-width: 160em) { /* 1921px to 2560px */
+  body {
+    font-size: 1.5rem; /* 24px */
+    max-width: 110rem; /* 1800px */
+    padding: 0 1.125rem; /* 18px side padding */
+  }
+  .content-container {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+
+    .hamburger, #menu-toggle {
+        display: none; /* Hide hamburger icon and checkbox on larger screens */
+    }
+    .menu {
+        display: block;
+        background: none;
+    }
+    .menu li {
+        display: inline-block; /* Horizontal menu */
+    }
+    .menu li a {
+        padding: 15px;
+        border-radius: 50%; /* Consistent border-radius */
+        border: 2px solid transparent; /* Initial border color transparent */
+    }
+    
+}
+
+/* 5K and Above Screens (2561px and above) */
+@media (min-width: 160.063em) { /* 2561px and above */
+  body {
+    font-size: 1.5rem; /* 24px */
+    max-width: 110rem; /* 1800px */
+    padding: 0 1.125rem; /* 18px side padding */
+  }
+  .content-container {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+
+    .hamburger, #menu-toggle {
+        display: none; /* Hide hamburger icon and checkbox on larger screens */
+    }
+    .menu {
+        display: block;
+        background: none;
+    }
+    .menu li {
+        display: inline-block; /* Horizontal menu */
+    }
+    .menu li a {
+        padding: 15px;
+        border-radius: 50%; /* Consistent border-radius */
+        border: 2px solid transparent; /* Initial border color transparent */
+    }
+    
+}
