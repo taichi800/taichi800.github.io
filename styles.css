@@ -255,7 +255,7 @@ cite {
 }
 
 #disclaimer h2 {
-    text-align: left; /* Left-align disclaimer heading */
+    text-align: center; /* Left-align disclaimer heading */
     font-size: 22px;
     color: #333;
 }
