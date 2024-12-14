@@ -56,6 +56,60 @@ body {
     gap: 2%;
 }
 
+.site-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.site-footer a {
+    color: #0077B6;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.site-footer a:hover {
+    color: #005994;
+}
+
+.site-footer p {
+    margin: 0.625rem 0; 
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212; /* Dark background */
+        color: #e0e0e0; /* Light text for contrast */
+    }
+
+    .relaxation-section {
+        background-color: #1e1e1e; /* Slightly lighter than body */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    }
+
+    .relaxation-section h2 {
+        color: #90caf9; /* Light blue for headers */
+    }
+
+    .relaxation-section ul li {
+        border-left: 4px solid #90caf9; /* Matching blue border */
+    }
+
+    .relaxation-section p {
+        color: #b0b0b0; /* Softer text for paragraphs */
+    }
+
+    a {
+        color: #64b5f6; /* Light blue for links */
+    }
+
+    a:hover {
+        color: #42a5f5; /* Slightly brighter on hover */
+    }
+}
+
+
 @media (max-width: 30em) { /* Small to Medium Screens */
     body {
         font-size: 0.875rem; /* Adjust text size for smaller screens */
