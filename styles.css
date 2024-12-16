@@ -213,32 +213,38 @@ cite {
     color: #555;
 }
 
+/* General Grid Layout */
 .info-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
-  gap: 1.5rem; /* Space between items */
-  list-style: none; /* Remove default list styling */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid layout */
+  gap: 1rem; /* Consistent spacing between items */
+  justify-content: center; /* Center-align the entire grid */
+  list-style: none; /* Remove list styling */
   padding: 0;
-  margin: 2rem 0;
+  margin: 2rem auto; /* Center the grid on the page */
+  max-width: 1200px; /* Limit the grid width for better readability */
 }
 
+/* Styling for Grid Items */
 .info-grid li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
   background: #f9f9f9; /* Light background for contrast */
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   padding: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.2s ease; /* Smooth hover transition */
 }
 
+/* Hover Effect */
 .info-grid li:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+  background-color: #e6f4fa; /* Slightly blue background on hover */
+  transform: scale(1.02); /* Subtle zoom on hover */
 }
 
+/* Images for Video Links */
 .info-grid img {
   width: 100%;
   max-width: 150px; /* Limit image size */
@@ -247,41 +253,48 @@ cite {
   margin-bottom: 0.5rem; /* Space between image and text */
 }
 
+/* Text for Grid Items */
 .info-grid span {
-  font-size: 1rem; /* Adjust text size */
-  color: #333; /* High contrast text color */
+  font-size: 1rem; /* Standard font size */
+  color: #333; /* High-contrast text */
   font-weight: bold;
 }
 
+/* Links */
 .info-grid a {
   text-decoration: none; /* Remove underline */
   color: inherit; /* Inherit text color */
 }
 
-.info-grid a:focus,
-.info-grid a:hover {
-  outline: 2px solid #0077B6; /* High contrast focus state */
-  text-decoration: underline; /* Underline for hover/focus feedback */
-}
-
-
+/* Text-Only Links */
 .info-grid li:not(:has(img)) {
-  background: transparent; /* Remove background for text-only links */
-  box-shadow: none; /* Remove shadow for simplicity */
-  padding: 0; /* Remove padding to align with inline links */
-  text-align: left; /* Align text to the left */
+  background: transparent; /* No background for text-only links */
+  box-shadow: none; /* Remove shadow */
+  padding: 0.5rem; /* Consistent padding */
+  text-align: left; /* Left-align text-only links */
 }
 
-.info-grid li:not(:has(img)) span {
-  font-size: 1rem; /* Keep consistent font size */
-  color: #0077B6; /* Highlight text-only links with blue */
-  font-weight: bold;
+/* Hover for Text-Only Links */
+.info-grid li:not(:has(img)):hover {
+  background: none; /* No hover background */
+  transform: none; /* No hover animation */
 }
 
-.info-grid li:not(:has(img)):hover span {
-  color: #005994; /* Slightly darker blue on hover */
-  text-decoration: underline;
+/* Responsive Adjustments for Small Screens */
+@media (max-width: 600px) {
+  .info-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid for smaller screens */
+  }
+
+  .info-grid img {
+    max-width: 120px; /* Smaller image size */
+  }
+
+  .info-grid span {
+    font-size: 0.9rem; /* Slightly smaller text */
+  }
 }
+
 
 
 
