@@ -1,6 +1,4 @@
-Includes some notation regarding the css file for the first homepage: 
-
-
+first notes for the css home page
 /* Header styling STACKBLOCK00 */
 .site-header {
     display: flex;
