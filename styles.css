@@ -284,24 +284,25 @@ font-size:.9rem
 }
 
 .site-footer {
-background-color:#333;
+background-color:#121212;
 color:#fff;
 padding:1.25rem;
 text-align:center
 }
 
 .site-footer a {
-color:#0077B6;
+color:#FFD700;
 text-decoration:none;
 transition:color .3s
 }
 
 .site-footer a:hover {
-color:#005994
+color:#FFC300
 }
 
 .site-footer p {
 margin:.625rem 0
+color: #fff
 }
 
 @media (prefers-color-scheme: dark) {
