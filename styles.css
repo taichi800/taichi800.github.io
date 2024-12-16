@@ -191,58 +191,6 @@ cite {
     margin-top: 10px;
 }
 
-/* Buttons */
-.button-style,
-.message button,
-.message a.button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
-    background-color: #4CAF50;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    margin: 10px 5px;
-    transition: background-color 0.3s ease;
-    border: none;
-}
-
-.button-style:hover,
-.message button:hover,
-.message a.button:hover {
-    background-color: #45a049;
-}
-
-.button-style:focus,
-.message button:focus,
-.message a:focus {
-    outline: 2px solid #FFD700; /* High-contrast focus state */
-}
-
-/* Message Section */
-.message {
-    text-align: center; /* Center-align all text */
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    color: #333;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.message h2,
-.message h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #4CAF50;
-}
-
-.message p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
 
 /* Specific Adjustments for Disclaimer Section */
 #disclaimer {
@@ -265,19 +213,80 @@ cite {
     color: #555;
 }
 
-/* Key Features Section */
-[aria-label="List of key features"] li {
-    background: #eaf4e9; /* Soft green background for feature items */
-    padding: 10px;
-    border: 1px solid #4CAF50;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    transition: background-color 0.3s;
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+  gap: 1.5rem; /* Space between items */
+  list-style: none; /* Remove default list styling */
+  padding: 0;
+  margin: 2rem 0;
 }
 
-[aria-label="List of key features"] li:hover {
-    background: #d7ecd5; /* Slightly darker green on hover */
+.info-grid li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #f9f9f9; /* Light background for contrast */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.info-grid li:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.info-grid img {
+  width: 100%;
+  max-width: 150px; /* Limit image size */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Rounded corners */
+  margin-bottom: 0.5rem; /* Space between image and text */
+}
+
+.info-grid span {
+  font-size: 1rem; /* Adjust text size */
+  color: #333; /* High contrast text color */
+  font-weight: bold;
+}
+
+.info-grid a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color */
+}
+
+.info-grid a:focus,
+.info-grid a:hover {
+  outline: 2px solid #0077B6; /* High contrast focus state */
+  text-decoration: underline; /* Underline for hover/focus feedback */
+}
+
+
+.info-grid li:not(:has(img)) {
+  background: transparent; /* Remove background for text-only links */
+  box-shadow: none; /* Remove shadow for simplicity */
+  padding: 0; /* Remove padding to align with inline links */
+  text-align: left; /* Align text to the left */
+}
+
+.info-grid li:not(:has(img)) span {
+  font-size: 1rem; /* Keep consistent font size */
+  color: #0077B6; /* Highlight text-only links with blue */
+  font-weight: bold;
+}
+
+.info-grid li:not(:has(img)):hover span {
+  color: #005994; /* Slightly darker blue on hover */
+  text-decoration: underline;
+}
+
+
+
+
+
 .site-footer {
     background-color: #333;
     color: #fff;
@@ -348,6 +357,20 @@ cite {
     max-width: 2rem; /* 32px */
     padding: 0 0.5rem; /* 8px side padding */
   }
+
+  .info-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid for smaller screens */
+    gap: 1rem;
+  }
+
+  .info-grid img {
+    max-width: 120px; /* Reduce image size for small screens */
+  }
+
+  .info-grid span {
+    font-size: 0.9rem; /* Slightly smaller text for small screens */
+  }
+    
 }
 
 @media (min-width: 2.063em) and (max-width: 5.25em) { /* 33px to 84px */
@@ -356,6 +379,20 @@ cite {
     max-width: 4rem; /* 84px */
     padding: 0 0.5rem; /* 8px side padding */
   }
+
+      .info-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid for smaller screens */
+    gap: 1rem;
+  }
+
+  .info-grid img {
+    max-width: 120px; /* Reduce image size for small screens */
+  }
+
+  .info-grid span {
+    font-size: 0.9rem; /* Slightly smaller text for small screens */
+  }
+    
 }
 
 /* Legacy Screens */
@@ -365,6 +402,20 @@ cite {
     max-width: 14rem; /* 240px */
     padding: 0 0.75rem; /* 12px side padding */
   }
+
+  .info-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid for smaller screens */
+    gap: 1rem;
+  }
+
+  .info-grid img {
+    max-width: 120px; /* Reduce image size for small screens */
+  }
+
+  .info-grid span {
+    font-size: 0.9rem; /* Slightly smaller text for small screens */
+  }
+    
 }
 
 /* Very Small Screens (241px to 320px) */
@@ -374,6 +425,20 @@ cite {
     max-width: 16rem; /* 270px */
     padding: 0 1rem; /* 16px side padding */
   }
+
+  .info-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid for smaller screens */
+    gap: 1rem;
+  }
+
+  .info-grid img {
+    max-width: 120px; /* Reduce image size for small screens */
+  }
+
+  .info-grid span {
+    font-size: 0.9rem; /* Slightly smaller text for small screens */
+  }
+    
 }
 
 /* Small Screens (321px to 375px) */
@@ -383,6 +448,20 @@ cite {
     max-width: 18rem; /* 315px */
     padding: 0 1rem; /* 16px side padding */
   }
+
+  .info-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid for smaller screens */
+    gap: 1rem;
+  }
+
+  .info-grid img {
+    max-width: 120px; /* Reduce image size for small screens */
+  }
+
+  .info-grid span {
+    font-size: 0.9rem; /* Slightly smaller text for small screens */
+  }
+    
 }
 
 /* Small-Medium Screens (376px to 480px) */
@@ -392,6 +471,20 @@ cite {
     max-width: 24rem; /* 408px */
     padding: 0 1rem; /* 16px side padding */
   }
+
+      .info-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid for smaller screens */
+    gap: 1rem;
+  }
+
+  .info-grid img {
+    max-width: 120px; /* Reduce image size for small screens */
+  }
+
+  .info-grid span {
+    font-size: 0.9rem; /* Slightly smaller text for small screens */
+  }
+    
 }
 
 /* Medium Screens (481px to 600px) */
@@ -401,6 +494,20 @@ cite {
     max-width: 30rem; /* 512px */
     padding: 0 1.125rem; /* 18px side padding */
   }
+
+      .info-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid for smaller screens */
+    gap: 1rem;
+  }
+
+  .info-grid img {
+    max-width: 120px; /* Reduce image size for small screens */
+  }
+
+  .info-grid span {
+    font-size: 0.9rem; /* Slightly smaller text for small screens */
+  }
+    
 }
 
 /* Medium-Large Screens (601px to 768px) */
@@ -410,6 +517,20 @@ cite {
     max-width: 46rem; /* 768px */
     padding: 0 1.125rem; /* 18px side padding */
   }
+
+      .info-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid for smaller screens */
+    gap: 1rem;
+  }
+
+  .info-grid img {
+    max-width: 120px; /* Reduce image size for small screens */
+  }
+
+  .info-grid span {
+    font-size: 0.9rem; /* Slightly smaller text for small screens */
+  }
+    
     
 }
 
