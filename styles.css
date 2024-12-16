@@ -29,12 +29,6 @@ width:120px;
 height:auto
 }
 
-#taijitu {
-width: 121px;
-height: auto;
-max-width: 100%;
-}
-
 .portal-link,
 .accessibility-link {
     display: inline-block;
