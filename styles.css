@@ -29,40 +29,35 @@ width:120px;
 height:auto
 }
 
-.portal-link,
-.accessibility-link {
-    display: inline-block;
-    padding: 0.5rem; 
-    margin: 0 0.5rem; 
+.portal-link,.accessibility-link {
+display:inline-block;
+padding:.5rem;
+margin:0 .5rem
 }
-
 
 .portal-link img {
-    width: 44px; 
-    height: 44px;
+width:44px;
+height:44px
 }
-
 
 .accessibility-link {
-    font-size: 1rem; 
-    font-weight: bold;
-    color: #FFD700;
-    text-decoration: none;
-    transition: color 0.3s ease, background-color 0.3s ease;
-    background-color: transparent; 
-    border-radius: 4px; 
+font-size:1rem;
+font-weight:bold;
+color:#FFD700;
+text-decoration:none;
+transition:color .3s ease,background-color .3s ease;
+background-color:transparent;
+border-radius:4px
 }
 
-.accessibility-link:hover,
-.accessibility-link:focus {
-    color: #FFC300;
-    text-decoration: underline;
+.accessibility-link:hover,.accessibility-link:focus {
+color:#FFC300;
+text-decoration:underline
 }
 
-.portal-link:hover img,
-.portal-link:focus img {
-outline: 2px solid #FFD700;
-outline-offset: 2px;
+.portal-link:hover img,.portal-link:focus img {
+outline:2px solid #FFD700;
+outline-offset:2px
 }
 
 nav {
@@ -287,7 +282,7 @@ font-size:.9rem
 background-color:#121212;
 color:#fff;
 padding:1.5rem;
-text-align:center;
+text-align:center
 }
 
 .site-footer ul {
@@ -328,6 +323,7 @@ body {
 background-color:#000000;
 color:#ffffff
 }
+
 blockquote {
 background-color:#222222;
 border-left:5px solid #005f8a;
@@ -358,7 +354,7 @@ color:#FFFFFF
 }
 
 .info-grid span {
-color: #FFD700;
+color:#FFD700
 }
 
 .info-grid li:hover {
