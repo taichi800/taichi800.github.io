@@ -320,6 +320,10 @@ background-color:#262626;
 color:#FFFFFF
 }
 
+.info-grid span {
+color: #FFD700;
+}
+
 .info-grid li:hover {
 background-color:#2B2B2B
 }
