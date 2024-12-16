@@ -292,8 +292,23 @@ font-size:.9rem
 .site-footer {
 background-color:#121212;
 color:#fff;
-padding:1.25rem;
-text-align:center
+padding:1.5rem;
+text-align:center;
+font-size:.9rem
+}
+
+.site-footer ul {
+list-style:none;
+padding:0;
+margin:1rem 0
+}
+
+.site-footer ul.footer-links {
+margin-bottom:1.5rem
+}
+
+.site-footer li {
+margin:.5rem 0
 }
 
 .site-footer a {
@@ -306,9 +321,13 @@ transition:color .3s
 color:#FFC300
 }
 
-.site-footer p {
-margin:.625rem 0
-color: #fff
+.site-footer .footer-navigation li {
+display:inline-block;
+margin:0 .5rem
+}
+
+.site-footer .footer-navigation li a {
+font-weight:bold
 }
 
 @media (prefers-color-scheme: dark) {
