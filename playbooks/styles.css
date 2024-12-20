@@ -172,38 +172,7 @@ p {
     line-height: 1.8;
 }
 
-/* Navigation Menu */
-nav ul {
-    display: flex; /* Aligns items horizontally */
-    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-    justify-content: center; /* Centers items within the container */
-    padding: 0;
-    margin: 0 auto;
-    list-style: none; /* Removes default list styling */
-    max-width: 100%; /* Prevents overflowing the viewport */
-    overflow-x: hidden; /* Hides any accidental horizontal scrolling */
-    gap: 10px; /* Adds spacing between items */
-}
 
-nav ul li {
-    margin: 0; /* Removes unnecessary margin */
-}
-
-nav ul li a {
-    display: inline-block;
-    padding: 10px 15px;
-    background: #005a9c; /* Blue background for nav links */
-    color: #fff; /* White text for contrast */
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    white-space: nowrap; /* Prevents wrapping text within buttons */
-}
-
-nav ul li a:hover {
-    background: #004377; /* Darker blue on hover */
-}
 
 /* Lifelong Practice Section */
 .standalone {
