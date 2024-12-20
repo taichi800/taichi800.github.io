@@ -118,7 +118,7 @@ a.skip-link {
     position: absolute;
     top: -40px;
     left: 10px;
-    background: #FFD700;
+    background: #FFD700; /* Bright yellow for contrast */
     color: #000;
     padding: 8px 12px;
     z-index: 100;
@@ -143,17 +143,17 @@ main {
 /* Headings */
 h1 {
     font-size: 2.5rem;
-    color: #0077B6; /* Blue for a bold main heading */
+    color: #005a9c; /* Accessible blue for main heading */
     text-align: center;
     margin-bottom: 30px;
 }
 
 h2 {
     font-size: 2rem;
-    color: #4CAF50; /* Green for section headings */
+    color: #007a4f; /* Accessible dark green */
     margin-top: 30px;
     margin-bottom: 15px;
-    border-bottom: 2px solid #ccc; /* Subtle divider for clarity */
+    border-bottom: 2px solid #ccc;
     padding-bottom: 5px;
 }
 
@@ -174,59 +174,41 @@ p {
 
 /* Navigation Menu */
 nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
+    display: flex; /* Aligns items horizontally */
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    justify-content: center; /* Centers items within the container */
     padding: 0;
-    margin-bottom: 30px;
-    background: #0077B6;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    list-style: none; /* Removes default list styling */
+    max-width: 100%; /* Prevents overflowing the viewport */
+    overflow-x: hidden; /* Hides any accidental horizontal scrolling */
+    gap: 10px; /* Adds spacing between items */
 }
 
 nav ul li {
-    margin: 0 10px;
+    margin: 0; /* Removes unnecessary margin */
 }
 
 nav ul li a {
-    color: #fff;
-    text-decoration: none;
+    display: inline-block;
     padding: 10px 15px;
+    background: #005a9c; /* Blue background for nav links */
+    color: #fff; /* White text for contrast */
+    text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    white-space: nowrap; /* Prevents wrapping text within buttons */
 }
 
 nav ul li a:hover {
-    background: #005f8c; /* Darker blue on hover */
-}
-
-/* Lists */
-ul {
-    list-style: none; /* Remove bullets */
-    padding: 0;
-}
-
-ul li {
-    position: relative;
-    font-size: 1rem;
-    margin-bottom: 15px;
-    padding-left: 30px; /* Space for custom bullet */
-}
-
-ul li::before {
-    content: "✔"; /* Checkmark for custom bullet */
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #4CAF50; /* Green to match the theme */
-    font-size: 1.2rem;
+    background: #004377; /* Darker blue on hover */
 }
 
 /* Lifelong Practice Section */
 .standalone {
-    background: #f9f9f9; /* Light background for emphasis */
-    border-left: 5px solid #4CAF50;
+    background: #f9f9f9;
+    border-left: 5px solid #007a4f;
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -234,23 +216,18 @@ ul li::before {
 
 /* Links */
 a {
-    color: #0077B6; /* Accessible blue */
+    color: #005a9c; /* Accessible blue */
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
-    color: #005f8c;
+    color: #004377;
 }
 
 /* Accessibility: Focus Styles */
 a:focus, button:focus {
-    outline: 2px solid #FFD700; /* High-contrast focus outline */
-}
-
-/* Utility Classes */
-.hidden {
-    display: none;
+    outline: 2px solid #FFD700;
 }
 
 
@@ -279,10 +256,62 @@ a:focus, button:focus {
 /* === Dark Light Mode === */
 
 @media (prefers-color-scheme: dark) {
-  body {
-    background-color: #000000; /* Dark background */
-    color: #ffffff; /* Light text */
-  }
+   body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+
+    main {
+        background: #2b2b2b;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+        color: #80c4ff; /* Lighter blue for dark mode */
+    }
+
+    h2 {
+        color: #4dff88; /* Bright green for dark mode */
+        border-bottom: 2px solid #444;
+    }
+
+    h3 {
+        color: #e0e0e0;
+    }
+
+    p {
+        color: #ccc;
+    }
+
+    nav ul {
+        background: #333;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    nav ul li a {
+        color: #fff;
+    }
+
+    nav ul li a:hover {
+        background: #444;
+    }
+
+    ul li::before {
+        color: #4dff88; /* Bright green checkmarks */
+    }
+
+    .standalone {
+        background: #333;
+        border-left: 5px solid #4dff88;
+    }
+
+    a {
+        color: #80c4ff;
+    }
+
+    a:hover {
+        color: #4d94ff;
+    }
 }
 
 @media (prefers-color-scheme: light) {
@@ -325,6 +354,17 @@ a:focus, button:focus {
     max-width: 2rem; /* 32px */
     padding: 0 0.5rem; /* 8px side padding */
   }
+
+    nav ul {
+        flex-direction: column; /* Stacks items vertically on small screens */
+        align-items: center; /* Centers items in the column */
+        padding: 0;
+    }
+
+    nav ul li {
+        margin-bottom: 10px; /* Adds spacing between vertically stacked items */
+    }
+    
 }
 
 @media (min-width: 2.063em) and (max-width: 5.25em) { /* 33px to 84px */
@@ -333,6 +373,17 @@ a:focus, button:focus {
     max-width: 4rem; /* 84px */
     padding: 0 0.5rem; /* 8px side padding */
   }
+
+    nav ul {
+        flex-direction: column; /* Stacks items vertically on small screens */
+        align-items: center; /* Centers items in the column */
+        padding: 0;
+    }
+
+    nav ul li {
+        margin-bottom: 10px; /* Adds spacing between vertically stacked items */
+    }
+
 }
 
 /* Legacy Screens */
@@ -342,6 +393,17 @@ a:focus, button:focus {
     max-width: 14rem; /* 240px */
     padding: 0 0.75rem; /* 12px side padding */
   }
+
+    nav ul {
+        flex-direction: column; /* Stacks items vertically on small screens */
+        align-items: center; /* Centers items in the column */
+        padding: 0;
+    }
+
+    nav ul li {
+        margin-bottom: 10px; /* Adds spacing between vertically stacked items */
+    }
+    
 }
 
 /* Very Small Screens (241px to 320px) */
@@ -351,6 +413,17 @@ a:focus, button:focus {
     max-width: 16rem; /* 270px */
     padding: 0 1rem; /* 16px side padding */
   }
+
+    nav ul {
+        flex-direction: column; /* Stacks items vertically on small screens */
+        align-items: center; /* Centers items in the column */
+        padding: 0;
+    }
+
+    nav ul li {
+        margin-bottom: 10px; /* Adds spacing between vertically stacked items */
+    }
+    
 }
 
 /* Small Screens (321px to 375px) */
@@ -360,6 +433,17 @@ a:focus, button:focus {
     max-width: 18rem; /* 315px */
     padding: 0 1rem; /* 16px side padding */
   }
+
+    nav ul {
+        flex-direction: column; /* Stacks items vertically on small screens */
+        align-items: center; /* Centers items in the column */
+        padding: 0;
+    }
+
+    nav ul li {
+        margin-bottom: 10px; /* Adds spacing between vertically stacked items */
+    }
+    
 }
 
 /* Small-Medium Screens (376px to 480px) */
@@ -369,6 +453,17 @@ a:focus, button:focus {
     max-width: 24rem; /* 408px */
     padding: 0 1rem; /* 16px side padding */
   }
+
+    nav ul {
+        flex-direction: column; /* Stacks items vertically on small screens */
+        align-items: center; /* Centers items in the column */
+        padding: 0;
+    }
+
+    nav ul li {
+        margin-bottom: 10px; /* Adds spacing between vertically stacked items */
+    }
+    
 }
 
 /* Medium Screens (481px to 600px) */
@@ -387,6 +482,16 @@ a:focus, button:focus {
     max-width: 46rem; /* 768px */
     padding: 0 1.125rem; /* 18px side padding */
   }
+
+    nav ul {
+        flex-direction: column; /* Stacks items vertically on small screens */
+        align-items: center; /* Centers items in the column */
+        padding: 0;
+    }
+
+    nav ul li {
+        margin-bottom: 10px; /* Adds spacing between vertically stacked items */
+    }
     
 }
 
