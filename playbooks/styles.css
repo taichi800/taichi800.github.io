@@ -188,31 +188,6 @@ a.skip-link:focus {
 }
 
 /* Main Content */
-main {
-    margin: 20px auto;
-    max-width: 800px;
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Headings */
-h1 {
-    font-size: 2.5rem;
-    color: #005a9c;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-h2 {
-    font-size: 2rem;
-    color: #007a4f;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 5px;
-}
 
 /* Description List */
 dl {
