@@ -4,41 +4,6 @@
         font-size: 16px;                /* Base font size for scaling em units */
     }
 
-.walkthrough-nav {
-  background-color: #f9f9f9; /* Light background for contrast */
-  border: 1px solid #ddd; /* Subtle border for definition */
-  border-radius: 8px; /* Rounded corners */
-  padding: 1rem; /* Space around the nav items */
-  width: 100%; /* Full-width container */
-  max-width: 400px; /* Limit max width for better readability */
-  margin: 1rem auto; /* Center the nav menu */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a slight shadow for depth */
-}
-
-.walkthrough-nav ul {
-  list-style: none; /* Remove default list styling */
-  margin: 0;
-  padding: 0;
-}
-
-.walkthrough-nav li {
-  margin-bottom: 0.5rem; /* Space between list items */
-}
-
-.walkthrough-nav a {
-  display: block; /* Make links clickable across their entire area */
-  text-decoration: none; /* Remove underline */
-  color: #0073e6; /* Accessible blue for links */
-  font-size: 1.1rem; /* Slightly larger font for readability */
-  padding: 0.5rem; /* Space around each link */
-  border-radius: 4px; /* Rounded corners for links */
-  transition: background-color 0.3s, color 0.3s; /* Smooth hover effects */
-}
-
-.walkthrough-nav a:hover {
-  background-color: #0073e6; /* Blue background on hover */
-  color: #fff; /* White text on hover */
-}
 
 
 pre {
@@ -63,20 +28,7 @@ pre {
     color: #ffffff; /* Light text */
   }
 
-  .walkthrough-nav {
-    background-color: #2c2c2c; /* Dark background */
-    border: 1px solid #444; /* Subtle border for definition in dark mode */
-    color: #e0e0e0; /* Light text color */
-  }
-
-  .walkthrough-nav a {
-    color: #4da8da; /* Softer blue for dark mode */
-  }
-
-  .walkthrough-nav a:hover {
-    background-color: #4da8da; /* Softer blue background on hover */
-    color: #2c2c2c; /* Dark text on hover */
-  }    
+ 
     
     pre {
         background-color: #1e1e1e;    /* Dark background */
