@@ -222,71 +222,106 @@ cite {
 }
 
 
-/* Table Styling */
-table {
+/* Styling for Definition Lists (dl, dt, dd) */
+dl {
     width: 100%;
-    border-collapse: collapse; /* Ensures clean borders */
-    margin: 20px auto; /* Centers the table */
+    margin: 20px auto; /* Centers the list */
+    padding: 0; /* Removes default padding */
     background-color: #f9f9f9; /* Light background for readability */
     font-size: 16px; /* Readable text size */
-    line-height: 1.4; /* Slightly increased line height for readability */
+    line-height: 1.4; /* Comfortable line spacing */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border: 1px solid #ddd; /* Light border for structure */
+    border-radius: 8px; /* Rounded corners for a softer look */
 }
 
-th, td {
-    text-align: left; /* Aligns text to the left */
-    padding: 12px; /* Padding for text spacing */
-    border: 1px solid #ddd; /* Light border for separation */
-}
-
-th {
+dt {
     background-color: #0077B6; /* Matches your navigation bar */
     color: #fff; /* High contrast for readability */
-    font-weight: bold; /* Emphasizes headers */
+    font-weight: bold; /* Emphasizes category titles */
+    padding: 12px; /* Adds space around text */
     text-transform: uppercase; /* Consistent header styling */
+    border-bottom: 1px solid #005f8a; /* Adds separation between categories */
 }
 
-tr:nth-child(even) {
-    background-color: #f4f4f4; /* Alternating row colors for clarity */
+dd {
+    margin: 0; /* Removes default margin */
+    padding: 12px; /* Padding for text spacing */
+    background-color: #f4f4f4; /* Alternating background for descriptions */
+    border-bottom: 1px solid #ddd; /* Separates list items */
+    color: #333; /* Standard text color */
 }
 
-tr:hover {
+dd:last-of-type {
+    border-bottom: none; /* Removes border for the last item */
+}
+
+dl:hover dd {
     background-color: #e6f7ff; /* Subtle highlight on hover */
+}
+
+dl dd:hover {
     cursor: pointer; /* Pointer cursor for interactivity */
 }
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
-    table {
+    dl {
         font-size: 14px; /* Slightly smaller text for smaller screens */
     }
 
-    th, td {
+    dt {
+        padding: 10px; /* Adjusted padding for smaller screens */
+    }
+
+    dd {
         padding: 10px; /* Adjusted padding for smaller screens */
     }
 }
 
 /* Dark Mode Adjustments */
 @media (prefers-color-scheme: dark) {
-    table {
+    dl {
         background-color: #222; /* Dark background */
         color: #eee; /* Light text */
     }
 
-    th {
+    dt {
         background-color: #005f8a; /* Slightly darker header */
         color: #fff; /* Keeps header text visible */
+        border-bottom: 1px solid #444; /* Adjusts separation color */
     }
 
-    tr:nth-child(even) {
+    dd {
         background-color: #333; /* Alternating dark row color */
+        border-bottom: 1px solid #444; /* Adjusts separation color */
     }
 
-    tr:hover {
+    dl:hover dd {
         background-color: #444; /* Hover state in dark mode */
     }
 }
 
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* Print Adjustments */
+@media print {
+    dl {
+        box-shadow: none; /* Removes shadow for printing */
+        background-color: white; /* White background */
+        color: black; /* Black text for printing */
+    }
+
+    dt, dd {
+        border: none; /* Removes borders for printing */
+    }
+}
 
 
 .site-footer {
