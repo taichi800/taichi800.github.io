@@ -221,193 +221,74 @@ cite {
     outline: 2px solid #FFD700; /* High-contrast focus state */
 }
 
-/* Message Section */
-.message {
-    text-align: center; /* Center-align all text */
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    color: #333;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures clean borders */
+    margin: 20px auto; /* Centers the table */
+    background-color: #f9f9f9; /* Light background for readability */
+    font-size: 16px; /* Readable text size */
+    line-height: 1.4; /* Slightly increased line height for readability */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-.message h2,
-.message h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #4CAF50;
+th, td {
+    text-align: left; /* Aligns text to the left */
+    padding: 12px; /* Padding for text spacing */
+    border: 1px solid #ddd; /* Light border for separation */
 }
 
-.message p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 20px;
+th {
+    background-color: #0077B6; /* Matches your navigation bar */
+    color: #fff; /* High contrast for readability */
+    font-weight: bold; /* Emphasizes headers */
+    text-transform: uppercase; /* Consistent header styling */
 }
 
-/* Specific Adjustments for Disclaimer Section */
-#disclaimer {
-    border: 2px solid #4CAF50;
-    padding: 20px;
-    margin: 20px;
-    background-color: #fff; /* Separate visual tone for disclaimers */
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+tr:nth-child(even) {
+    background-color: #f4f4f4; /* Alternating row colors for clarity */
 }
 
-#disclaimer h2 {
-    text-align: left; /* Left-align disclaimer heading */
-    font-size: 22px;
-    color: #333;
+tr:hover {
+    background-color: #e6f7ff; /* Subtle highlight on hover */
+    cursor: pointer; /* Pointer cursor for interactivity */
 }
 
-#disclaimer p {
-    font-size: 16px;
-    color: #555;
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    table {
+        font-size: 14px; /* Slightly smaller text for smaller screens */
+    }
+
+    th, td {
+        padding: 10px; /* Adjusted padding for smaller screens */
+    }
 }
 
-/* Older CSS CODE */
+/* Dark Mode Adjustments */
+@media (prefers-color-scheme: dark) {
+    table {
+        background-color: #222; /* Dark background */
+        color: #eee; /* Light text */
+    }
 
-.learning-background {
-    background-color: #fff;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin: 2rem auto;
-    max-width: 800px; /* Ensures the text is not too wide, enhancing readability */
-}
+    th {
+        background-color: #005f8a; /* Slightly darker header */
+        color: #fff; /* Keeps header text visible */
+    }
 
-.timeline {
-    border-left: 4px solid #0077B6;
-    border-radius: 4px;
-    margin-left: 20px;
-    padding: 10px;
-}
+    tr:nth-child(even) {
+        background-color: #333; /* Alternating dark row color */
+    }
 
-.timeline-item {
-    position: relative;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    padding-left: 20px;
-}
-
-.timeline-item:last-child {
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
-
-.timeline-item::before {
-    content: '';
-    background-color: #0077B6;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    position: absolute;
-    left: -7px; /* Half of width to align center with the line */
-    top: 0;
-}
-
-.age-range {
-    font-weight: bold;
-    color: #333;
-}
-
-.martial-art {
-    display: block; /* Makes it go to the next line */
-    margin-top: 5px;
+    tr:hover {
+        background-color: #444; /* Hover state in dark mode */
+    }
 }
 
 
-.practice-benefit {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    text-align: center;
-}
 
-.practice-benefit h2 {
-    color: #0077B6;
-    margin-bottom: 1rem;
-}
-
-.practice-benefit img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin-bottom: 1rem;
-}
-
-.practice-benefit p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #666;
-}
-
-
-.style-groups {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.style-groups div {
-    flex: 1 1 200px; /* Adjust width as needed */
-    margin-bottom: 1rem;
-}
-
-.style-groups img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-.focuses h2 {
-    margin-top: 2rem; /* Adds more space above the section heading */
-}
-
-.focuses ul {
-    padding-left: 0; /* Removes padding to align list properly */
-    list-style-type: none; /* Removes bullet points for a cleaner look */
-    columns: 2;  /* Arranges the list in two columns for better readability */
-    max-width: 600px; /* Limits the width for easier reading */
-    margin: auto; /* Centers the list in the section */
-}
-
-.focuses li {
-    margin-bottom: 0.5rem; /* Adds a little space below each list item */
-}
-
-
-/* Key Features Section */
-[aria-label="List of key features"] li {
-    background: #eaf4e9; /* Soft green background for feature items */
-    padding: 10px;
-    border: 1px solid #4CAF50;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    transition: background-color 0.3s;
-}
-
-[aria-label="List of key features"] li:hover {
-    background: #d7ecd5; /* Slightly darker green on hover */
-}
-
-/* Key Features Section */
-[aria-label="List of key features"] li {
-    background: #eaf4e9; /* Soft green background for feature items */
-    padding: 10px;
-    border: 1px solid #4CAF50;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    transition: background-color 0.3s;
-}
-
-[aria-label="List of key features"] li:hover {
-    background: #d7ecd5; /* Slightly darker green on hover */
-}
 .site-footer {
     background-color: #333;
     color: #fff;
