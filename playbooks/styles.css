@@ -221,47 +221,58 @@ cite {
     outline: 2px solid #FFD700; /* High-contrast focus state */
 }
 
-
 /* Styling for Definition Lists (dl, dt, dd) */
 dl {
     width: 100%;
     margin: 20px auto; /* Centers the list */
     padding: 0; /* Removes default padding */
-    background-color: #f9f9f9; /* Light background for readability */
     font-size: 16px; /* Readable text size */
-    line-height: 1.4; /* Comfortable line spacing */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    line-height: 1.6; /* Comfortable line spacing */
     border: 1px solid #ddd; /* Light border for structure */
     border-radius: 8px; /* Rounded corners for a softer look */
+    background-color: #f9f9f9; /* Light background for readability */
 }
 
+/* Category Titles (dt) */
 dt {
     background-color: #0077B6; /* Matches your navigation bar */
     color: #fff; /* High contrast for readability */
     font-weight: bold; /* Emphasizes category titles */
     padding: 12px; /* Adds space around text */
     text-transform: uppercase; /* Consistent header styling */
-    border-bottom: 1px solid #005f8a; /* Adds separation between categories */
+    border-bottom: 2px solid #005f8a; /* Separation between categories */
 }
 
+/* Descriptions (dd) */
 dd {
     margin: 0; /* Removes default margin */
-    padding: 12px; /* Padding for text spacing */
+    padding: 12px 16px; /* Padding for text spacing */
     background-color: #f4f4f4; /* Alternating background for descriptions */
-    border-bottom: 1px solid #ddd; /* Separates list items */
     color: #333; /* Standard text color */
+    border-bottom: 1px solid #ddd; /* Separates list items */
 }
 
+/* Styling for Links */
+dd a {
+    color: #0056b3; /* Accessible blue for links */
+    text-decoration: none; /* Removes underline for cleaner look */
+    font-weight: bold; /* Slight emphasis for links */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+dd a:hover {
+    color: #003d80; /* Darker blue on hover */
+    text-decoration: underline; /* Clear visual feedback for hover */
+}
+
+/* Last Description Item */
 dd:last-of-type {
-    border-bottom: none; /* Removes border for the last item */
+    border-bottom: none; /* Removes bottom border for the last item */
 }
 
-dl:hover dd {
-    background-color: #e6f7ff; /* Subtle highlight on hover */
-}
-
+/* Hover Effects */
 dl dd:hover {
-    cursor: pointer; /* Pointer cursor for interactivity */
+    background-color: #e6f7ff; /* Subtle highlight on hover */
 }
 
 /* Mobile Adjustments */
@@ -270,11 +281,7 @@ dl dd:hover {
         font-size: 14px; /* Slightly smaller text for smaller screens */
     }
 
-    dt {
-        padding: 10px; /* Adjusted padding for smaller screens */
-    }
-
-    dd {
+    dt, dd {
         padding: 10px; /* Adjusted padding for smaller screens */
     }
 }
@@ -287,18 +294,27 @@ dl dd:hover {
     }
 
     dt {
-        background-color: #005f8a; /* Slightly darker header */
-        color: #fff; /* Keeps header text visible */
-        border-bottom: 1px solid #444; /* Adjusts separation color */
+        background-color: #005f8a; /* Darker header background */
+        color: #fff; /* High contrast text */
+        border-bottom: 1px solid #444; /* Adjusted separation color */
     }
 
     dd {
-        background-color: #333; /* Alternating dark row color */
-        border-bottom: 1px solid #444; /* Adjusts separation color */
+        background-color: #333; /* Dark mode row color */
+        color: #ddd; /* Softer light text */
+        border-bottom: 1px solid #444; /* Adjusted separation color */
     }
 
-    dl:hover dd {
-        background-color: #444; /* Hover state in dark mode */
+    dl dd:hover {
+        background-color: #444; /* Subtle hover effect in dark mode */
+    }
+
+    dd a {
+        color: #80cfff; /* Lighter blue for links in dark mode */
+    }
+
+    dd a:hover {
+        color: #50a6db; /* Slightly darker blue on hover */
     }
 }
 
