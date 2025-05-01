@@ -1,0 +1,33 @@
+© 2025 [Your Name]
+This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0). To view a copy of this license, visit:  
+
+https://creativecommons.org/licenses/by-sa/4.0/
+
+This license applies to all components of this work, including but not limited to:
+- English translation, commentary, and analysis
+- Any embedded or accompanying Chinese text (Traditional, Simplified, Seal Script, or other variant forms)
+- Glossaries, indexes, appendices, formatting, typographical structure, and metadata
+- All modes of communication and expression including written, spoken, visual, tactile, auditory, gestural, digital, analog, temporal, and symbolic forms
+- All formats and platforms, present or future, including print, electronic, and archival editions
+- This license applies equally to any part of the work when used separately; no component may be excluded from these terms or misrepresented as unlicensed. 
+
+***You are free to:***
+- Share — copy and redistribute the material in any medium or format  
+- Adapt — remix, transform, and build upon the material for any purpose, including commercial use
+
+Under the following terms:
+- Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. Attribution must clearly credit: *[Your Name]*, and where applicable, link to the original source.
+- ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+- No DRM — You may not impose Digital Rights Management (DRM) or other access control technologies that restrict lawful uses permitted by this license.
+- Machine Use — Use in machine learning datasets or automated content generation tools is permitted only if proper attribution is retained and the output remains under the same ShareAlike terms.
+- No Endorsement — Attribution must not suggest endorsement by the original author unless explicitly stated. It must also not misrepresent the original author as having created or approved any derivative work.
+
+Additional Conditions:
+- This license is irrevocable once granted and is not contingent upon payment, donation, or compensation of any kind.
+- Conversions between Traditional and Simplified Chinese, or among character sets, are considered formatting changes and do not affect the licensing terms.
+- Translations into other languages or adaptations into different sensory or communicative formats do not alter the license and remain bound by the same terms.
+- No additional restrictions may be applied. You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+- Public, archival, and educational uses are explicitly permitted without fee or limitation, provided attribution and license compliance are maintained.
+---
+For any reuse or distribution, you must make clear the license terms of this work. The best way to do this is to link to the CC BY-SA 4.0 license page and indicate whether any changes were made.
+This license governs all current and future formats, reproductions, and communications of this work unless a separate license is explicitly stated by the author.
