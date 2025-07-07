@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>General World Clock</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Check world times quickly.">
+  <meta name="keywords" content="time, clock, world clock, UTC">
+  <meta name="author" content="Time">
+  <meta http-equiv="Content-Language" content="en">
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self';
+    style-src 'self';
+    img-src 'self' https:;
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+    frame-ancestors 'none';
+  ">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
+  <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+  <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="expect-ct" content="max-age=86400, enforce">
+  <meta http-equiv="X-Download-Options" content="noopen">
+
+  <!-- Permissions Policy -->
+  <meta http-equiv="Permissions-Policy" content="
+    geolocation=(),
+    camera=(),
+    microphone=(),
+    fullscreen=(),
+    payment=(),
+    accelerometer=(),
+    ambient-light-sensor=(),
+    gyroscope=(),
+    magnetometer=(),
+    bluetooth=(),
+    nfc=(),
+    autoplay=(),
+    picture-in-picture=(),
+    clipboard-read=(),
+    clipboard-write=(self),
+    gamepad=(),
+    usb=()
+  ">
+  
+   <link rel="stylesheet" href="utcstyles1.css">
+</head>
+<body>
+  <h1>World Time by UTC</h1>
+  <div class="grid" id="timeGrid"></div>
+
+<script src="utcscript1.js"></script>
+
+</body>
+</html>
