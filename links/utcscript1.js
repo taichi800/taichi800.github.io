@@ -23,6 +23,7 @@ const cityZones = {
   'Tehran': 'Asia/Tehran',                   // UTC+3.5
   'Baku': 'Asia/Baku',                       // UTC+4
   'Kabul': 'Asia/Kabul',                     // UTC+4.5
+  'Aqtobe': 'Asia/Aqtobe',                   // UTC+5
   'Calcutta': 'Asia/Calcutta',               // UTC+5.5
   'Kathmandu': 'Asia/Kathmandu',             // UTC+5.75
   'Yangon': 'Asia/Yangon',                   // UTC+6.5
