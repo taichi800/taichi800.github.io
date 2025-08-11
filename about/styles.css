@@ -264,6 +264,150 @@ background:none;
 transform:none
 }
 
+/* Older CSS CODE */
+
+.learning-background {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 2rem auto;
+    max-width: 800px; /* Ensures the text is not too wide, enhancing readability */
+}
+
+.timeline {
+    border-left: 4px solid #0077B6;
+    border-radius: 4px;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.timeline-item::before {
+    content: '';
+    background-color: #0077B6;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    left: -7px; /* Half of width to align center with the line */
+    top: 0;
+}
+
+.age-range {
+    font-weight: bold;
+    color: #333;
+}
+
+.martial-art {
+    display: block; /* Makes it go to the next line */
+    margin-top: 5px;
+}
+
+
+.practice-benefit {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.practice-benefit h2 {
+    color: #0077B6;
+    margin-bottom: 1rem;
+}
+
+.practice-benefit img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.practice-benefit p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+
+.style-groups {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.style-groups div {
+    flex: 1 1 200px; /* Adjust width as needed */
+    margin-bottom: 1rem;
+}
+
+.style-groups img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.focuses h2 {
+    margin-top: 2rem; /* Adds more space above the section heading */
+}
+
+.focuses ul {
+    padding-left: 0; /* Removes padding to align list properly */
+    list-style-type: none; /* Removes bullet points for a cleaner look */
+    columns: 2;  /* Arranges the list in two columns for better readability */
+    max-width: 600px; /* Limits the width for easier reading */
+    margin: auto; /* Centers the list in the section */
+}
+
+.focuses li {
+    margin-bottom: 0.5rem; /* Adds a little space below each list item */
+}
+
+
+/* Key Features Section */
+[aria-label="List of key features"] li {
+    background: #eaf4e9; /* Soft green background for feature items */
+    padding: 10px;
+    border: 1px solid #4CAF50;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+[aria-label="List of key features"] li:hover {
+    background: #d7ecd5; /* Slightly darker green on hover */
+}
+
+/* Key Features Section */
+[aria-label="List of key features"] li {
+    background: #eaf4e9; /* Soft green background for feature items */
+    padding: 10px;
+    border: 1px solid #4CAF50;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+[aria-label="List of key features"] li:hover {
+    background: #d7ecd5; /* Slightly darker green on hover */
+}
+
+
 @media (max-width: 600px) {
 .info-grid {
 grid-template-columns:repeat(auto-fit,minmax(150px,1fr))
@@ -783,148 +927,3 @@ border-radius:50%;
 border:2px solid transparent
 }
 }
-
-/* Older CSS CODE */
-
-.learning-background {
-    background-color: #fff;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin: 2rem auto;
-    max-width: 800px; /* Ensures the text is not too wide, enhancing readability */
-}
-
-.timeline {
-    border-left: 4px solid #0077B6;
-    border-radius: 4px;
-    margin-left: 20px;
-    padding: 10px;
-}
-
-.timeline-item {
-    position: relative;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    padding-left: 20px;
-}
-
-.timeline-item:last-child {
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
-
-.timeline-item::before {
-    content: '';
-    background-color: #0077B6;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    position: absolute;
-    left: -7px; /* Half of width to align center with the line */
-    top: 0;
-}
-
-.age-range {
-    font-weight: bold;
-    color: #333;
-}
-
-.martial-art {
-    display: block; /* Makes it go to the next line */
-    margin-top: 5px;
-}
-
-
-.practice-benefit {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.practice-benefit h2 {
-    color: #0077B6;
-    margin-bottom: 1rem;
-}
-
-.practice-benefit img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin-bottom: 1rem;
-}
-
-.practice-benefit p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #666;
-}
-
-
-.style-groups {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.style-groups div {
-    flex: 1 1 200px; /* Adjust width as needed */
-    margin-bottom: 1rem;
-}
-
-.style-groups img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-.focuses h2 {
-    margin-top: 2rem; /* Adds more space above the section heading */
-}
-
-.focuses ul {
-    padding-left: 0; /* Removes padding to align list properly */
-    list-style-type: none; /* Removes bullet points for a cleaner look */
-    columns: 2;  /* Arranges the list in two columns for better readability */
-    max-width: 600px; /* Limits the width for easier reading */
-    margin: auto; /* Centers the list in the section */
-}
-
-.focuses li {
-    margin-bottom: 0.5rem; /* Adds a little space below each list item */
-}
-
-
-/* Key Features Section */
-[aria-label="List of key features"] li {
-    background: #eaf4e9; /* Soft green background for feature items */
-    padding: 10px;
-    border: 1px solid #4CAF50;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    transition: background-color 0.3s;
-}
-
-[aria-label="List of key features"] li:hover {
-    background: #d7ecd5; /* Slightly darker green on hover */
-}
-
-/* Key Features Section */
-[aria-label="List of key features"] li {
-    background: #eaf4e9; /* Soft green background for feature items */
-    padding: 10px;
-    border: 1px solid #4CAF50;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    transition: background-color 0.3s;
-}
-
-[aria-label="List of key features"] li:hover {
-    background: #d7ecd5; /* Slightly darker green on hover */
-}
-
-
