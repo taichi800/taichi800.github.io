@@ -457,16 +457,6 @@ margin:0 .5rem
 font-weight:bold
 }
 
-blockquote {
-background-color:#222222;
-border-left:5px solid #005f8a;
-color:#CCCCCC
-}
-
-cite {
-color:#009ACD
-}
-
 /* Buttons */
 .button-style,
 .message button,
@@ -520,145 +510,8 @@ color:#009ACD
     margin-bottom: 20px;
 }
 
-#disclaimer {
-background-color:#1E1E1E;
-border:2px solid #005f8a;
-color:#E0E0E0
-}
-
-#disclaimer h2 {
-color:#FFFFFF
-}
-
-#disclaimer p {
-color:#CCCCCC
-}
-
-.info-grid li {
-background-color:#262626;
-color:#FFFFFF
-}
-
-.info-grid span {
-color:#FFD700
-}
-
-.info-grid li:hover {
-background-color:#2B2B2B
-}
-
-.info-grid img {
-border:2px solid #005f8a
-}
-}
-
-/* === Dark Light Mode === */
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #000000; /* Dark background */
-    color: #ffffff; /* Light text */
-  }
-    
-    .legend {
-        background-color: #2a2a2a; /* Dark gray background */
-        border-left-color: #3399FF; /* Bright blue for contrast */
-        color: #f4f4f4; /* Light text color */
-    }
-
-    .legend p {
-        color: inherit; /* Consistent with parent */
-    }
-
-    .legend-item {
-        color: #f4f4f4; /* Matches dark mode text color */
-    }
-
-    .legend-icon {
-        color: #3399FF; /* Bright blue for dark mode */
-    }
-
-    .legend-item.indoor {
-        color: #3399FF; /* Bright blue for indoor in dark mode */
-    }
-
-    .legend-item.outdoor {
-        color: #77dd77; /* Bright green for outdoor in dark mode */
-    }
-
-        .schedule-header {
-        background-color: #2a2a2a; /* Dark gray background */
-        color: #f4f4f4; /* Light text for dark mode */
-    }
-
-        .mobile-view {
-        background-color: #1e1e1e; /* Dark background for mobile view */
-        color: #f4f4f4; /* Light text */
-    }
-
-    .mobile-view .day {
-        background-color: #2a2a2a; /* Darker gray for day blocks */
-        border: 1px solid #444; /* Dark border */
-    }
-
-        .desktop-view {
-        background-color: #1e1e1e; /* Dark table background */
-        color: #f4f4f4; /* Light text */
-    }
-
-    .desktop-view th, .desktop-view td {
-        border: 1px solid #444; /* Dark border for cells */
-        background-color: #2a2a2a; /* Darker gray cells */
-    }
-
-    .desktop-view th {
-        background-color: #333; /* Darker header background */
-        color: #f4f4f4; /* Light header text */
-    }
-
-        .not-running {
-        background-color: #402020; /* Dark red background */
-        color: #FFFFFF; /* Light text */
-        border-left: 5px solid #ff8080; /* Lighter red border */
-    }
-
-    .not-running p {
-    color: #FFFFFF;
-}
 
 
-        .flowshop-header {
-        background-color: #2a2a2a; /* Dark gray background */
-        color: #f4f4f4; /* Light text */
-    }
-
-        .schedule-header a,
-    .flowshop-header a {
-        color: #80aaff; /* Light blue for links in dark mode */
-    }
-
-    .schedule-header a:hover,
-    .flowshop-header a:hover {
-        color: #5590e6; /* Slightly darker blue for hover */
-    }
-
-    
-}
-
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: #ffffff; /* Light background */
-    color: #000000; /* Dark text */
-  }
-
-  button, a {
-    border-color: #000000;
-  }
-
-  button:focus, a:focus {
-    outline: 2px dashed #000000;
-  }
-}
 
 /* === Reduced Motion === */
 @media (prefers-reduced-motion: reduce) {
@@ -1210,4 +1063,74 @@ border:2px solid #005f8a
         display: table;  /* Show desktop view on larger screens */
     }
     
+}
+
+/* === Dark Light Mode === */
+@media (prefers-color-scheme: dark) {
+  /* Base */
+  body { background-color:#000000; color:#ffffff; }
+
+  /* Elements you previously darkened globally */
+  blockquote {
+    background-color:#222222;
+    border-left:5px solid #005f8a;
+    color:#CCCCCC;
+  }
+  cite { color:#009ACD; }
+
+  #disclaimer {
+    background-color:#1E1E1E;
+    border:2px solid #005f8a;
+    color:#E0E0E0;
+  }
+  #disclaimer h2 { color:#FFFFFF; }
+  #disclaimer p  { color:#CCCCCC; }
+
+  .info-grid li { background-color:#262626; color:#FFFFFF; }
+  .info-grid span { color:#FFD700; }
+  .info-grid li:hover { background-color:#2B2B2B; }
+  .info-grid img { border:2px solid #005f8a; }
+
+  /* Calendar and classes */
+  .legend {
+    background-color:#2a2a2a;
+    border-left-color:#3399FF;
+    color:#f4f4f4;
+  }
+  .legend-item { color:#f4f4f4; }
+  .legend-icon  { color:#3399FF; }
+  .legend-item.indoor  { color:#3399FF; }
+  .legend-item.outdoor { color:#77dd77; }
+
+  .schedule-header { background-color:#2a2a2a; color:#f4f4f4; }
+
+  .mobile-view { background-color:#1e1e1e; color:#f4f4f4; }
+  .mobile-view .day {
+    background-color:#2a2a2a;
+    border:1px solid #444;
+  }
+
+  .desktop-view { background-color:#1e1e1e; color:#f4f4f4; }
+  .desktop-view th, .desktop-view td {
+    border:1px solid #444;
+    background-color:#2a2a2a;
+  }
+  .desktop-view th { background-color:#333; color:#f4f4f4; }
+
+  .not-running {
+    background-color:#402020;
+    color:#FFFFFF;
+    border-left:5px solid #ff8080;
+  }
+  .not-running p { color:#FFFFFF; }
+
+  .flowshop-header { background-color:#2a2a2a; color:#f4f4f4; }
+  .schedule-header a, .flowshop-header a { color:#80aaff; }
+  .schedule-header a:hover, .flowshop-header a:hover { color:#5590e6; }
+}
+
+@media (prefers-color-scheme: light) {
+  body { background-color:#ffffff; color:#000000; }
+  button, a { border-color:#000000; }
+  button:focus, a:focus { outline:2px dashed #000000; }
 }
