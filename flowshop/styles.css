@@ -1,4 +1,3 @@
-
 /* Header styling STACKBLOCK00 */
 .site-header {
     display: flex;
@@ -24,8 +23,9 @@
     margin-bottom: 10px; /* Margin below images */
 }
 
-.center-section .images img, .center-section > img {
-    width: 120px;
+.center-section .images img,
+.center-section > img {
+    max-width: 120px;  /* cap at 120px but don't upscale */
     height: auto;
 }
 
