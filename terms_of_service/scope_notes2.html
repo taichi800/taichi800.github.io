@@ -1,0 +1,194 @@
+Here are interaction and publishing strategies that stay low risk under evolving UK or AUS rules because they avoid user-to-user scope, avoid non-essential device storage, and keep third parties out. I include short “why it survives” notes and the exact policy lines to publish. At the end, I give ready-to-paste HTML sections you can add to your scope page.
+A. Strategies that are resilient to new laws
+
+    Mail-to-publish letters
+    Why it survives: nothing auto-publishes, so your site is not user-to-user.
+    Policy line: “Reader emails are curated and edited. Nothing is auto-published. By sending a letter for publication you grant a non-exclusive license to publish edited excerpts. You can withdraw consent and we will remove where reasonably practicable.”
+
+    Periodic digest
+    Why it survives: you publish your own edited summaries at a fixed interval.
+    Policy line: “We publish edited monthly digests of selected correspondence. Sources are email submissions. No live comments.”
+
+    PR-to-publish, manual merge only
+    Why it survives: publication is editorial, not automatic.
+    Policy line: “Proposed edits via pull requests are reviewed and may be rejected without reply. Nothing is auto-published.”
+
+    Read-only Q&A
+    Why it survives: you answer questions you received by email, then publish as static pages.
+    Policy line: “Questions are received by email and answered at our discretion. We edit for clarity and privacy.”
+
+    Local, site-only search
+    Why it survives: search runs entirely on the client against a local index of your own pages, no telemetry, no external calls. This is not a “search service” under the OSA.
+    Policy line: “Any search is limited to this site and runs locally in your browser. No queries are sent off site. No cookies are set.”
+
+    Click-to-load embeds
+    Why it survives: third-party content loads only after an explicit click, and you store no preference.
+    Policy line: “External media loads only after you click. We do not remember the choice. No non-essential storage.”
+
+    RSS or JSON Feed instead of newsletters
+    Why it survives: no emails sent, no mailing lists, no consent management.
+    Policy line: “Updates are available via RSS and JSON Feed. We do not operate email newsletters.”
+
+    Static polls and feedback by email
+    Why it survives: no live widgets, no tracking.
+    Policy line: “Feedback is collected by email. We publish aggregated results in digests.”
+
+    Federated presence without hosting an instance
+    Why it survives: you do not operate a user-to-user service.
+    Policy line: “We do not host a federated server. Any social accounts are off site and subject to their own terms.”
+
+    Mirrored high-risk sections in a separate repo or subdomain
+    Why it survives: you can withdraw or archive a mirror fast if law changes.
+    Policy line: “Some archives may be mirrored. We may remove or relocate a mirror if required by law.”
+
+    No third-party embeds by default, host assets locally
+    Why it survives: eliminates pixels, cookies, and processor disclosures.
+    Policy line: “Fonts, scripts, and media are hosted locally. No third-party widgets by default.”
+
+    Strict device-access rule
+    Why it survives: keeps you out of cookie banner territory.
+    Policy line: “Any device information read during a page view is used only to render that page, not stored and not sent to analytics.”
+
+    Integrity and provenance
+    Why it survives: reduces false-tampering claims and improves trust without adding tracking.
+    Policy line: “We publish SHA-256 checksums for downloads. No tracking is added.”
+
+B. Tiny, production-ready snippets
+
+    Click-to-load embed wrapper, no persistence
+
+
+
+<figure>
+  <button type="button" aria-controls="ext-1">
+    Load external video
+  </button>
+  <div id="ext-1" data-src="https://example.com/embed/xyz" hidden></div>
+  <figcaption>External media loads only after you click.</figcaption>
+</figure>
+<script>
+document.addEventListener('click', e => {
+  if (e.target.matches('button[aria-controls]')) {
+    const id = e.target.getAttribute('aria-controls');
+    const host = document.getElementById(id);
+    if (host && host.hasAttribute('data-src') && host.hidden) {
+      const iframe = document.createElement('iframe');
+      iframe.src = host.getAttribute('data-src');
+      iframe.setAttribute('title', 'External media');
+      iframe.setAttribute('loading', 'lazy');
+      iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+      iframe.setAttribute('allow', 'fullscreen');
+      host.appendChild(iframe);
+      host.hidden = false;
+    }
+  }
+});
+</script>
+
+
+
+
+Local, site-only search with a static index
+Build a small JSON index at deploy time. Load it locally and filter in memory. No network calls beyond your own domain, no cookies, no telemetry.
+
+
+
+
+
+
+
+<input id="q" type="search" placeholder="Search this site">
+<ul id="results" aria-live="polite"></ul>
+<script>
+let idx=[]; // [{t:"Title",u:"/path",k:"keywords text"}]
+fetch('/index.json',{cache:'no-store'}).then(r=>r.json()).then(j=>idx=j);
+document.getElementById('q').addEventListener('input', e=>{
+  const q=e.target.value.trim().toLowerCase();
+  const out=document.getElementById('results'); out.innerHTML='';
+  if(!q) return;
+  const hits=idx.filter(x=>x.k.includes(q)).slice(0,20);
+  for(const h of hits){
+    const li=document.createElement('li');
+    const a=document.createElement('a'); a.href=h.u; a.textContent=h.t;
+    li.appendChild(a); out.appendChild(li);
+  }
+});
+</script>
+
+
+
+
+Generate index.json during your build from page titles plus plain-text content. Store nothing on the device.
+
+    RSS feed starter (Atom works too)
+
+
+
+
+
+    <?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Taichiman Updates</title>
+    <link>https://taichi800.github.io/</link>
+    <description>Static site updates and digests.</description>
+    <lastBuildDate>Tue, 12 Aug 2025 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Letters, August 2025</title>
+      <link>https://taichi800.github.io/letters/2025-08.html</link>
+      <guid>https://taichi800.github.io/letters/2025-08.html</guid>
+      <pubDate>Tue, 12 Aug 2025 00:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>
+
+
+
+
+
+C. Drop-in HTML section to add to your scope page
+
+Paste this into scope_and_changes.html under a new heading.
+
+
+
+
+
+
+<section id="low-risk-strategies" aria-labelledby="low-risk-strategies-h">
+  <h2 id="low-risk-strategies-h">Low-risk interaction strategies we use</h2>
+  <ul>
+    <li>Mail-to-publish letters. Curated, edited, never auto-published.</li>
+    <li>Periodic digests. Edited summaries on a schedule, not live threads.</li>
+    <li>PR-to-publish with manual merge. Editorial control, not automatic.</li>
+    <li>Read-only Q&amp;A. Questions by email, answers published as static pages.</li>
+    <li>Local, site-only search. Runs in your browser, no external calls, no cookies.</li>
+    <li>Click-to-load embeds. External media loads only after you click, no saved preference.</li>
+    <li>RSS and JSON Feed. No mailing lists, no tracking.</li>
+    <li>No third-party widgets by default. Assets are hosted locally.</li>
+    <li>Strict device-access rule. Any device info read is used only to render that page, not stored.</li>
+    <li>Integrity checks. SHA-256 checksums for downloadable files.</li>
+  </ul>
+  <p>These patterns keep this site outside regulated user-to-user scope, avoid non-essential cookies or similar technologies, and minimize third-party processing.</p>
+</section>
+
+
+
+
+D. Operational guardrails to keep everything durable
+
+    Feature gate. Maintain a single boolean flag in code that disables optional scripts.
+
+    Two builds, strict and full. Strict has only HTML and CSS.
+
+    No persistent preferences. If you ever add them, add a real consent flow with equal Accept and Reject and block until choice.
+
+    No third-party embeds by default. If you must embed, use click-to-load.
+
+    Keep the “scope and changes” page current, with a dated changelog.
+
+If you want, I can bundle these into a single PR: a new low-risk-strategies section added to your scope page, a tiny local search index script, and a one-file RSS feed.
+
+
+
+
