@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Service Scope, Non-Features, and Change Triggers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Public statement of current service scope, features not offered, and the exact triggers that require policy updates.">
+  <link rel="canonical" href="https://taichi800.github.io/scope_and_changes">
+  <meta name="color-scheme" content="dark light">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="icon" href="/images10/blem/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/styles.css">
+
+  <!-- Minimal CSP that works via meta on static hosting -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    base-uri 'self';
+    form-action 'self';
+    img-src 'self' data:;
+    object-src 'none';
+    frame-ancestors 'none';
+    script-src 'self';
+    style-src 'self'
+  ">
+
+  <!-- Note: Strong headers like HSTS and X-Content-Type-Options must be sent by the server or CDN, not by HTML meta. -->
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<header>
+  <h1>Service Scope, Non-Features, and Change Triggers</h1>
+  <p><strong>Last updated:</strong> 2025-08-12</p>
+  <nav aria-label="Quick links">
+    <ul>
+      <li><a href="/privacy_policy">Privacy and Device Access</a></li>
+      <li><a href="/terms_of_service">Terms of Service</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+  <section id="current-scope" aria-labelledby="current-scope-h">
+    <h2 id="current-scope-h">Current status</h2>
+    <p>This site is static and content-only. The following statements are true today:</p>
+    <ul>
+      <li>No user accounts and no profiles.</li>
+      <li>No comments, forums, messaging, uploads, or chats.</li>
+      <li>No multi-site search. Any search, if present, is limited to this site only.</li>
+      <li>No advertising, affiliate tracking, or referral pixels.</li>
+      <li>No analytics, session replay, heatmaps, or A/B testing.</li>
+      <li>No non-essential cookies, no localStorage, no IndexedDB, no fingerprinting.</li>
+      <li>No third-party embeds by default. Fonts, scripts, and media are hosted locally.</li>
+      <li>No payments, orders, donations with perks, or subscriptions sold through this site.</li>
+      <li>No adult or age-restricted content.</li>
+      <li>No collection of location, microphone, camera, or biometric data.</li>
+      <li>No push notifications, background sync, or installed PWA behaviors that store data.</li>
+      <li>No public API endpoints that accept user input.</li>
+      <li>Hosting is on GitHub Pages. Operational logs are handled by GitHub under its own policies.</li>
+    </ul>
+    <p><strong>Scope line:</strong> No user-to-user features. No multi-site search. No non-essential cookies or persistent storage.</p>
+  </section>
+
+  <section id="not-offered" aria-labelledby="not-offered-h">
+    <h2 id="not-offered-h">Services not offered</h2>
+    <p>To avoid confusion, each item below is not available on this site:</p>
+    <ul>
+      <li>Account registration.</li>
+      <li>User login.</li>
+      <li>User profiles or avatars.</li>
+      <li>Public comments.</li>
+      <li>Message boards or forums.</li>
+      <li>Direct messages or chats.</li>
+      <li>User uploads of files, images, audio, or video.</li>
+      <li>Live streams or live events.</li>
+      <li>Multi-site or web-wide search.</li>
+      <li>Advertising placements.</li>
+      <li>Affiliate links that track users.</li>
+      <li>Analytics, session replay, or heatmap scripts.</li>
+      <li>Preference cookies or saved settings across visits.</li>
+      <li>Third-party widgets that set tracking cookies.</li>
+      <li>Payments, orders, or subscriptions.</li>
+      <li>Age-restricted or adult areas.</li>
+      <li>Collection of precise location, audio, video, or biometrics.</li>
+      <li>Push notifications, background sync, or offline caching beyond normal browser caching.</li>
+      <li>Public API keys or interactive endpoints.</li>
+    </ul>
+  </section>
+
+  <section id="change-triggers" aria-labelledby="change-triggers-h">
+    <h2 id="change-triggers-h">Change triggers and required actions</h2>
+    <p>If any trigger becomes true in the future, we will update the Privacy and Terms pages <em>before</em> enabling the feature. Each trigger has a matching action list.</p>
+
+    <h3 id="t-accounts">Accounts and identity</h3>
+    <ul>
+      <li>Trigger: add registration, login, usernames, or profiles.</li>
+      <li>Actions: describe data collected, legal bases, retention, deletion; add account rules, acceptable use, suspension and appeals; add age gates if needed.</li>
+    </ul>
+    <ul>
+      <li>Trigger: enable Single Sign-On or federated login.</li>
+      <li>Actions: name providers, list data received, note cross-border transfers; add user responsibility for SSO security.</li>
+    </ul>
+
+    <h3 id="t-ugc">User submissions and interaction</h3>
+    <ul>
+      <li>Trigger: enable comments, forums, chats, messaging, uploads, or automatic PR-to-publish.</li>
+      <li>Actions: add content standards, license grant, moderation powers, takedown policy, reporting routes; describe processing of UGC and abuse reports.</li>
+    </ul>
+    <ul>
+      <li>Trigger: expand mail-to-publish beyond curated, manual publication.</li>
+      <li>Actions: clarify selection, editing, retention, withdrawal; confirm non-exclusive publication license and removal process.</li>
+    </ul>
+
+    <h3 id="t-cookies">Cookies, local storage, and device access</h3>
+    <ul>
+      <li>Trigger: any non-essential storage or access, for example analytics, A/B tests, remembering time zone or preferences.</li>
+      <li>Actions: add a Cookies and similar technologies section with purposes, providers, durations; deploy a consent banner with equal Accept and Reject; block non-essential scripts until consent.</li>
+    </ul>
+    <ul>
+      <li>Trigger: bot-defense or CAPTCHA that fingerprints devices.</li>
+      <li>Actions: describe data points read, provider, retention; justify as strictly necessary or obtain consent.</li>
+    </ul>
+
+    <h3 id="t-analytics">Analytics, measurement, and profiling</h3>
+    <ul>
+      <li>Trigger: enable page analytics, error tracking tied to users, heatmaps, or session replay.</li>
+      <li>Actions: identify processor, IP handling, retention, opt-out; obtain consent if not strictly necessary; consider a DPIA for rich tracking.</li>
+    </ul>
+
+    <h3 id="t-marketing">Marketing and contact</h3>
+    <ul>
+      <li>Trigger: start a newsletter or direct marketing.</li>
+      <li>Actions: capture consent, provide one-click unsubscribe, maintain suppression lists; name provider; state retention and frequency.</li>
+    </ul>
+    <ul>
+      <li>Trigger: add affiliate links or ads.</li>
+      <li>Actions: disclose partners and tracking; obtain consent for any pixels; state independence and labeling rules.</li>
+    </ul>
+
+    <h3 id="t-commerce">Payments, sales, or subscriptions</h3>
+    <ul>
+      <li>Trigger: sell digital or physical goods, accept donations with perks, or run subscriptions.</li>
+      <li>Actions: add prices, taxes, delivery, refund and cooling-off terms; payment processor details; cancellation method; fraud checks and retention.</li>
+    </ul>
+
+    <h3 id="t-sensitive">Sensitive or age-restricted content</h3>
+    <ul>
+      <li>Trigger: host adult or other restricted content.</li>
+      <li>Actions: implement age checks; add eligibility and access restrictions; describe age-assurance data and deletion timelines.</li>
+    </ul>
+
+    <h3 id="t-sensors">Location, biometric, or audio features</h3>
+    <ul>
+      <li>Trigger: collect or infer location, use microphone or camera, accept voice input, or process biometrics.</li>
+      <li>Actions: add explicit categories collected, consent, purpose, retention, on-device versus server processing; add environment safety notes in Terms.</li>
+    </ul>
+
+    <h3 id="t-embeds">Third-party embeds and processors</h3>
+    <ul>
+      <li>Trigger: embed maps, videos, comments, fonts from CDNs, or social widgets.</li>
+      <li>Actions: list each third party and data flow; load only after click or consent; add disclaimers for third-party outages.</li>
+    </ul>
+    <ul>
+      <li>Trigger: add new vendors or move hosting.</li>
+      <li>Actions: update processor list, locations, and transfer mechanisms; update availability language.</li>
+    </ul>
+
+    <h3 id="t-technical">Technical changes that affect data</h3>
+    <ul>
+      <li>Trigger: add service worker, PWA install, background sync, or push notifications.</li>
+      <li>Actions: explain what is cached and for how long; provide instructions to clear; add opt-out.</li>
+    </ul>
+    <ul>
+      <li>Trigger: publish API endpoints or downloadable software.</li>
+      <li>Actions: document API logging, rate limits, license, reverse engineering rules, and any export controls.</li>
+    </ul>
+
+    <h3 id="t-jurisdiction">Legal and jurisdictional scope</h3>
+    <ul>
+      <li>Trigger: target or market to a new country or state with special rules.</li>
+      <li>Actions: add that jurisdiction’s disclosures and rights; update governing law or consumer notices where mandatory.</li>
+    </ul>
+
+    <h3 id="t-security">Security events and policy posture</h3>
+    <ul>
+      <li>Trigger: data breach, significant incident, or new high-risk processing.</li>
+      <li>Actions: add breach notice practices, update security measures, adjust retention; notify authorities where required.</li>
+    </ul>
+
+    <h3 id="t-children">Children and education contexts</h3>
+    <ul>
+      <li>Trigger: direct content to children or run school programs.</li>
+      <li>Actions: add parental consent flows, data minimization, guardian contact route; update eligibility terms.</li>
+    </ul>
+
+    <h3 id="t-ip">Intellectual property policy</h3>
+    <ul>
+      <li>Trigger: accept user works, host fonts, or change licensing of site assets.</li>
+      <li>Actions: update content licenses, attribution requirements, hotlink rules, trademark usage, and DMCA notice procedure.</li>
+    </ul>
+
+    <h3 id="t-business">Business changes</h3>
+    <ul>
+      <li>Trigger: merger, acquisition, or transfer of operation.</li>
+      <li>Actions: add transfer of control clause and user rights at transfer; update successor language in Terms.</li>
+    </ul>
+
+    <h3 id="t-federation">Federated presence or hosting</h3>
+    <ul>
+      <li>Trigger: operate a federated server or enable cross-instance posting.</li>
+      <li>Actions: document moderation logs, federation metadata, and partners; add federation conduct code and defederation rights.</li>
+    </ul>
+
+    <h3 id="t-automation">Automated decision-making</h3>
+    <ul>
+      <li>Trigger: use filters, classifiers, or automated moderation that materially affects publication or visibility.</li>
+      <li>Actions: disclose logic in meaningful terms, significance, consequences, and provide a way to contest.</li>
+    </ul>
+  </section>
+
+  <section id="pre-deploy-gate" aria-labelledby="pre-deploy-gate-h">
+    <h2 id="pre-deploy-gate-h">Pre-deployment gate</h2>
+    <p>Before launching any change, we run this checklist:</p>
+    <ul>
+      <li>Will anything be stored on or read from the device beyond what is strictly necessary for the feature the user asked for.</li>
+      <li>Will any user content be visible to any other user without manual editorial review.</li>
+      <li>Will any new third party receive data from visitors, including via an embed.</li>
+      <li>Will we collect contacts, billing, location, audio, video, biometrics, or identifiers.</li>
+      <li>Will we sell, accept donations with perks, or run subscriptions.</li>
+      <li>Are we targeting a new jurisdiction or an audience such as children.</li>
+      <li>Are we changing where or how we host or process data.</li>
+      <li>Are we changing licenses or IP terms for site content.</li>
+    </ul>
+    <p>If any answer is yes, we update the Privacy and Terms pages before launch and state the effective date.</p>
+  </section>
+
+  <section id="notice" aria-labelledby="notice-h">
+    <h2 id="notice-h">Advance notice and versioning</h2>
+    <p>If we introduce accounts, comments, forums, third-party embeds, analytics, advertising, sales, or any other feature that changes how your information is processed or how you interact with others, we will update the Privacy and Terms pages before launch and set a new effective date. We will not enable non-essential cookies or persistent storage without your explicit choice.</p>
+  </section>
+
+  <section id="changelog" aria-labelledby="changelog-h">
+    <h2 id="changelog-h">Change log</h2>
+    <p>Entries appear here with dates and summaries.</p>
+    <ul>
+      <li><strong>2025-08-12:</strong> Initial publication of scope, non-features, and change triggers.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p><small>Scope line: No user-to-user features. No multi-site search. No non-essential cookies or persistent storage.</small></p>
+  <p><small>Contact: <a href="mailto:taichiman@tutamail.com">taichiman@tutamail.com</a></small></p>
+</footer>
+<!-- No scripts on this page -->
+</body>
+</html>
