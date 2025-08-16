@@ -1,6 +1,6 @@
 /* =================================
-   Taichiman Homepage — styles.css
-   Single file tailored to provided HTML
+   Taichiman Links — styles.css
+   Linear rundown (no grid)
    ================================= */
 
 /* Tokens */
@@ -18,42 +18,37 @@
   --h1-accent: #4CAF50;
   --h2-accent: #005f8a;
 
-  --link: #0056b3;
+  --link: #0b59c7;
   --link-hover: #003d80;
 
   --gold: #FFD700;
   --gold-600: #FFC300;
 
-  --border-light: rgba(0, 0, 0, 0.08);
-  --border-dark: rgba(255, 255, 255, 0.14);
-
-  --card-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  --border: rgba(0, 0, 0, 0.12);
+  --border-dark: rgba(255, 255, 255, 0.2);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #0c0c0c;
     --text: #f2f2f2;
-    --surface: #1a1a1a;
+    --surface: #141414;
 
     --header-bg: #0f0f0f;
     --footer-bg: #0f0f0f;
 
-    /* Tamed brand for dark mode to avoid harsh blue on black */
+    /* Softer brand tones for dark */
     --brand: #0b3d5b;
     --brand-600: #0e567d;
 
-    /* Headings switch to gold for clarity on dark */
+    /* Headings switch to gold for contrast */
     --h1-accent: #FFD700;
     --h2-accent: #FFD700;
 
     --link: #9bd1ff;
     --link-hover: #c9e6ff;
 
-    --border-light: rgba(255, 255, 255, 0.14);
-    --border-dark: rgba(255, 255, 255, 0.18);
-
-    --card-shadow: 0 2px 6px rgba(0,0,0,0.35);
+    --border: rgba(255, 255, 255, 0.12);
   }
 }
 
@@ -66,15 +61,18 @@ html, body { margin: 0; padding: 0; }
 
 body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.5;
+  line-height: 1.55;
   color: var(--text);
   background: var(--bg);
 }
 
 img { max-width: 100%; height: auto; }
 
-a { color: var(--link); text-decoration: none; }
-a:hover { color: var(--link-hover); text-decoration: underline; }
+a {
+  color: var(--link);
+  text-decoration: underline; /* Links page: underline for clarity */
+}
+a:hover { color: var(--link-hover); }
 
 a:focus,
 button:focus,
@@ -84,7 +82,7 @@ label:focus {
   outline-offset: 2px;
 }
 
-/* Optional helper if you replace input[hidden] with this class */
+/* Optional helper if you swap input[hidden] */
 .visually-hidden {
   position: absolute;
   left: -9999px;
@@ -133,7 +131,6 @@ label:focus {
 .accessibility-link:hover,
 .accessibility-link:focus {
   color: var(--gold-600);
-  text-decoration: underline;
 }
 
 /* Navigation */
@@ -174,6 +171,7 @@ nav {
   border: 2px solid transparent;
   margin: 0.25rem auto;
   max-width: 24rem;
+  text-decoration: none; /* nav links are distinct buttons */
 }
 
 .menu li a:hover,
@@ -197,9 +195,9 @@ nav {
   .menu li a { margin: 0.25rem 0.5rem; }
 }
 
-/* Main layout */
+/* Main — linear rundown */
 main {
-  max-width: 80rem;
+  max-width: 72rem;   /* readable width but wide enough for long link rows */
   margin: 0 auto;
   padding: 1rem;
 }
@@ -213,41 +211,31 @@ main > h1 {
 
 main > p {
   max-width: 70ch;
-  margin: 0 auto 1.5rem auto;
+  margin: 0 auto 1.25rem auto;
 }
 
-/* Categories grid and sections */
+/* No grid: one column stack */
 .categories {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  gap: 1rem;
-  margin-top: 1.25rem;
+  display: block;
 }
 
+/* Section blocks stack naturally; compact and readable */
 .relaxation-section {
   background: var(--surface);
-  border: 1px solid var(--border-light);
-  border-radius: 10px;
-  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border);
+  border-left: 6px solid var(--h2-accent); /* visual anchor without grid */
+  border-radius: 8px;
   padding: 1rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  .relaxation-section {
-    border-color: var(--border-dark);
-  }
+  margin: 0 0 1rem 0; /* vertical rhythm */
 }
 
 .relaxation-section h2 {
-  margin: 0 0 0.75rem 0;
+  margin: 0 0 0.5rem 0;
   font-size: 1.25rem;
   color: var(--h2-accent);
-  text-align: left;
 }
 
-.relaxation-section p {
-  margin: 0 0 0.75rem 0;
-}
+.relaxation-section p { margin: 0.25rem 0 0.75rem 0; }
 
 .relaxation-section ul {
   margin: 0.5rem 0 0 1.25rem;
@@ -258,9 +246,10 @@ main > p {
   margin: 0.35rem 0;
 }
 
-/* Ensure long link rows wrap nicely */
+/* Long URLs and titles should wrap, not overflow */
 .relaxation-section li a {
   word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 /* Footer */
@@ -276,7 +265,6 @@ main > p {
   text-decoration: none;
   transition: color 0.25s ease;
 }
-
 .site-footer a:hover,
 .site-footer a:focus { color: var(--gold-600); }
 
@@ -297,4 +285,5 @@ main > p {
   }
   nav, .site-header, .site-footer { display: none; }
   main { max-width: none; }
+  .relaxation-section { border-left: 0; border-radius: 0; }
 }
