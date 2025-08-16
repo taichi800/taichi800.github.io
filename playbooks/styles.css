@@ -32,9 +32,9 @@
     --header-bg: #0f0f0f;
     --footer-bg: #0f0f0f;
 
-    /* Keep brand bar readable on dark without harsh blue vs black */
-    --brand: #0b3d5b;
-    --brand-600: #0e567d;
+    /* Keep brand bar consistent in dark */
+    --brand: #0077B6;
+    --brand-600: #005f8a;
 
     --h1-accent: #FFD700;  /* h1 in dark switches to gold for clarity */
     --dt-accent: #FFD700;  /* dt in dark switches to gold for clarity */
@@ -134,7 +134,7 @@ label:focus {
 
 /* Navigation */
 nav {
-  background-color: var(--brand);
+  background-color: #0077B6;
   padding: 0.625em 1.25em;
 }
 
@@ -143,7 +143,7 @@ nav {
   font-size: 1.875em;
   cursor: pointer;
   text-align: center;
-  padding: 0.5em;
+  padding: 0.625em; /* adjusted to match reference */
   background: #333333;
   color: #ffffff;
   border-radius: 6px;
@@ -154,7 +154,7 @@ nav {
   list-style: none;
   margin: 0;
   padding: 0;
-  background: #333333;
+  background: #333333; /* match reference */
   text-align: center;
   display: none;
 }
@@ -171,16 +171,16 @@ input[type="checkbox"]:checked + .hamburger + .menu {
   padding: 0.625em 1.25em;
   color: #ffffff;
   text-decoration: none;
-  transition: background-color 0.2s ease, color 0.2s ease, border 0.2s ease;
+  transition: background-color 0.5s ease, color 0.5s ease, border 0.5s ease; /* adjusted to 0.5s */
   border-radius: 50%;
   border: 2px solid transparent;
 }
 
 .menu li a:hover,
 .menu li a:focus {
-  background-color: var(--brand-600);
-  color: var(--gold);
-  border: 2px solid var(--gold);
+  background-color: #005f8a; /* use hex to match reference */
+  color: #FFD700;
+  border: 2px solid #FFD700;
   outline: none;
 }
 
@@ -188,7 +188,7 @@ input[type="checkbox"]:checked + .hamburger + .menu {
   .hamburger { display: none; }
   .menu {
     display: flex;
-    background: none;
+    background: #333333; /* keep consistent with reference */
     justify-content: center;
     gap: 0.25rem 0.5rem;
     flex-wrap: wrap;
@@ -426,7 +426,7 @@ cite {
   .hamburger, #menu-toggle { display: none; }
   .menu {
     display: block;
-    background: none;
+    background: #333333; /* enforce consistency */
   }
   .menu li { display: inline-block; }
   .menu li a {
@@ -444,7 +444,7 @@ cite {
   }
 
   .hamburger, #menu-toggle { display: none; }
-  .menu { display: block; background: none; }
+  .menu { display: block; background: #333333; }
   .menu li { display: inline-block; }
   .menu li a {
     padding: 15px;
@@ -461,7 +461,7 @@ cite {
   }
 
   .hamburger, #menu-toggle { display: none; }
-  .menu { display: block; background: none; }
+  .menu { display: block; background: #333333; } /* was none */
   .menu li { display: inline-block; }
   .menu li a {
     padding: 15px;
@@ -478,7 +478,7 @@ cite {
   }
 
   .hamburger, #menu-toggle { display: none; }
-  .menu { display: block; background: none; }
+  .menu { display: block; background: #333333; } /* was none */
   .menu li { display: inline-block; }
   .menu li a {
     padding: 15px;
@@ -495,7 +495,7 @@ cite {
   }
 
   .hamburger, #menu-toggle { display: none; }
-  .menu { display: block; background: none; }
+  .menu { display: block; background: #333333; } /* was none */
   .menu li { display: inline-block; }
   .menu li a {
     padding: 15px;
@@ -512,7 +512,7 @@ cite {
   }
 
   .hamburger, #menu-toggle { display: none; }
-  .menu { display: block; background: none; }
+  .menu { display: block; background: #333333; } /* was none */
   .menu li { display: inline-block; }
   .menu li a {
     padding: 15px;
