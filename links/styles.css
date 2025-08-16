@@ -287,3 +287,16 @@ main > p {
   main { max-width: none; }
   .relaxation-section { border-left: 0; border-radius: 0; }
 }
+
+/* Force nav bar and menu interior to the same blue at all sizes */
+nav { background-color: #0077B6; }
+.menu { background-color: #0077B6; }
+
+/* Ensure desktop breakpoints do not reintroduce another background */
+@media (min-width: 48.063em) { .menu { background-color: #0077B6; } }
+@media (min-width: 64.063em) { .menu { background-color: #0077B6; } }
+@media (min-width: 80.063em) { .menu { background-color: #0077B6; } }
+@media (min-width: 90.063em) { .menu { background-color: #0077B6; } }
+@media (min-width: 120.063em) { .menu { background-color: #0077B6; } }
+@media (min-width: 160.063em) { .menu { background-color: #0077B6; } }
+
