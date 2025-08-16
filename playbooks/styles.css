@@ -1,9 +1,12 @@
-/* =========================
-   Base and theme tokens
-   ========================= */
+/* =================================
+   Taichi For Everyone — styles.css
+   Single file tailored to your HTML
+   ================================= */
+
+/* Tokens */
 :root {
   --bg: #f4f4f4;
-  --text: #333333;
+  --text: #222222;
   --surface: #ffffff;
 
   --header-bg: #121212;
@@ -12,39 +15,49 @@
   --brand: #0077B6;
   --brand-600: #005f8a;
 
-  --accent: #4CAF50;
+  --h1-accent: #4CAF50;   /* h1 in light */
+  --dt-accent: #005f8a;   /* dt in light */
+
+  --link: #0056b3;
+  --link-hover: #003d80;
+
   --gold: #FFD700;
   --gold-600: #FFC300;
 
   --border-light: rgba(0, 0, 0, 0.08);
-  --border-dark: rgba(255, 255, 255, 0.12);
+  --border-dark: rgba(255, 255, 255, 0.14);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #000000;
-    --text: #ffffff;
-    --surface: #1e1e1e;
+    --bg: #0c0c0c;
+    --text: #f2f2f2;
+    --surface: #1a1a1a;
 
-    /* Keep header and footer dark as designed */
-    --border-light: rgba(255, 255, 255, 0.12);
+    --header-bg: #0f0f0f;
+    --footer-bg: #0f0f0f;
+
+    /* Keep brand bar readable on dark without harsh blue vs black */
+    --brand: #0b3d5b;
+    --brand-600: #0e567d;
+
+    --h1-accent: #FFD700;  /* h1 in dark switches to gold for clarity */
+    --dt-accent: #FFD700;  /* dt in dark switches to gold for clarity */
+
+    --link: #9bd1ff;
+    --link-hover: #bfe3ff;
+
+    --border-light: rgba(255, 255, 255, 0.14);
+    --border-dark: rgba(255, 255, 255, 0.18);
   }
 }
 
-/* =========================
-   Reset and base elements
-   ========================= */
+/* Base */
 *,
 *::before,
-*::after {
-  box-sizing: border-box;
-}
+*::after { box-sizing: border-box; }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
+html, body { margin: 0; padding: 0; }
 
 body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -53,13 +66,8 @@ body {
   background: var(--bg);
 }
 
-/* Make images responsive by default */
-img {
-  max-width: 100%;
-  height: auto;
-}
+img { max-width: 100%; height: auto; }
 
-/* High visibility focus outlines */
 a:focus,
 button:focus,
 input:focus,
@@ -68,18 +76,15 @@ label:focus {
   outline-offset: 2px;
 }
 
-/* Helper for visually hiding the checkbox while keeping it interactive if you add the class */
+/* Optional helper if you replace input[hidden] with this class */
 .visually-hidden {
   position: absolute;
   left: -9999px;
-  width: 1px;
-  height: 1px;
+  width: 1px; height: 1px;
   overflow: hidden;
 }
 
-/* =========================
-   Header
-   ========================= */
+/* Header */
 .site-header {
   display: flex;
   justify-content: space-between;
@@ -103,17 +108,12 @@ label:focus {
   padding: 5px;
 }
 
-/* On wider screens align edges */
 @media (min-width: 48em) {
   .left-section { text-align: left; }
   .right-section { text-align: right; }
 }
 
-/* Header icon control */
-#taijitu {
-  width: 44px;
-  height: 44px;
-}
+#taijitu { width: 44px; height: 44px; }
 
 .right-section a:first-child {
   display: inline-block;
@@ -123,10 +123,10 @@ label:focus {
 
 .accessibility-link {
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 700;
   color: var(--gold);
   text-decoration: none;
-  transition: color 0.3s ease, background-color 0.3s ease;
+  transition: color 0.25s ease, background-color 0.25s ease;
   background-color: transparent;
   border-radius: 4px;
 }
@@ -137,15 +137,12 @@ label:focus {
   text-decoration: underline;
 }
 
-/* =========================
-   Navigation
-   ========================= */
+/* Navigation */
 nav {
   background-color: var(--brand);
   padding: 0.625em 1.25em;
 }
 
-/* Hamburger label */
 .hamburger {
   display: block;
   font-size: 1.875em;
@@ -158,29 +155,24 @@ nav {
   user-select: none;
 }
 
-/* Menu list */
 .menu {
   list-style: none;
   margin: 0;
   padding: 0;
   background: #333333;
   text-align: center;
-  display: none; /* default hidden on small screens */
+  display: none;
 }
 
-/* Toggle open when checkbox is checked */
-#menu-toggle:checked + .hamburger + .menu {
-  display: block;
-}
+#menu-toggle:checked + .hamburger + .menu { display: block; }
 
-/* Menu links */
 .menu li a {
   display: block;
   padding: 0.625em 1.25em;
   color: #ffffff;
   text-decoration: none;
-  transition: background-color 0.25s ease, color 0.25s ease, border 0.25s ease;
-  border-radius: 9999px; /* pill shape to avoid clipping text */
+  transition: background-color 0.2s ease, color 0.2s ease, border 0.2s ease;
+  border-radius: 9999px;
   border: 2px solid transparent;
   margin: 0.25rem auto;
   max-width: 24rem;
@@ -191,10 +183,9 @@ nav {
   background-color: var(--brand-600);
   color: var(--gold);
   border: 2px solid var(--gold);
-  outline: none; /* outline already replaced by border for focus */
+  outline: none;
 }
 
-/* Desktop navigation */
 @media (min-width: 48em) {
   .hamburger { display: none; }
   .menu {
@@ -205,14 +196,10 @@ nav {
     flex-wrap: wrap;
   }
   .menu li { display: inline-block; }
-  .menu li a {
-    margin: 0.25rem 0.5rem;
-  }
+  .menu li a { margin: 0.25rem 0.5rem; }
 }
 
-/* =========================
-   Main content
-   ========================= */
+/* Main */
 main {
   max-width: 70ch;
   margin: 0 auto;
@@ -220,17 +207,15 @@ main {
 }
 
 h1 {
-  font-size: 1.875rem; /* 30px-ish */
-  color: var(--accent);
+  font-size: 1.875rem;
+  color: var(--h1-accent);
   margin: 1.25rem 0 0.5rem 0;
   text-align: center;
 }
 
-.about-general p {
-  margin: 0.5rem 0 1.5rem 0;
-}
+.about-general p { margin: 0.5rem 0 1.5rem 0; }
 
-/* Definition list formatting for Playbooks */
+/* Definition list for Playbooks */
 main dl {
   max-width: 70ch;
   margin: 2rem auto;
@@ -241,7 +226,7 @@ main dt {
   font-weight: 700;
   font-size: 1.125rem;
   margin-top: 1.25rem;
-  color: var(--brand-600);
+  color: var(--dt-accent);
 }
 
 main dd {
@@ -251,26 +236,19 @@ main dd {
 }
 
 @media (prefers-color-scheme: dark) {
-  main dd {
-    border-bottom: 1px solid var(--border-dark);
-  }
+  main dd { border-bottom: 1px solid var(--border-dark); }
 }
 
 /* Links in main */
 main a {
-  color: #0056b3;
+  color: var(--link);
   text-decoration: none;
   font-weight: 700;
 }
 
-main a:hover {
-  text-decoration: underline;
-  color: #003d80;
-}
+main a:hover { text-decoration: underline; color: var(--link-hover); }
 
-/* =========================
-   Footer
-   ========================= */
+/* Footer */
 .site-footer {
   background-color: var(--footer-bg);
   color: #ffffff;
@@ -281,17 +259,13 @@ main a:hover {
 .site-footer a {
   color: var(--gold);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.25s ease;
 }
 
 .site-footer a:hover,
-.site-footer a:focus {
-  color: var(--gold-600);
-}
+.site-footer a:focus { color: var(--gold-600); }
 
-/* =========================
-   Preferences and prints
-   ========================= */
+/* Motion and print preferences */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
