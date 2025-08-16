@@ -55,8 +55,8 @@
 html, body { margin: 0; padding: 0; }
 
 body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.5;
+  font-family: monospace, sans-serif;   /* match requested scheme */
+  line-height: 1.2;                     /* match requested hierarchy */
   color: var(--text);
   background: var(--bg);
 }
@@ -161,16 +161,15 @@ nav {
 
 #menu-toggle:checked + .hamburger + .menu { display: block; }
 
+/* match original visual style: circular buttons */
 .menu li a {
-  display: block;
+  display: inline-block;
   padding: 0.625em 1.25em;
   color: #ffffff;
   text-decoration: none;
   transition: background-color 0.2s ease, color 0.2s ease, border 0.2s ease;
-  border-radius: 9999px;
+  border-radius: 50%;
   border: 2px solid transparent;
-  margin: 0.25rem auto;
-  max-width: 24rem;
 }
 
 .menu li a:hover,
@@ -208,7 +207,15 @@ h1 {
   text-align: center;
 }
 
-/* Give the intro block a left accent for quick scanning */
+/* optional h2 to align hierarchy with your scheme */
+main h2 {
+  font-size: 1.75rem;
+  color: var(--dt-accent);
+  margin: 1.25rem 0 0.5rem 0;
+  text-align: center;
+}
+
+/* Intro block with left accent */
 .about-general {
   background: var(--surface);
   border: 1px solid var(--border-light);
@@ -223,33 +230,32 @@ h1 {
 
 .about-general p { margin: 0.25rem 0 0 0; }
 
-/* Definition list for Playbooks with left-side guides */
+/* Definition list with left-side guides */
 main dl {
   max-width: 70ch;
   margin: 2rem auto;
   padding: 0 0.5rem;
-  border-left: 6px solid var(--dt-accent);   /* main visual guide */
+  border-left: 6px solid var(--dt-accent);
 }
 
 /* Section headers within the DL */
 main dt {
   font-weight: 700;
   font-size: 1.125rem;
-  margin: 1.25rem 0 0.35rem 0.75rem;         /* indent past the left guide */
+  margin: 1.25rem 0 0.35rem 0.75rem;  /* indent past the left guide */
   color: var(--dt-accent);
 }
 
 /* Items under each section */
 main dd {
-  margin: 0 0 0 0.75rem;                     /* align with dt text edge */
-  padding: 0.5rem 0 0.5rem 0.75rem;          /* inner padding for readability */
-  border-left: 3px solid var(--border-light);/* thinner inner guide */
+  margin: 0 0 0 0.75rem;               /* align with dt text edge */
+  padding: 0.5rem 0 0.5rem 0.75rem;    /* inner padding for readability */
+  border-left: 3px solid var(--border-light);
   border-bottom: 1px dashed var(--border-light);
   background: transparent;
-  border-radius: 0 6px 6px 0;                /* soften the inner edge */
+  border-radius: 0 6px 6px 0;
 }
 
-/* Improve contrast in dark mode */
 @media (prefers-color-scheme: dark) {
   main dd {
     border-left: 3px solid var(--border-dark);
@@ -263,8 +269,24 @@ main a {
   text-decoration: none;
   font-weight: 700;
 }
-
 main a:hover { text-decoration: underline; color: var(--link-hover); }
+
+/* Blockquote and citation to match scheme */
+blockquote {
+  font-style: italic;
+  background: #F9F9F9;
+  border-left: 5px solid var(--dt-accent);
+  margin: 20px;
+  padding: 10px 20px;
+  color: #4D4D4D;
+}
+cite {
+  display: block;
+  text-align: right;
+  color: var(--dt-accent);
+  font-style: normal;
+  margin-top: 10px;
+}
 
 /* Footer */
 .site-footer {
