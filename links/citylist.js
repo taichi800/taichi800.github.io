@@ -1,4 +1,4 @@
-// ===== 1) Editable region order =====
+/* ===== 1) Region order ===== */
 const regionOrder = [
   'Canada/USA',
   'Mexico, Central America and Caribbean',
@@ -18,7 +18,7 @@ const regionOrder = [
   'Other'
 ];
 
-// ===== 2) Cities -> IANA time zones =====
+/* ===== 2) Cities -> IANA time zones (your list) ===== */
 const cityZones = {
   'Honolulu': 'Pacific/Honolulu',
   'Papeete': 'Pacific/Tahiti',
@@ -248,16 +248,27 @@ const cityZones = {
   'Andaman Islands': 'Asia/Kolkata'
 };
 
-// ===== 3) Optional input aliases (safe to leave empty) =====
-const inputAliases = {};
+/* ===== 3) Known fallbacks for engines with older tzdata ===== */
+const tzFallbacks = {
+  'Europe/Kyiv': 'Europe/Kiev',
+  'America/Nuuk': 'America/Godthab',
+  'Asia/Harbin': 'Asia/Shanghai',
+  'Asia/Chongqing': 'Asia/Shanghai',
+  'Pacific/Chuuk': 'Pacific/Truk',
+  'Pacific/Kanton': 'Pacific/Enderbury',
+  // Rare extras
+  'Pacific/Johnston': 'Pacific/Honolulu',
+  'Pacific/Midway': 'Pacific/Pago_Pago',
+  'Asia/Ho_Chi_Minh': 'Asia/Saigon'
+};
 
-// ===== 4) Manual offsets only for non-IANA or historical =====
+/* ===== 4) Manual offsets kept only for non-IANA/historical ===== */
 const manualOffsets = {
   'Namibia (historical)': 1.5,
   'Norfolk Island': 10.75
 };
 
-// ===== 5) Region membership sets =====
+/* ===== 5) Region membership sets (unchanged from your version) ===== */
 const usCanada = new Set([
   'Honolulu','Anchorage','Los Angeles','Chicago','New York','Seattle','Portland','Sacramento',
   'Phoenix','Las Vegas','Denver','Santa Fe','Dallas','Fort Worth','El Paso','Oklahoma City','Omaha',
@@ -265,7 +276,6 @@ const usCanada = new Set([
   'Cleveland','Richmond','Washington, DC','Buffalo','Philadelphia','Boston',
   'Vancouver','Halifax','St. John\'s','Toronto','Montreal','Quebec City','Edmonton','Happy Valley-Goose Bay'
 ]);
-
 const mexicoCACarib = new Set(['Mexico City','Panama City','Kingston','Bahamas']);
 const southAmerica = new Set(['Lima','Santiago','Buenos Aires','La Paz','Rio de Janeiro','Georgetown (Guyana)','Quito','Bogotá','Medellín']);
 const atlanticIslands = new Set(['Azores','Madeira','Canary Islands','Cape Verde','Saint Helena','Ascension','Bermuda','St. Pierre & Miquelon','Reykjavik','Nuuk']);
@@ -286,7 +296,7 @@ const pacificIslands = new Set([
 const indianOcean = new Set(['Christmas Island','Cocos (Keeling) Islands','Diego Garcia','Seychelles','Mauritius','Réunion','Comoros']);
 const middleEastCaucasus = new Set(['Baghdad','Tehran','Dubai','Tel Aviv','Kuwait City','Yerevan','Baku','Aleppo']);
 
-// ===== 6) Region classifier and comparator =====
+/* ===== 6) Region classifier and comparator ===== */
 function getRegion(city) {
   if (usCanada.has(city)) return 'Canada/USA';
   if (mexicoCACarib.has(city)) return 'Mexico, Central America and Caribbean';
@@ -313,28 +323,37 @@ function getRegion(city) {
   if (tz.startsWith('America/')) return 'Mexico, Central America and Caribbean';
   return 'Other';
 }
-
 function regionCompare(a, b) {
-  const ra = getRegion(a);
-  const rb = getRegion(b);
-  const ia = regionOrder.indexOf(ra);
-  const ib = regionOrder.indexOf(rb);
+  const ia = regionOrder.indexOf(getRegion(a));
+  const ib = regionOrder.indexOf(getRegion(b));
   if (ia !== ib) return ia - ib;
   return a.localeCompare(b);
 }
 
-// ===== 7) Optional input normalizer =====
-function canonicalize(city) {
-  if (!city) return null;
-  const key = city.trim().toLowerCase();
-  const canon = inputAliases[key] || null;
-  return canon || (cityZones[city] ? city : null);
+/* ===== 7) Safe time zone resolver ===== */
+const warnedTZ = new Set();
+function hasTZ(tz) {
+  try { new Intl.DateTimeFormat('en-US', { timeZone: tz }); return true; }
+  catch { return false; }
+}
+function resolveTZ(tz) {
+  if (!tz) return null;
+  if (hasTZ(tz)) return tz;
+  const alt = tzFallbacks[tz];
+  if (alt && hasTZ(alt)) return alt;
+  if (!warnedTZ.has(tz)) {
+    console.warn(`[world-clock] Unsupported tz "${tz}"${alt ? `, tried "${alt}"` : ''}.`);
+    warnedTZ.add(tz);
+  }
+  return null;
 }
 
-// ===== 8) Time lookup =====
+/* ===== 8) Time lookup with guard ===== */
 function getTimeForCity(city) {
+  const tzRaw = cityZones[city];
+  const tz = resolveTZ(tzRaw);
   const now = new Date();
-  const tz = cityZones[city];
+
   if (tz) {
     return new Intl.DateTimeFormat('en-US', {
       timeZone: tz,
@@ -345,13 +364,13 @@ function getTimeForCity(city) {
   }
   const offset = manualOffsets[city];
   if (offset !== undefined) {
-    const t = new Date(now.getTime() + offset * 60 * 60 * 1000);
+    const t = new Date(now.getTime() + offset * 3600 * 1000);
     return t.toISOString().substring(11, 16);
   }
   return '--:--';
 }
 
-// ===== 9) Render =====
+/* ===== 9) Render ===== */
 function updateCityList() {
   const list = document.getElementById('cityList');
   if (!list) {
@@ -363,7 +382,11 @@ function updateCityList() {
   Object.keys(cityZones)
     .sort(regionCompare)
     .forEach(city => {
-      const time = getTimeForCity(city);
+      // do not let a single failure stop the loop
+      let time = '--:--';
+      try { time = getTimeForCity(city); } catch (e) {
+        console.error(`Failed to format ${city}:`, e);
+      }
       const div = document.createElement('div');
       div.className = 'city';
       div.innerHTML = `<span>${city}</span><span class="time">${time}</span>`;
@@ -371,12 +394,11 @@ function updateCityList() {
     });
 }
 
-// ===== 10) Init =====
+/* ===== 10) Init ===== */
 function initClockList() {
   updateCityList();
   setInterval(updateCityList, 1000);
 }
-
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initClockList);
 } else {
