@@ -1,4 +1,4 @@
-// Editable region order
+// ===== 1) Editable region order =====
 const regionOrder = [
   'Canada/USA',
   'Mexico, Central America and Caribbean',
@@ -18,9 +18,8 @@ const regionOrder = [
   'Other'
 ];
 
-// Canonical display names -> IANA time zones
+// ===== 2) Cities -> IANA time zones =====
 const cityZones = {
-  // --- Existing baseline ---
   'Honolulu': 'Pacific/Honolulu',
   'Papeete': 'Pacific/Tahiti',
   'Anchorage': 'America/Anchorage',
@@ -65,7 +64,6 @@ const cityZones = {
   'Auckland': 'Pacific/Auckland',
   'Namibia (historical)': null,
 
-  // --- Previously added cities ---
   'Busan': 'Asia/Seoul',
   'Andong': 'Asia/Seoul',
   'Vladivostok': 'Asia/Vladivostok',
@@ -217,7 +215,6 @@ const cityZones = {
   'Edmonton': 'America/Edmonton',
   'Happy Valley-Goose Bay': 'America/Goose_Bay',
 
-  // --- New additions from latest list ---
   'Apia (Samoa)': 'Pacific/Apia',
   'Nouméa (New Caledonia)': 'Pacific/Noumea',
   'Nendö (Solomon Islands)': 'Pacific/Guadalcanal',
@@ -251,16 +248,82 @@ const cityZones = {
   'Andaman Islands': 'Asia/Kolkata'
 };
 
-// 1) Define aliases even if you do not use them
-const inputAliases = {};  // prevents ReferenceError in canonicalize()
+// ===== 3) Optional input aliases (safe to leave empty) =====
+const inputAliases = {};
 
-// 2) Keep your manual offsets (unchanged)
+// ===== 4) Manual offsets only for non-IANA or historical =====
 const manualOffsets = {
   'Namibia (historical)': 1.5,
   'Norfolk Island': 10.75
 };
 
-// 3) Leave canonicalize() in place, now safe
+// ===== 5) Region membership sets =====
+const usCanada = new Set([
+  'Honolulu','Anchorage','Los Angeles','Chicago','New York','Seattle','Portland','Sacramento',
+  'Phoenix','Las Vegas','Denver','Santa Fe','Dallas','Fort Worth','El Paso','Oklahoma City','Omaha',
+  'Bismarck','Minneapolis','Madison','Detroit','New Orleans','Nashville','Atlanta','Miami',
+  'Cleveland','Richmond','Washington, DC','Buffalo','Philadelphia','Boston',
+  'Vancouver','Halifax','St. John\'s','Toronto','Montreal','Quebec City','Edmonton','Happy Valley-Goose Bay'
+]);
+
+const mexicoCACarib = new Set(['Mexico City','Panama City','Kingston','Bahamas']);
+const southAmerica = new Set(['Lima','Santiago','Buenos Aires','La Paz','Rio de Janeiro','Georgetown (Guyana)','Quito','Bogotá','Medellín']);
+const atlanticIslands = new Set(['Azores','Madeira','Canary Islands','Cape Verde','Saint Helena','Ascension','Bermuda','St. Pierre & Miquelon','Reykjavik','Nuuk']);
+const russia = new Set(['Moscow','Vladivostok','Irkutsk','Omsk','Petropavlovsk-Kamchatsky','Kyzyl (Tuva)','Kazan']);
+const centralAsia = new Set(['Tashkent','Khiva','Bukhara','Dihua (Urumqi)','Hotan','Kashgar']);
+const southAsia = new Set(['Delhi','Darjeeling','Madras (Chennai)','Thiruvananthapuram','Kochi','Mumbai','Hyderabad','Bhopal','Kathmandu','Andaman Islands','Imphal','Lahore','Punakha','Maldives']);
+const southeastAsia = new Set(['Bangkok','Yangon','Mandalay','Rangoon','Phnom Penh','Hanoi','Kuala Lumpur','Singapore','Jakarta','Makassar','Manila','Port Moresby','Madang']);
+const eastAsia = new Set([
+  'Beijing','Harbin','Nanjing','Shanghai','Taipei','Shenzhen','Guangzhou','Hong Kong','Xi\'an','Changsha','Chongqing','Lanzhou','Lhasa',
+  'Busan','Andong','Seoul','Tokyo','Sapporo','Kyoto','Kagoshima','Naha','Iwo Jima'
+]);
+const ausNz = new Set(['Sydney','Perth','Darwin','Auckland']);
+const pacificIslands = new Set([
+  'Papeete','Apia (Samoa)','Nouméa (New Caledonia)','Nendö (Solomon Islands)','Honiara (Solomon Islands)',
+  'Johnston Atoll','Midway Atoll','Wake Island','Kanton (Phoenix Islands)','Kiritimati (Line Islands)',
+  'Nauru','Palau','Chuuk (Caroline Islands)','Saipan (Mariana Islands)','Guam','Minamitorishima','Easter Island','Galápagos','Suva'
+]);
+const indianOcean = new Set(['Christmas Island','Cocos (Keeling) Islands','Diego Garcia','Seychelles','Mauritius','Réunion','Comoros']);
+const middleEastCaucasus = new Set(['Baghdad','Tehran','Dubai','Tel Aviv','Kuwait City','Yerevan','Baku','Aleppo']);
+
+// ===== 6) Region classifier and comparator =====
+function getRegion(city) {
+  if (usCanada.has(city)) return 'Canada/USA';
+  if (mexicoCACarib.has(city)) return 'Mexico, Central America and Caribbean';
+  if (southAmerica.has(city)) return 'South America';
+  if (atlanticIslands.has(city)) return 'Atlantic Islands';
+  if (russia.has(city)) return 'Russia';
+  if (centralAsia.has(city)) return 'Central Asia';
+  if (southAsia.has(city)) return 'South Asia';
+  if (southeastAsia.has(city)) return 'Southeast Asia';
+  if (eastAsia.has(city)) return 'East Asia';
+  if (ausNz.has(city)) return 'Australia and New Zealand';
+  if (pacificIslands.has(city)) return 'Pacific Islands';
+  if (indianOcean.has(city)) return 'Indian Ocean';
+  if (middleEastCaucasus.has(city)) return 'Middle East and Caucasus';
+
+  const tz = cityZones[city] || '';
+  if (tz.startsWith('Europe/')) return 'Europe';
+  if (tz.startsWith('Africa/')) return 'Africa';
+  if (tz.startsWith('Asia/')) return 'East Asia';
+  if (tz.startsWith('Australia/')) return 'Australia and New Zealand';
+  if (tz.startsWith('Pacific/')) return 'Pacific Islands';
+  if (tz.startsWith('Indian/')) return 'Indian Ocean';
+  if (tz.startsWith('Atlantic/')) return 'Atlantic Islands';
+  if (tz.startsWith('America/')) return 'Mexico, Central America and Caribbean';
+  return 'Other';
+}
+
+function regionCompare(a, b) {
+  const ra = getRegion(a);
+  const rb = getRegion(b);
+  const ia = regionOrder.indexOf(ra);
+  const ib = regionOrder.indexOf(rb);
+  if (ia !== ib) return ia - ib;
+  return a.localeCompare(b);
+}
+
+// ===== 7) Optional input normalizer =====
 function canonicalize(city) {
   if (!city) return null;
   const key = city.trim().toLowerCase();
@@ -268,7 +331,7 @@ function canonicalize(city) {
   return canon || (cityZones[city] ? city : null);
 }
 
-// 4) Time lookup (unchanged)
+// ===== 8) Time lookup =====
 function getTimeForCity(city) {
   const now = new Date();
   const tz = cityZones[city];
@@ -288,7 +351,7 @@ function getTimeForCity(city) {
   return '--:--';
 }
 
-// 5) Render with a small guard
+// ===== 9) Render =====
 function updateCityList() {
   const list = document.getElementById('cityList');
   if (!list) {
@@ -298,8 +361,7 @@ function updateCityList() {
   list.innerHTML = '';
 
   Object.keys(cityZones)
-    // if you implemented regionCompare, use it; otherwise use localeCompare
-    .sort(typeof regionCompare === 'function' ? regionCompare : (a, b) => a.localeCompare(b))
+    .sort(regionCompare)
     .forEach(city => {
       const time = getTimeForCity(city);
       const div = document.createElement('div');
@@ -309,7 +371,7 @@ function updateCityList() {
     });
 }
 
-// 6) Initialize after DOM is ready
+// ===== 10) Init =====
 function initClockList() {
   updateCityList();
   setInterval(updateCityList, 1000);
