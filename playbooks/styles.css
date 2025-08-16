@@ -159,7 +159,11 @@ nav {
   display: none;
 }
 
-#menu-toggle:checked + .hamburger + .menu { display: block; }
+/* Support both explicit id and generic checkbox structure */
+#menu-toggle:checked + .hamburger + .menu,
+input[type="checkbox"]:checked + .hamburger + .menu {
+  display: block;
+}
 
 /* match original visual style: circular buttons */
 .menu li a {
@@ -288,6 +292,15 @@ cite {
   margin-top: 10px;
 }
 
+@media (prefers-color-scheme: dark) {
+  blockquote {
+    background-color: #222222;
+    color: #CCCCCC;
+    border-left: 5px solid var(--dt-accent);
+  }
+  cite { color: var(--dt-accent); }
+}
+
 /* Footer */
 .site-footer {
   background-color: var(--footer-bg);
@@ -325,4 +338,185 @@ cite {
   /* keep left guides in print for navigation */
   main dl { border-left-color: #000; }
   main dd { border-left-color: #000; border-bottom-color: #000; }
+}
+
+/* Light scheme explicit focus parity with prior sheets */
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  button, a { border-color: #000000; }
+  button:focus, a:focus { outline: 2px dashed #000000; }
+}
+
+/* Resolution strategy to match prior layout. Keep granular steps. */
+@media (max-width: 2em) {
+  body {
+    font-size: .625rem;
+    max-width: 2rem;
+    padding: 0 .5rem;
+  }
+}
+
+@media (min-width: 2.063em) and (max-width: 5.25em) {
+  body {
+    font-size: .75rem;
+    max-width: 4rem;
+    padding: 0 .5rem;
+  }
+}
+
+@media (min-width: 5.313em) and (max-width: 15em) {
+  body {
+    font-size: .8125rem;
+    max-width: 14rem;
+    padding: 0 .75rem;
+  }
+}
+
+@media (min-width: 15.063em) and (max-width: 20em) {
+  body {
+    font-size: .9375rem;
+    max-width: 16rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width: 20.063em) and (max-width: 23.438em) {
+  body {
+    font-size: .9375rem;
+    max-width: 18rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width: 23.5em) and (max-width: 30em) {
+  body {
+    font-size: 1.0625rem;
+    max-width: 24rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width: 30.063em) and (max-width: 37.5em) {
+  body {
+    font-size: 1.0625rem;
+    max-width: 30rem;
+    padding: 0 1.125rem;
+  }
+}
+
+@media (min-width: 37.563em) and (max-width: 48em) {
+  body {
+    font-size: 1.0625rem;
+    max-width: 46rem;
+    padding: 0 1.125rem;
+  }
+}
+
+/* At and above this range, align nav presentation with prior sheet */
+@media (min-width: 48.063em) and (max-width: 64em) {
+  body {
+    font-size: 1.125rem;
+    max-width: 58rem;
+    padding: 0 1.125rem;
+  }
+
+  .hamburger, #menu-toggle { display: none; }
+  .menu {
+    display: block;
+    background: none;
+  }
+  .menu li { display: inline-block; }
+  .menu li a {
+    padding: 15px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+  }
+}
+
+@media (min-width: 64.063em) and (max-width: 80em) {
+  body {
+    font-size: 1.25rem;
+    max-width: 74rem;
+    padding: 0 1.125rem;
+  }
+
+  .hamburger, #menu-toggle { display: none; }
+  .menu { display: block; background: none; }
+  .menu li { display: inline-block; }
+  .menu li a {
+    padding: 15px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+  }
+}
+
+@media (min-width: 80.063em) and (max-width: 90em) {
+  body {
+    font-size: 1.375rem;
+    max-width: 82rem;
+    padding: 0 1.125rem;
+  }
+
+  .hamburger, #menu-toggle { display: none; }
+  .menu { display: block; background: none; }
+  .menu li { display: inline-block; }
+  .menu li a {
+    padding: 15px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+  }
+}
+
+@media (min-width: 90.063em) and (max-width: 120em) {
+  body {
+    font-size: 1.5rem;
+    max-width: 106rem;
+    padding: 0 1.125rem;
+  }
+
+  .hamburger, #menu-toggle { display: none; }
+  .menu { display: block; background: none; }
+  .menu li { display: inline-block; }
+  .menu li a {
+    padding: 15px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+  }
+}
+
+@media (min-width: 120.063em) and (max-width: 160em) {
+  body {
+    font-size: 1.5rem;
+    max-width: 110rem;
+    padding: 0 1.125rem;
+  }
+
+  .hamburger, #menu-toggle { display: none; }
+  .menu { display: block; background: none; }
+  .menu li { display: inline-block; }
+  .menu li a {
+    padding: 15px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+  }
+}
+
+@media (min-width: 160.063em) {
+  body {
+    font-size: 1.5rem;
+    max-width: 110rem;
+    padding: 0 1.125rem;
+  }
+
+  .hamburger, #menu-toggle { display: none; }
+  .menu { display: block; background: none; }
+  .menu li { display: inline-block; }
+  .menu li a {
+    padding: 15px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+  }
 }
