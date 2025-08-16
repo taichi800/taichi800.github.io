@@ -1,4 +1,4 @@
-/* ===== 1) Region order ===== */
+/* 1) Region order */
 const regionOrder = [
   'Canada/USA',
   'Mexico, Central America and Caribbean',
@@ -18,7 +18,7 @@ const regionOrder = [
   'Other'
 ];
 
-/* ===== 2) Cities -> IANA time zones (your list) ===== */
+/* 2) Cities -> IANA time zones (your data) */
 const cityZones = {
   'Honolulu': 'Pacific/Honolulu',
   'Papeete': 'Pacific/Tahiti',
@@ -248,27 +248,29 @@ const cityZones = {
   'Andaman Islands': 'Asia/Kolkata'
 };
 
-/* ===== 3) Known fallbacks for engines with older tzdata ===== */
+/* 3) Fallbacks for engines with older tzdata */
 const tzFallbacks = {
+  'America/North_Dakota/Bismarck': 'America/Chicago',
   'Europe/Kyiv': 'Europe/Kiev',
   'America/Nuuk': 'America/Godthab',
   'Asia/Harbin': 'Asia/Shanghai',
   'Asia/Chongqing': 'Asia/Shanghai',
   'Pacific/Chuuk': 'Pacific/Truk',
   'Pacific/Kanton': 'Pacific/Enderbury',
-  // Rare extras
   'Pacific/Johnston': 'Pacific/Honolulu',
   'Pacific/Midway': 'Pacific/Pago_Pago',
-  'Asia/Ho_Chi_Minh': 'Asia/Saigon'
+  'Pacific/Minamitorishima': 'Asia/Tokyo',
+  'Asia/Ho_Chi_Minh': 'Asia/Saigon',
+  'America/Miquelon': 'America/St_Pierre' // if needed
 };
 
-/* ===== 4) Manual offsets kept only for non-IANA/historical ===== */
+/* 4) Manual offsets only for non-IANA or historical */
 const manualOffsets = {
   'Namibia (historical)': 1.5,
   'Norfolk Island': 10.75
 };
 
-/* ===== 5) Region membership sets (unchanged from your version) ===== */
+/* 5) Region membership sets */
 const usCanada = new Set([
   'Honolulu','Anchorage','Los Angeles','Chicago','New York','Seattle','Portland','Sacramento',
   'Phoenix','Las Vegas','Denver','Santa Fe','Dallas','Fort Worth','El Paso','Oklahoma City','Omaha',
@@ -296,7 +298,7 @@ const pacificIslands = new Set([
 const indianOcean = new Set(['Christmas Island','Cocos (Keeling) Islands','Diego Garcia','Seychelles','Mauritius','Réunion','Comoros']);
 const middleEastCaucasus = new Set(['Baghdad','Tehran','Dubai','Tel Aviv','Kuwait City','Yerevan','Baku','Aleppo']);
 
-/* ===== 6) Region classifier and comparator ===== */
+/* 6) Region classifier and comparator */
 function getRegion(city) {
   if (usCanada.has(city)) return 'Canada/USA';
   if (mexicoCACarib.has(city)) return 'Mexico, Central America and Caribbean';
@@ -312,7 +314,7 @@ function getRegion(city) {
   if (indianOcean.has(city)) return 'Indian Ocean';
   if (middleEastCaucasus.has(city)) return 'Middle East and Caucasus';
 
-  const tz = cityZones[city] || '';
+  const tz = zonesResolved[city] || '';
   if (tz.startsWith('Europe/')) return 'Europe';
   if (tz.startsWith('Africa/')) return 'Africa';
   if (tz.startsWith('Asia/')) return 'East Asia';
@@ -330,7 +332,7 @@ function regionCompare(a, b) {
   return a.localeCompare(b);
 }
 
-/* ===== 7) Safe time zone resolver ===== */
+/* 7) Safe time zone resolver */
 const warnedTZ = new Set();
 function hasTZ(tz) {
   try { new Intl.DateTimeFormat('en-US', { timeZone: tz }); return true; }
@@ -342,18 +344,25 @@ function resolveTZ(tz) {
   const alt = tzFallbacks[tz];
   if (alt && hasTZ(alt)) return alt;
   if (!warnedTZ.has(tz)) {
-    console.warn(`[world-clock] Unsupported tz "${tz}"${alt ? `, tried "${alt}"` : ''}.`);
+    console.warn(`[world-clock] Unsupported tz "${tz}"${alt ? `, tried "${alt}"` : ''}. Using UTC.`);
     warnedTZ.add(tz);
   }
-  return null;
+  return 'UTC';
 }
 
-/* ===== 8) Time lookup with guard ===== */
-function getTimeForCity(city) {
-  const tzRaw = cityZones[city];
-  const tz = resolveTZ(tzRaw);
-  const now = new Date();
+/* 8) Build a resolved zones map once */
+const zonesResolved = (() => {
+  const out = {};
+  for (const [city, tz] of Object.entries(cityZones)) {
+    out[city] = resolveTZ(tz);
+  }
+  return out;
+})();
 
+/* 9) Time lookup uses resolved zones only */
+function getTimeForCity(city) {
+  const tz = zonesResolved[city];
+  const now = new Date();
   if (tz) {
     return new Intl.DateTimeFormat('en-US', {
       timeZone: tz,
@@ -370,7 +379,7 @@ function getTimeForCity(city) {
   return '--:--';
 }
 
-/* ===== 9) Render ===== */
+/* 10) Render */
 function updateCityList() {
   const list = document.getElementById('cityList');
   if (!list) {
@@ -382,7 +391,6 @@ function updateCityList() {
   Object.keys(cityZones)
     .sort(regionCompare)
     .forEach(city => {
-      // do not let a single failure stop the loop
       let time = '--:--';
       try { time = getTimeForCity(city); } catch (e) {
         console.error(`Failed to format ${city}:`, e);
@@ -394,7 +402,7 @@ function updateCityList() {
     });
 }
 
-/* ===== 10) Init ===== */
+/* 11) Init */
 function initClockList() {
   updateCityList();
   setInterval(updateCityList, 1000);
