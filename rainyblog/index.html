@@ -4,22 +4,21 @@
   <meta charset="utf-8">
   <title>Rainy Blog — Notes and Outlines on Tai Chi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  Content-Security-Policy: default-src 'self'; img-src 'self' data:; frame-src https:; object-src 'none'; base-uri 'self'; form-action 'self'
-Referrer-Policy: strict-origin-when-cross-origin
-Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-Cross-Origin-Opener-Policy: same-origin
-Cross-Origin-Embedder-Policy: require-corp
 
-<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-<meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <!-- Optional CSP via meta if server headers are not available.
+       Remove if you set CSP at the server. -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' data:; frame-src https:; object-src 'none'; base-uri 'self'; form-action 'self'">
 
+  <!-- These two are safe as fallbacks -->
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
 
-  <!-- External CSS only -->
-  <link rel="stylesheet" href="/rainyblog.css">
-  <!-- JSON Feed link -->
-  <link rel="alternate" type="application/feed+json" title="JSON Feed" href="rainyblog/feed.json">
+  <!-- Blog-specific CSS -->
+  <link rel="stylesheet" href="/rainyblog/rainyblog.css">
+
+  <!-- Feed -->
+  <link rel="alternate" type="application/feed+json" title="JSON Feed" href="/rainyblog/feed.json">
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
@@ -41,39 +40,35 @@ Cross-Origin-Embedder-Policy: require-corp
     </nav>
   </header>
 
-  <main id="content" class="main">
+  <main id="content" class="main" role="main">
     <!-- Blog content goes here -->
+
+    <!-- Click-to-load external media -->
+    <figure class="ext-media">
+      <button type="button" class="ext-media__btn" aria-controls="ext-1" aria-expanded="false">
+        Load external media
+      </button>
+      <div id="ext-1" class="ext-media__host" data-src="https://example.com/embed/xyz" hidden></div>
+      <figcaption>External media loads only after you click.</figcaption>
+      <noscript><p>JavaScript is off. External media is not loaded automatically.</p></noscript>
+    </figure>
+
+    <!-- Local, site-only search -->
+    <form class="site-search" role="search" aria-label="Site search" action="#" onsubmit="return false;">
+      <label for="q">Search this site</label>
+      <input id="q" type="search" name="q" autocomplete="off" inputmode="search">
+      <ul id="results" class="search-results" aria-live="polite" aria-relevant="additions removals"></ul>
+      <p class="search-note">Search runs locally in your browser. No queries are sent off site.</p>
+      <noscript><p>Search requires JavaScript. No data leaves your device.</p></noscript>
+    </form>
   </main>
 
-  <figure class="ext-media">
-  <button type="button"
-          class="ext-media__btn"
-          aria-controls="ext-1"
-          aria-expanded="false">
-    Load external media
-  </button>
-  <div id="ext-1"
-       class="ext-media__host"
-       data-src="https://example.com/embed/xyz"
-       hidden></div>
-  <figcaption>External media loads only after you click.</figcaption>
-  <noscript>
-    <p>JavaScript is off. External media is not loaded automatically.</p>
-  </noscript>
-</figure>
-
-  <form class="site-search" role="search" aria-label="Site search" action="#" onsubmit="return false;">
-  <label for="q">Search this site</label>
-  <input id="q" type="search" name="q" autocomplete="off" inputmode="search" />
-  <ul id="results" class="search-results" aria-live="polite" aria-relevant="additions removals"></ul>
-  <p class="search-note">Search runs locally in your browser. No queries are sent off site.</p>
-  <noscript><p>Search requires JavaScript. No data leaves your device.</p></noscript>
-</form>
-
-  
-
   <footer class="site-footer" role="contentinfo">
-    <p>© Your Name. <a href="/license/">License</a> · <a href="/privacy/">Privacy</a></p>
+    <p>© Your Name. <a href="/rainyblog/license/">License</a> · <a href="/rainyblog/privacy/">Privacy</a></p>
   </footer>
+
+  <!-- Blog-specific JS; defer so parsing is not blocked -->
+  <script src="/rainyblog/js/embed.js" defer></script>
+  <script src="/rainyblog/js/site-search.js" defer></script>
 </body>
 </html>
