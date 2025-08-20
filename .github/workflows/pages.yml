@@ -1,1 +1,30 @@
-name: test
+name: Build blog feed
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'rainyblog/posts.json'
+      - 'rainyblog/makefeed.py'
+      - 'rainyblog/articles/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Generate blog feed and index
+        working-directory: blog
+        run: python3 makefeed.py
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: rebuild blog feed'
+          file_pattern: 'blog/feed.json blog/index.json'
