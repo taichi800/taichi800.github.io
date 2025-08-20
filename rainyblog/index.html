@@ -33,6 +33,24 @@
     <!-- Blog content goes here -->
   </main>
 
+  <figure class="ext-media">
+  <button type="button"
+          class="ext-media__btn"
+          aria-controls="ext-1"
+          aria-expanded="false">
+    Load external media
+  </button>
+  <div id="ext-1"
+       class="ext-media__host"
+       data-src="https://example.com/embed/xyz"
+       hidden></div>
+  <figcaption>External media loads only after you click.</figcaption>
+  <noscript>
+    <p>JavaScript is off. External media is not loaded automatically.</p>
+  </noscript>
+</figure>
+  
+
   <footer class="site-footer" role="contentinfo">
     <p>© Your Name. <a href="/license/">License</a> · <a href="/privacy/">Privacy</a></p>
   </footer>
