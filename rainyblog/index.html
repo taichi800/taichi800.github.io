@@ -1,17 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Rainy Blog — Notes and Outlines on Tai Chi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Do NOT set CSP here if your host already sends a CSP header -->
+  <!-- Optional CSP via meta if server headers are not available.
+       Remove if you set CSP at the server. -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' data:; frame-src https:; object-src 'none'; base-uri 'self'; form-action 'self'">
+
+  <!-- These two are safe as fallbacks -->
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
-
-  <!-- Blog-local favicon to avoid /favicon.ico -->
-  <link rel="icon" href="/rainyblog/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/rainyblog/favicon.png">
 
   <!-- Blog-specific CSS -->
   <link rel="stylesheet" href="/rainyblog/rainyblog.css">
@@ -42,6 +43,7 @@
   <main id="content" class="main" role="main">
     <!-- Blog content goes here -->
 
+    <!-- Click-to-load external media -->
     <figure class="ext-media">
       <button type="button" class="ext-media__btn" aria-controls="ext-1" aria-expanded="false">
         Load external media
@@ -51,6 +53,7 @@
       <noscript><p>JavaScript is off. External media is not loaded automatically.</p></noscript>
     </figure>
 
+    <!-- Local, site-only search -->
     <form class="site-search" role="search" aria-label="Site search" action="#" onsubmit="return false;">
       <label for="q">Search this site</label>
       <input id="q" type="search" name="q" autocomplete="off" inputmode="search">
@@ -64,6 +67,7 @@
     <p>© Your Name. <a href="/rainyblog/license/">License</a> · <a href="/rainyblog/privacy/">Privacy</a></p>
   </footer>
 
+  <!-- Blog-specific JS; defer so parsing is not blocked -->
   <script src="/rainyblog/js/embed.js" defer></script>
   <script src="/rainyblog/js/site-search.js" defer></script>
 </body>
