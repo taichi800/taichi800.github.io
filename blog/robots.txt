@@ -1,6 +1,0 @@
-User-agent: * 
-Disallow: /search 
-Disallow: /drafts/ 
-Disallow: /__trap__/ 
-
-Sitemap:  https://taichi800.github.io/sitemap.xml
