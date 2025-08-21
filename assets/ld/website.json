@@ -1,0 +1,15 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://taichi800.github.io/",
+  "name": "Tai Chi for Everyone",
+  "inLanguage": "en",
+  "description": "Tai Chi Chuan resources with clear instruction and minimal design. Focus on health, wellness, practical practice notes, and straightforward learning for all.",
+  "publisher": {
+    "@type": "Person",
+    "name": "Taichiman",
+    "sameAs": [
+      "https://www.youtube.com/@jimregan5145"
+    ]
+  }
+}
