@@ -75,6 +75,9 @@ nav {
 nav details { display:block; }
 nav summary { list-style:none; cursor:pointer; user-select:none; }
 nav summary::-webkit-details-marker { display:none; }
+nav summary { appearance: none; -webkit-appearance: none; -moz-appearance: none; }
+nav summary::marker { content: ""; }                 /* Firefox */
+
 
 /* Menu default: hidden on narrow screens */
 .menu {
