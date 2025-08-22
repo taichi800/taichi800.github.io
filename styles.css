@@ -60,58 +60,66 @@ outline:2px solid #FFD700;
 outline-offset:2px
 }
 
+/* NAV BASE */
 nav {
-background-color:#0077B6;
-padding:.625em 1.25em
+  background-color:#0077B6;
+  padding:.625em 1.25em;
 }
 
+/* Support BOTH patterns: details/summary and checkbox hack */
 nav details { display:block; }
-nav summary { list-style:none; }
+nav summary { list-style:none; cursor:pointer; user-select:none; }
 nav summary::-webkit-details-marker { display:none; }
-nav .menu { display:none; }
-nav details[open] .menu { display:block; }
-.hamburger:focus { outline:2px solid #FFD700; outline-offset:2px; }
 
+/* Menu default: hidden on narrow screens */
 .menu {
-list-style:none;
-margin:0;
-padding:0;
-background:#333;
-text-align:center;
-display:none
+  list-style:none;
+  margin:0;
+  padding:0;
+  background:#333;
+  text-align:center;
+  display:none;
 }
 
-.menu li a {
-display:inline-block;
-padding:.625em 1.25em;
-color:white;
-text-decoration:none;
-transition:background-color .5s ease,color .5s ease,border .5s ease;
-border-radius:50%;
-border:2px solid transparent
+/* Show menu when checkbox is checked (old pattern still works) */
+input[type="checkbox"]:checked + .hamburger + .menu {
+  display:block !important;
 }
 
-.menu li a:hover,.menu li a:focus {
-background-color:#005f8a;
-text-decoration:none;
-color:#FFD700;
-border:2px solid #FFD700;
-outline:none
+/* Show menu when <details> is open (new pattern) */
+nav details[open] .menu {
+  display:block !important;
 }
 
+/* Hamburger button */
 .hamburger {
-display:block;
-font-size:1.875em;
-cursor:pointer;
-text-align:center;
-padding:.625em;
-background:#333;
-color:white
+  display:block;
+  font-size:1.875em;
+  cursor:pointer;
+  text-align:center;
+  padding:.625em;
+  background:#333;
+  color:white;
 }
-
-nav details[open] .menu { display:block; }
-
 .hamburger:focus { outline:2px solid #FFD700; outline-offset:2px; }
+
+/* Menu links */
+.menu li a {
+  display:inline-block;
+  padding:.625em 1.25em;
+  color:white;
+  text-decoration:none;
+  transition:background-color .5s ease,color .5s ease,border .5s ease;
+  border-radius:50%;
+  border:2px solid transparent;
+}
+.menu li a:hover,.menu li a:focus {
+  background-color:#005f8a;
+  text-decoration:none;
+  color:#FFD700;
+  border:2px solid #FFD700;
+  outline:none;
+}
 
 body {
 font-family:monospace,sans-serif;
