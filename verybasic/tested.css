@@ -185,7 +185,7 @@ nav details[open] .menu { display: block; }
    COMPONENTS
    ========================================================= */
 /* Info grid: keep your existing cap */
-+.info-grid img { max-inline-size: var(--img-max-inline); }
+.info-grid img { max-inline-size: var(--img-max-inline); }
 
 
 /* If an item has no image, add .no-thumb in HTML */
@@ -211,8 +211,8 @@ nav details[open] .menu { display: block; }
    IMAGE MODES (driven by html[data-img-mode])
    ========================================================= */
 
-+html[data-img-mode="hidden"] article img,
-+html[data-img-mode="hidden"] main img     { display: none; }
+html[data-img-mode="hidden"] article img,
+html[data-img-mode="hidden"] main img     { display: none; }
 
 html[data-img-mode="compact"] figure > img{ max-inline-size: calc(var(--img-max-inline) * 0.66); }
 
@@ -232,6 +232,23 @@ figcaption {
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+
+@media (prefers-contrast: more) {
+  :root { --para-space: 1rem; } /* a bit more breathing room */
+  a { text-decoration-thickness: max(2px, .12em); }
+}
+@media (forced-colors: active) {
+  * { forced-color-adjust: auto; } /* honor user colors */
+  .dialog-backdrop { background: CanvasText; opacity:.85; }
+}
+
+@media print {
+  :root { --surface-bg:#fff; --surface-fg:#000; }
+  body { background: #fff; color:#000; }
+  nav, .hamburger { display:none !important; }
+  a[href]:after { content:" (" attr(href) ")"; font-size:.9em; }
+}
+
 
 
 /* Modern browsers: use :focus-visible */
