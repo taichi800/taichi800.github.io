@@ -83,19 +83,21 @@
 </header>
 
 <nav aria-label="Main navigation">
-  <input type="checkbox" id="menu-toggle" hidden>
-  <label for="menu-toggle" class="hamburger" aria-label="Toggle menu">&#9776;</label>
-  <ul class="menu" aria-label="Main menu">
-    <li><a href="/about">About</a></li>
-    <li><a href="/class">Class</a></li>
-    <li><a href="/playbooks">Playbooks</a></li>
-    <li><a href="/faq">FAQ</a></li>
-    <li><a href="/links">Links</a></li>
-    <li><a href="/support" target="_blank" rel="noopener noreferrer">Support</a></li>
-    <li><a href="mailto:taichiman@tutamail.com">Contact</a></li>
-    <li><a href="https://taichi800.github.io/">Home</a></li>
-  </ul>
+  <details>
+    <summary class="hamburger" aria-controls="mainmenu" aria-label="Toggle menu">&#9776;</summary>
+    <ul class="menu" id="mainmenu" aria-label="Main menu">
+      <li><a href="/about">About</a></li>
+      <li><a href="/class">Class</a></li>
+      <li><a href="/playbooks">Playbooks</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a href="/links">Links</a></li>
+      <li><a href="/support" target="_blank" rel="noopener noreferrer">Support</a></li>
+      <li><a href="mailto:taichiman@tutamail.com">Contact</a></li>
+      <li><a href="https://taichi800.github.io/">Home</a></li>
+    </ul>
+  </details>
 </nav>
+
 
 <!-- Single main starts here, with Microdata -->
 <main itemscope itemtype="https://schema.org/WebSite">
