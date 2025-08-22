@@ -77,7 +77,8 @@ nav summary { list-style:none; cursor:pointer; user-select:none; }
 nav summary::-webkit-details-marker { display:none; }
 nav summary { appearance: none; -webkit-appearance: none; -moz-appearance: none; }
 nav summary::marker { content: ""; }                 /* Firefox */
-
+.hamburger:focus { outline:2px solid #FFD700; outline-offset:2px; }
+.hamburger:hover { background:#444; }
 
 /* Menu default: hidden on narrow screens */
 .menu {
@@ -275,17 +276,8 @@ text-decoration:none;
 color:inherit
 }
 
-.info-grid li:not(:has(img)) {
-background:transparent;
-box-shadow:none;
-padding:.5rem;
-text-align:left
-}
-
-.info-grid li:not(:has(img)):hover {
-background:none;
-transform:none
-}
+.info-grid li.text-only { background:transparent; box-shadow:none; padding:.5rem; text-align:left; }
+.info-grid li.text-only:hover { background:none; transform:none; }
 
 @media (max-width: 600px) {
 .info-grid {
@@ -402,6 +394,11 @@ border-color:#000000
 button:focus,a:focus {
 outline:2px dashed #000000
 }
+}
+
+@media (forced-colors: active) {
+  .menu li a { border-color: ButtonText; }
+  .hamburger { border: 1px solid CanvasText; }
 }
 
 @media (prefers-reduced-motion: reduce) {
